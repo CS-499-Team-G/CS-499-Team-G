@@ -1,5 +1,3 @@
 # CS-499-Team-G
 
-Feel free to change up this file to say whatever you'd like. Just adding this for an initial commit.
-
-\- Cameron Howell
+This repository holds files for our CS 499 website project. The team members working on this project are Jazmine Funchess, Dant'e Peaks, and Cameron Howell.
