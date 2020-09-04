@@ -1,3 +1,9 @@
 # CS-499-Team-G
 
-This repository holds files for our CS 499 website project. The team members working on this project are Jazmine Funchess, Dant'e Peaks, and Cameron Howell.
+### Team Members
+- Jazmine Funchess
+- Dant'e Peaks
+- Cameron Howell
+
+### Project Description
+This website is intended to simulate a web-based interface for a trucking management service. \<Add more text here\>
