@@ -1,21 +1,27 @@
 const express = require('express');
-const app = express();
 const cors = require('cors');
-const PORT = process.env.PORT || 5005;
+const path = require('path');
 const mongoose = require('mongoose');
-require('dotenv').config();
 
-// gives access to the data models
-const usersRouter = require('./routes/users');
-app.use('./users', usersRouter);
-app.use(express.json());
-
+const app = express();
+const PORT = process.env.PORT || 5000;
 
 app.use(cors());
+app.use(express.json()); // This will let us analyze the body of a request
+
+require('dotenv').config();
+
+// Gives access to the data models
+const usersRouter = require('./routes/users'); // .require() lets us use the api calls in the Users.js
+app.use('/users', usersRouter); // Use the instance of Users that we just created
+
+
+// Use the connection code in the .env file to create a connection to mongoDB database
 const uri = process.env.ATLAS_URI;
 mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true}
 );
 
+// When the connection opens, do something
 const connection = mongoose.connection;
 connection.once('open', () => {
   console.log("MongoDB database connection established successfully");
@@ -23,8 +29,9 @@ connection.once('open', () => {
 
 
 
-/* Get requests are used to get information from the server. Once 
-   Once we receive a request, we will send information back*/
+/* Get requests are used to get information from the server. 
+   Once we receive a request, we will send information back.
+   The / referes to the home directory*/
 app.get('/', (req, res) =>
     res.send('API RUNNING')
 );
