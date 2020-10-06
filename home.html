@@ -1,43 +1,40 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<style>
-			body,
-			html {
-				height: 100%;
-				margin: 0;
-				font-family: Georgia, "Times New Roman", Times, serif;
-			}
-
-			input,
-			label {
-				display: block;
-			}
-
-			h1 {
-				color: #37393d;
-			}
-		</style>
 		<title>TCMS&#8482;</title>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="fonts/font-awesome-4.7.0/css/font-awesome.min.css"
+		/>
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
 	</head>
 	<body>
 		<h1 style="text-align: center">Log in to TCMS</h1>
 		<form method="POST" style="text-align: center">
 			<input
+				class="input100"
 				id="email"
 				type="email"
-				value=""
 				placeholder="Email"
 				name="email"
 			/>
+			<span class="focus-input100"></span>
+			<span class="symbol-input100">
+				<span class="lnr lnr-envelope"></span>
+			</span>
 
 			<input
+				class="input100"
 				id="password"
 				type="password"
-				value=""
 				placeholder="Password"
 				name="password"
 			/>
+			<span class="focus-input100"></span>
+			<span class="symbol-input100">
+				<span class="lnr lnr-lock"></span>
+			</span>
 		</form>
 	</body>
 </html>

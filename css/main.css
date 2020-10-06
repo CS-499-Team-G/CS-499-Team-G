@@ -1,0 +1,61 @@
+input {
+	outline: none;
+	border: none;
+}
+
+input:focus::-webkit-input-placeholder {
+	color: transparent;
+}
+input:focus:-moz-placeholder {
+	color: transparent;
+}
+input:focus::-moz-placeholder {
+	color: transparent;
+}
+input:focus:-ms-input-placeholder {
+	color: transparent;
+}
+
+input::-webkit-input-placeholder {
+	color: #acacac;
+}
+input:-moz-placeholder {
+	color: #acacac;
+}
+input::-moz-placeholder {
+	color: #acacac;
+}
+input:-ms-input-placeholder {
+	color: #acacac;
+}
+
+.symbol-input100 {
+	font-size: 24px;
+	color: #999999;
+
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	align-items: center;
+	position: absolute;
+	border-radius: 25px;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding-left: 23px;
+	padding-bottom: 5px;
+	pointer-events: none;
+
+	-webkit-transition: all 0.4s;
+	-o-transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	transition: all 0.4s;
+}
+
+.input100:focus + .focus-input100 + .symbol-input100 {
+	color: #d33f8d;
+	padding-left: 18px;
+}
