@@ -59,3 +59,24 @@ input:-ms-input-placeholder {
 	color: #d33f8d;
 	padding-left: 18px;
 }
+
+.login100-form {
+	width: 100%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.wrap-input100 {
+	position: relative;
+	width: 100%;
+	z-index: 1;
+}
+
+.m-b-16 {
+	margin-bottom: 16px;
+}
