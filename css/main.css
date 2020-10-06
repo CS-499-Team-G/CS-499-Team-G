@@ -12,6 +12,27 @@
 	font-family: Poppins-Medium;
 	src: url("../fonts/poppins/Poppins-Medium.ttf");
 }
+
+@font-face {
+	font-family: Raleway-Regular;
+	src: url("../fonts/raleway/Raleway-Regular.ttf");
+}
+
+@font-face {
+	font-family: Raleway-Black;
+	src: url("../fonts/raleway/Raleway-Black.ttf");
+}
+
+@font-face {
+	font-family: Raleway-SemiBold;
+	src: url("../fonts/raleway/Raleway-SemiBold.ttf");
+}
+
+@font-face {
+	font-family: Raleway-Bold;
+	src: url("../fonts/raleway/Raleway-Bold.ttf");
+}
+
 /*//////////////////////////////////////////////////////////////////
 [ RESTYLE TAG ]*/
 
@@ -567,6 +588,10 @@ iframe {
 
 .p-r-50 {
 	padding-right: 50px;
+}
+
+.p-t-25 {
+	padding-top: 25px;
 }
 
 .p-t-77 {
