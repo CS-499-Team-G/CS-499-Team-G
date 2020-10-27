@@ -191,7 +191,7 @@ iframe {
 }
 
 .hov1:hover {
-	border-color: #d33f8d;
+	border-color: #feae7b;
 }
 
 /*//////////////////////////////////////////////////////////////////
@@ -214,7 +214,7 @@ iframe {
 	justify-content: center;
 	align-items: center;
 	padding: 15px;
-	background: #0250c5;
+	background: #3b1c71;
 	background: -webkit-linear-gradient(bottom, #3b1c71, #feae7b);
 	background: -o-linear-gradient(bottom, #3b1c71, #feae7b);
 	background: -moz-linear-gradient(bottom, #3b1c71, #feae7b);
@@ -430,7 +430,7 @@ iframe {
 	width: 100%;
 	height: 62px;
 	border-radius: 3px;
-	background: #d33f8d;
+	background: #feae7b;
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -moz-box;
@@ -499,7 +499,7 @@ iframe {
 
 .btn-face:hover,
 .btn-google:hover {
-	border-color: #d33f8d;
+	border-color: #feae7b;
 }
 
 /*------------------------------------------------------------------
