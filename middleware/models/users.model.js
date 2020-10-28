@@ -15,6 +15,8 @@ const employeeName = new Schema({
   }
 });
 
+const maintenanceSchema = new Schema({/* Stuff here */});
+
 const employeeAddress = new Schema({
   streetAddress: {
     type: String
