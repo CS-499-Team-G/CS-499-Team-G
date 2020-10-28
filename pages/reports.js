@@ -1,5 +1,5 @@
 function fetchData(){
-    fetch('localhost:5000/users/login')
+    fetch('http:localhost:5000/users/login')
         .then(response =>{
             if(!response.ok){
                 throw Error("ERROR");
