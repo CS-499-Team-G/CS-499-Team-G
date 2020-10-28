@@ -1,6 +1,7 @@
 function fetchData(){
     fetch('http:localhost:5000/users/login')
         .then(response =>{
+            console.log(response.data);
             if(!response.ok){
                 throw Error("ERROR");
             }
