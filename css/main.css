@@ -232,7 +232,6 @@ iframe {
 	height: 100%;
 	top: 0;
 	left: 0;
-	background-image: url("../images/img-01.png");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -268,7 +267,6 @@ iframe {
 	height: 100%;
 	top: 0;
 	left: 0;
-	background-image: url("../images/img-01.png");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -282,7 +280,7 @@ iframe {
 }
 
 .wrap-signup100 {
-	width: 600px;
+	width: 450px;
 	background: #fff;
 	border-radius: 3px;
 	overflow: hidden;
