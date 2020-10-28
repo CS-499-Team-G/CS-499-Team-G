@@ -245,7 +245,7 @@ iframe {
 }
 
 .wrap-signup100 {
-	width: 500px;
+	width: 700px;
 	background: #fff;
 	border-radius: 3px;
 	overflow: hidden;
@@ -278,7 +278,7 @@ iframe {
 
 .signup100-form-label {
 	font-family: Raleway-Black;
-	font-size: 27px;
+	font-size: 24px;
 	color: #333333;
 	line-height: 1.2;
 	text-transform: uppercase;
@@ -596,7 +596,7 @@ iframe {
 	}
 }
 
-@media (max-width: 530px) {
+@media (max-width: 730px) {
 	.wrap-signup100 {
 		padding-left: 15px;
 		padding-right: 15px;
