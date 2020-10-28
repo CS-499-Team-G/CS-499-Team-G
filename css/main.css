@@ -620,3 +620,14 @@ iframe {
 .p-b-55 {
 	padding-bottom: 55px;
 }
+
+/*//////////////////////////////////////////////////////////////////
+[ div alignment ]*/
+
+#first {
+	display: inline-block;
+}
+
+#second {
+	display: inline-block;
+}
