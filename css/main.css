@@ -245,7 +245,7 @@ iframe {
 }
 
 .wrap-signup100 {
-	width: 700px;
+	width: 80%;
 	background: #fff;
 	border-radius: 3px;
 	overflow: hidden;
@@ -638,7 +638,7 @@ iframe {
 	}
 }
 
-@media (max-width: 730px) {
+@media (max-width: 85%) {
 	.wrap-signup100 {
 		padding-left: 15px;
 		padding-right: 15px;
