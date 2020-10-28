@@ -29,7 +29,7 @@
 				<div class="wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30">
 					<form class="login100-form validate-form" method="POST">
 						<span class="login100-form-title p-b-55">Create New Account</span>
-						<div class="wrap-input100 validate-input m-b-16 same-line">
+						<div class="wrap-input100 validate-input m-b-16">
 							<input
 								class="input100"
 								id="firstname"
@@ -40,13 +40,36 @@
 							/>
 							<span class="focus-input100"></span>
 						</div>
-						<div class="wrap-input100 validate-input m-b-16 same-line">
+						<div class="wrap-input100 validate-input m-b-16">
 							<input
 								class="input100"
 								id="lastname"
 								type="text"
 								placeholder="Last Name"
 								name="lastname"
+								required
+							/>
+							<span class="focus-input100"></span>
+						</div>
+						<div class="wrap-input100 validate-input m-b-16">
+							<input
+								class="input100"
+								id="middlename"
+								type="text"
+								placeholder="Middle Name"
+								name="middlename"
+								required
+							/>
+							<span class="focus-input100"></span>
+						</div>
+						<span class="login100-form-label p-b-30">Address</span>
+						<div class="wrap-input100 validate-input m-b-16">
+							<input
+								class="input100"
+								id="street"
+								type="text"
+								placeholder="Street Address"
+								name="street"
 								required
 							/>
 							<span class="focus-input100"></span>

@@ -270,6 +270,17 @@ iframe {
 	display: block;
 }
 
+.login100-form-label {
+	font-family: Raleway-Black;
+	font-size: 24px;
+	color: #333333;
+	line-height: 1;
+	text-transform: uppercase;
+	text-align: left;
+
+	width: 100%;
+	display: block;
+}
 /*---------------------------------------------*/
 .wrap-input100 {
 	position: relative;
@@ -604,8 +615,4 @@ iframe {
 
 .p-b-55 {
 	padding-bottom: 55px;
-}
-
-.same-line input {
-	float: left;
 }
