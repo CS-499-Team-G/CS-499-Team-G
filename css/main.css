@@ -653,6 +653,14 @@ iframe {
 		padding-right: 15px;
 	}
 }
+
+@media (max-width: 480px) {
+	.wrap-signup100 {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+
 .m-b-16 {
 	margin-bottom: 16px;
 }
