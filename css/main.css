@@ -315,7 +315,7 @@ iframe {
 	color: #686868;
 
 	display: inline-block;
-	width: 39%;
+	width: 39.5%;
 	background: #e6e6e6;
 	height: 62px;
 	border-radius: 3px;
@@ -329,10 +329,11 @@ iframe {
 	color: #686868;
 
 	display: inline-block;
-	width: 39%;
+	width: 39.5%;
 	background: #e6e6e6;
 	height: 62px;
 	border-radius: 3px;
+	padding: 0 0 0 15px;
 }
 
 .middlename-input100 {
@@ -346,6 +347,7 @@ iframe {
 	background: #e6e6e6;
 	height: 62px;
 	border-radius: 3px;
+	padding: 0 0 0 15px;
 }
 
 /*------------------------------------------------------------------
