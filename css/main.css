@@ -244,6 +244,13 @@ iframe {
 	overflow: hidden;
 }
 
+.wrap-signup100 {
+	width: 500px;
+	background: #fff;
+	border-radius: 3px;
+	overflow: hidden;
+}
+
 /*------------------------------------------------------------------
 [  ]*/
 .login100-form {
@@ -584,6 +591,13 @@ iframe {
 
 @media (max-width: 480px) {
 	.wrap-login100 {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+
+@media (max-width: 530px) {
+	.wrap-signup100 {
 		padding-left: 15px;
 		padding-right: 15px;
 	}
