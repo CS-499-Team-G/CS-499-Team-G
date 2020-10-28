@@ -605,3 +605,7 @@ iframe {
 .p-b-55 {
 	padding-bottom: 55px;
 }
+
+.same-line input {
+	float: left;
+}
