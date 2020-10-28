@@ -15,6 +15,8 @@ require('dotenv').config();
 const usersRouter = require('./routes/users'); // .require() lets us use the api calls in the Users.js
 app.use('/users', usersRouter); // Use the instance of Users that we just created
 
+const shipmentsRouter = require('./routes/shipments'); // .require() lets us use the api calls in the Users.js
+app.use('/shipments', shipmentsRouter); // Use the instance of Users that we just created
 
 // Use the connection code in the .env file to create a connection to mongoDB database
 const uri = process.env.ATLAS_URI;
