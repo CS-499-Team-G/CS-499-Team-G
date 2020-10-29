@@ -29,7 +29,9 @@
 				<div class="wrap-signup100 p-l-50 p-r-50 p-t-77 p-b-30">
 					<form class="login100-form validate-form" method="POST">
 						<span class="login100-form-title p-b-55">Create New Account</span>
-						<span class="signup100-form-label p-b-20">Name</span>
+						<span class="signup100-form-label p-b-20"
+							>Personal Information</span
+						>
 						<div class="wrap-input100 validate-input m-b-16">
 							<input
 								class="firstname-input100"
@@ -44,15 +46,6 @@
 								<span class="lnr lnr-user"></span>
 							</span>
 							<input
-								class="lastname-input100"
-								id="lastname"
-								type="text"
-								placeholder="Last Name"
-								name="lastname"
-								required
-							/>
-							<span class="focus-input100"></span>
-							<input
 								class="middlename-input100"
 								id="middlename"
 								type="text"
@@ -61,14 +54,59 @@
 								required
 							/>
 							<span class="focus-input100"></span>
+							<input
+								class="lastname-input100"
+								id="lastname"
+								type="text"
+								placeholder="Last Name"
+								name="lastname"
+								required
+							/>
+							<span class="focus-input100"></span>
 						</div>
-						<span class="signup100-form-label p-b-20">Address</span>
 						<div class="wrap-input100 validate-input m-b-16">
 							<input
-								class="input100"
+								class="email-input100"
+								id="email"
+								type="email"
+								placeholder="Email"
+								name="email"
+								required
+							/>
+							<span class="focus-input100"></span>
+							<span class="symbol-input100">
+								<span class="lnr lnr-envelope"></span>
+							</span>
+						</div>
+						<div class="wrap-input100 validate-input m-b-16">
+							<input
+								class="password-input100"
+								id="password"
+								type="password"
+								placeholder="Password"
+								name="password"
+								required
+							/>
+							<span class="focus-input100"></span>
+							<span class="symbol-input100">
+								<span class="lnr lnr-lock"></span>
+							</span>
+							<input
+								class="confirm-password-input100"
+								id="password-confirm"
+								type="password"
+								placeholder="Confirm Password"
+								name="password-confirm"
+								required
+							/>
+							<span class="focus-input100"></span>
+						</div>
+						<div class="wrap-input100 validate-input m-b-16">
+							<input
+								class="street-input100"
 								id="street"
 								type="text"
-								placeholder="Street Address"
+								placeholder="Address Line 1"
 								name="street"
 								required
 							/>
@@ -78,6 +116,25 @@
 							</span>
 						</div>
 						<div class="wrap-input100 validate-input m-b-16">
+							<input
+								class="street-2-input100"
+								id="street-2"
+								type="text"
+								placeholder="Address Line 2"
+								name="street"
+								required
+							/>
+						</div>
+						<div class="wrap-input100 validate-input m-b-16">
+							<input
+								class="zip-input100"
+								id="zip"
+								type="text"
+								placeholder="Zip Code"
+								name="zip"
+								required
+							/>
+							<span class="focus-input100"></span>
 							<input
 								class="city-input100"
 								id="city"
@@ -96,17 +153,7 @@
 								required
 							/>
 							<span class="focus-input100"></span>
-							<input
-								class="zip-input100"
-								id="zip"
-								type="text"
-								placeholder="Zip Code"
-								name="zip"
-								required
-							/>
-							<span class="focus-input100"></span>
 						</div>
-						<span class="signup100-form-label p-b-20">Contact Info</span>
 					</form>
 				</div>
 			</div>

@@ -245,7 +245,7 @@ iframe {
 }
 
 .wrap-signup100 {
-	width: 80%;
+	width: 60%;
 	background: #fff;
 	border-radius: 3px;
 	overflow: hidden;
@@ -350,6 +350,76 @@ iframe {
 	padding: 0 30px 0 15px;
 }
 
+.email-input100 {
+	font-family: Raleway-SemiBold;
+	font-size: 18px;
+	line-height: 1.2;
+	color: #686868;
+
+	display: block;
+	width: 100%;
+	background: #e6e6e6;
+	height: 62px;
+	border-radius: 3px;
+	padding: 0 30px 0 65px;
+}
+
+.password-input100 {
+	font-family: Raleway-SemiBold;
+	font-size: 18px;
+	line-height: 1.2;
+	color: #686868;
+
+	display: inline-block;
+	width: 49.5%;
+	background: #e6e6e6;
+	height: 62px;
+	border-radius: 3px;
+	padding: 0 30px 0 65px;
+}
+
+.confirm-password-input100 {
+	font-family: Raleway-SemiBold;
+	font-size: 18px;
+	line-height: 1.2;
+	color: #686868;
+
+	display: inline-block;
+	width: 49.5%;
+	background: #e6e6e6;
+	height: 62px;
+	border-radius: 3px;
+	padding: 0 30px 0 15px;
+}
+
+.street-input100 {
+	font-family: Raleway-SemiBold;
+	font-size: 18px;
+	line-height: 1.2;
+	color: #686868;
+
+	display: block;
+	width: 100%;
+	background: #e6e6e6;
+	height: 62px;
+	border-radius: 3px;
+	padding: 0 30px 0 65px;
+}
+
+.street-2-input100 {
+	font-family: Raleway-SemiBold;
+	font-size: 18px;
+	line-height: 1.2;
+	color: #686868;
+
+	display: block;
+	width: 100%;
+	background: #e6e6e6;
+	height: 62px;
+	border-radius: 3px;
+	padding: 0 30px 0 15px;
+}
+
 .city-input100 {
 	font-family: Raleway-SemiBold;
 	font-size: 18px;
@@ -357,7 +427,7 @@ iframe {
 	color: #686868;
 
 	display: inline-block;
-	width: 70%;
+	width: 59%;
 	background: #e6e6e6;
 	height: 62px;
 	border-radius: 3px;
@@ -371,7 +441,7 @@ iframe {
 	color: #686868;
 
 	display: inline-block;
-	width: 10%;
+	width: 25%;
 	background: #e6e6e6;
 	height: 62px;
 	border-radius: 3px;
@@ -384,7 +454,7 @@ iframe {
 	color: #686868;
 
 	display: inline-block;
-	width: 19%;
+	width: 15%;
 	background: #e6e6e6;
 	height: 62px;
 	border-radius: 3px;
@@ -679,7 +749,7 @@ iframe {
 	}
 }
 
-@media (max-width: 85%) {
+@media (max-width: 65%) {
 	.wrap-signup100 {
 		padding-left: 15px;
 		padding-right: 15px;
@@ -716,15 +786,4 @@ iframe {
 
 .p-b-55 {
 	padding-bottom: 55px;
-}
-
-/*//////////////////////////////////////////////////////////////////
-[ div alignment ]*/
-
-#first {
-	display: inline-block;
-}
-
-#second {
-	display: inline-block;
 }
