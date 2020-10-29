@@ -356,7 +356,7 @@ iframe {
 	line-height: 1.2;
 	color: #686868;
 
-	display: block;
+	display: inline-block;
 	width: 100%;
 	background: #e6e6e6;
 	height: 62px;
@@ -398,7 +398,7 @@ iframe {
 	line-height: 1.2;
 	color: #686868;
 
-	display: block;
+	display: inline-block;
 	width: 100%;
 	background: #e6e6e6;
 	height: 62px;
@@ -412,7 +412,7 @@ iframe {
 	line-height: 1.2;
 	color: #686868;
 
-	display: block;
+	display: inline-block;
 	width: 100%;
 	background: #e6e6e6;
 	height: 62px;
