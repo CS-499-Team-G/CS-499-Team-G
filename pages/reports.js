@@ -1,7 +1,7 @@
 function fetchData(){
     fetch("http:localhost:5000/users/login")
         .then(response =>{
-            console.log(response.data);
+            console.log(response.body);
             if(!response.ok){
                 throw Error("ERROR");
             }
@@ -18,7 +18,7 @@ function fetchData(){
         })
 }
 function msg() {
-    alert("Hello world!");
+    alert(response.body);
   }
 
 msg();
