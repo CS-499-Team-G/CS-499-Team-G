@@ -27,9 +27,10 @@ router.route('/login').get((req, res) => {
    * @param array Mongodb query returns an array containing the
    * users with a given user name.
   */
-  function checkArray(array){
-    if(!array.length == 0){
-      res.json(users)
+  function checkArray(queryResult){
+    
+    if(!queryResult.length == 0){
+      res.json(queryResult)
     }else{
       res.status(400).json('Error: User not found')
     }
