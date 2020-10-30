@@ -17,5 +17,8 @@ function fetchData(){
             console.log(error)
         })
 }
+function msg() {
+    alert("Hello world!");
+  }
 
-fetchData();
+msg();
