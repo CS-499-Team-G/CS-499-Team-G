@@ -12,10 +12,10 @@ app.use(express.json()); // This will let us analyze the body of a request
 require('dotenv').config();
 
 // Gives access to the data models
-const usersRouter = require('./routes/users'); // .require() lets us use the api calls in the Users.js
+const usersRouter = require('./middleware/routes/users'); // .require() lets us use the api calls in the Users.js
 app.use('/users', usersRouter); // Use the instance of Users that we just created
 
-const shipmentsRouter = require('./routes/shipments'); // .require() lets us use the api calls in the Users.js
+const shipmentsRouter = require('./middleware/routes/shipments'); // .require() lets us use the api calls in the Users.js
 app.use('/shipments', shipmentsRouter); // Use the instance of Users that we just created
 
 // Use the connection code in the .env file to create a connection to mongoDB database
