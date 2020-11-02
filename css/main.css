@@ -792,5 +792,20 @@ iframe {
 [ reports-page ]*/
 
 .sidebar100 {
+	height: 90%;
+	width: 125px;
+	position: fixed;
+	z-index: 1;
+	top: auto;
+	left: auto;
 	background-color: #feae7b;
+	overflow-x: hidden;
+	padding-top: 20px;
+	padding-left: 20px;
+}
+
+.text-sidebar100 {
+	font-family: Raleway-SemiBold;
+	font-size: 18px;
+	text-decoration: none;
 }
