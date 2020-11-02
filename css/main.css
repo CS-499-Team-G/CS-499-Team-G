@@ -792,20 +792,29 @@ iframe {
 [ reports-page ]*/
 
 .sidebar100 {
-	height: 90%;
+	height: 100%;
 	width: 125px;
 	position: fixed;
 	z-index: 1;
 	top: auto;
 	left: auto;
-	background-color: #feae7b;
+	background-color: #c3cfd7;
 	overflow-x: hidden;
 	padding-top: 20px;
-	padding-left: 20px;
+	padding-left: 15px;
 }
 
-.text-sidebar100 {
+.sidebar100 img {
+	mix-blend-mode: multiply;
+}
+
+.sidebar100 a {
 	font-family: Raleway-SemiBold;
 	font-size: 18px;
 	text-decoration: none;
+	padding-left: 10px;
+}
+
+.sidebar100 a:hover {
+	color: #d33f8d;
 }
