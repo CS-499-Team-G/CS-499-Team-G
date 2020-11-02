@@ -33,9 +33,9 @@ connection.once('open', () => {
 
 /* Get requests are used to get information from the server. 
    Once we receive a request, we will send information back.
-   The / referes to the home directory*/
-app.get('/', (req, res) =>
-    res.send('API RUNNING')
+*/
+app.get('*', (req, res) =>
+    res.sendFile('home.html')
 );
 
 app.listen(PORT, () => 
