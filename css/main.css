@@ -406,20 +406,6 @@ iframe {
 	padding: 0 30px 0 65px;
 }
 
-.street-2-input100 {
-	font-family: Raleway-SemiBold;
-	font-size: 18px;
-	line-height: 1.2;
-	color: #686868;
-
-	display: inline-block;
-	width: 100%;
-	background: #e6e6e6;
-	height: 62px;
-	border-radius: 3px;
-	padding: 0 30px 0 15px;
-}
-
 .city-input100 {
 	font-family: Raleway-SemiBold;
 	font-size: 18px;
@@ -791,30 +777,42 @@ iframe {
 /*//////////////////////////////////////////////////////////////////
 [ reports-page ]*/
 
-.sidebar100 {
-	height: 100%;
-	width: 125px;
-	position: fixed;
-	z-index: 1;
-	top: auto;
-	left: auto;
-	background-color: #c3cfd7;
-	overflow-x: hidden;
-	padding-top: 20px;
-	padding-left: 15px;
-}
-
-.sidebar100 img {
-	mix-blend-mode: multiply;
-}
-
-.sidebar100 a {
+header {
+	background-color: #fff;
+	border-top: 5px solid #3b1c71;
+	display: flex;
+	min-height: 50px;
+	border-bottom: 1px solid #ddd;
+	box-shadow: 0 0 5px rgba(59, 28, 113, 0.5);
+	width: 100%;
+	padding: 0;
+	justify-content: center;
 	font-family: Raleway-SemiBold;
-	font-size: 18px;
-	text-decoration: none;
-	padding-left: 10px;
+	margin: 0;
+	z-index: 10;
+	position: fixed;
 }
 
-.sidebar100 a:hover {
-	color: #d33f8d;
+header .wrap {
+	height: 60px;
+	width: 100%;
+	max-width: 1200px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	align-content: center;
+	padding: 0 10px;
+}
+
+header .wrap img {
+	width: 50px;
+	height: 50px;
+}
+
+header .wrap .hamburger-menu {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	position: relative;
 }
