@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json()); // This will let us analyze the body of a request
 
 app.use(express.static('./pages'));
-app.use(express.static('./css'));
+//app.use(express.static('./css'));
 require('dotenv').config();
 
 // Gives access to the data models
