@@ -10,9 +10,9 @@ app.use(cors());
 app.use(express.json()); // This will let us analyze the body of a request
 
 app.use(express.static('./pages'));
-//app.use(express.static('./css'));
+app.use(express.static('./css'));
 require('dotenv').config();
-path.resolve(__dirname, '/css') // attempting to use css folder
+
 // Gives access to the data models
 const usersRouter = require('./middleware/routes/users'); // .require() lets us use the api calls in the Users.js
 app.use('/users', usersRouter); // Use the instance of Users that we just created
