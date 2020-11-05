@@ -10,14 +10,14 @@ const{check, validationResult} = require('express-validator'); // Allows us to u
 router.route('/login').get((req, res) => {
   
   // Get the username and password from the req.body
-  const {name, password} = req.body;
+  const {username, password} = req.body;
 
   /** 
    * Summary. Check if the provided username exists. This function
    * returns an array containing all the infornation of every user.
    * @param userName name of a user account from a webpage request.
   */
-  User.find( {userName: name} )
+  User.find( {userName: username} )
     .then(users => checkArray(users))
     .catch(err => res.status(400).json('Error: ' + err));
 
