@@ -33,14 +33,14 @@ connection.once('open', () => {
 
 /* Get requests are used to get information from the server. 
    Once we receive a request, we will send information back.
-
-app.get('*', (req, res) =>
+*/
+app.get('/', (req, res) =>
     /* Server.js lives in the root directory. _dirname is an 
        environment var that returns the current working dir.
-    
+    */
     res.sendFile(path.resolve(__dirname, 'home.html'))
 );
-*/
+
 app.listen(PORT, () => 
     console.log(`Server started on port ${PORT}`)
 );
