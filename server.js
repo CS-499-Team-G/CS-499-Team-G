@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json()); // This will let us analyze the body of a request
 
-app.use(express.static(_dirname + '/pages'));
+app.use(express.static(__dirname + '/pages'));
 
 // Gives access to the data models
 const usersRouter = require('./middleware/routes/users'); // .require() lets us use the api calls in the Users.js
