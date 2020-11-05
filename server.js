@@ -41,6 +41,10 @@ app.get('/', (req, res) =>
     res.sendFile(path.resolve(__dirname, 'home.html'))
 );
 
+app.get('/pages/sign-up.hmtl', (req, res) =>
+    res.sendFile(path.resolve(__dirname, 'pages', 'home.html'))
+);
+
 app.listen(PORT, () => 
     console.log(`Server started on port ${PORT}`)
 );
