@@ -41,8 +41,8 @@ app.get('/', (req, res) =>
     res.sendFile(path.resolve(__dirname, 'home.html'))
 );
 
-app.get('/pages/sign-up.hmtl', (req, res) =>
-    res.sendFile(path.resolve(__dirname, 'pages', 'home.html'))
+app.get('/pages/sign-up.html', (req, res) =>
+    res.sendFile(path.resolve(__dirname, 'pages', 'sign-up.html'))
 );
 
 app.listen(PORT, () => 
