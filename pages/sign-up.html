@@ -25,13 +25,13 @@
 		<script>
 			//Is the user authenticated?
 			if (sessionStorage.getItem("AuthenticationState") === null) {
-				window.location.href = "error.html";
+				window.location.href = "access-denied.html";
 			}
 			//Is their authentication token still valid?
 			else if (
 				Date.now > new Date(sessionStorage.getItem("AuthenticationExpires"))
 			) {
-				window.location.href = "error.html";
+				window.location.href = "access-denied.html";
 			} else {
 				//The user is authenticated and the authentication has not expired.
 			}
