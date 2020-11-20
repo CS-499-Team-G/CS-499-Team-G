@@ -1,4 +1,10 @@
 // login.js
+
+Date.prototype.addHours = function (h) {
+	this.setTime(this.getTime() + h * 60 * 60 * 1000);
+	return this;
+};
+
 function login() {
 	sessionStorage.setItem("AuthenticationState", "Authenticated");
 
@@ -6,8 +12,3 @@ function login() {
 
 	window.location.href = "pages/reports.html";
 }
-
-Date.prototype.addHours = function (h) {
-	this.setTime(this.getTime() + h * 60 * 60 * 1000);
-	return this;
-};
