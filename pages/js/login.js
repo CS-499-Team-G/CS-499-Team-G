@@ -1,8 +1,8 @@
 // login.js
 function login() {
-	sessionStorage.setItem("AuthenticationState", "Authenticated");
+	//sessionStorage.setItem("AuthenticationState", "Authenticated");
 
-	sessionStorage.setItem("AuthenticationExpires", Date.now.addHours(1));
+	//sessionStorage.setItem("AuthenticationExpires", Date.now.addHours(1));
 
-	window.location.href = "../reports.html";
+	window.location.href = "pages/reports.html";
 }
