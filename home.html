@@ -26,9 +26,9 @@
 			href="pages/vendor/bootstrap/css/bootstrap.min.css"
 		/>
 		<link rel="stylesheet" type="text/css" href="pages/css/main.css" />
+		<script src="pages/js/login.js"></script>
 	</head>
 	<body>
-		<?php $_SESSION['loggedIn'] = true; ?>
 		<div class="limiter">
 			<div class="container-login100">
 				<div class="wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30">
@@ -74,7 +74,7 @@
 							<input
 								type="button"
 								class="login100-form-btn"
-								onclick="location.href='pages/reports.html';"
+								onclick="login();"
 								value="Login"
 							/>
 						</div>
