@@ -5,16 +5,16 @@ const{check, validationResult} = require('express-validator'); // Allows us to u
 router.route('/').get((req, res) => {
 
     // Returns all shipments found in the database
-    User.find()
+    Shipment.find()
       .then(users => res.json(users))
       .catch(err => res.status(400).json('Error: ' + err));
   });
 
 router.route('/add').post((req, res) => {
 
-    const shipmentTraffic = req.body.traffic;
+    const traffic = req.body.traffic;
     const company = req.body.company;
-
+    /*
     const streetAddress = req.body.streetAddress;
     const city = req.body.city;
     const state = req.body.state;
@@ -26,7 +26,7 @@ router.route('/add').post((req, res) => {
     const arrivalDate = req.body.arrivalDate;
     const arrivalStatus = req.body.arrivalStatus;
     //const drivers = req.body.drivers;
-
+    
     const items = req.body.items;
     items.forEach(items => {
         const totalCost = totalCost + item.cost;
@@ -35,17 +35,18 @@ router.route('/add').post((req, res) => {
     });
     const totalBalance = totalCost + 10;
     const manifest = {items, totalCost, totalBalance};
-
+    */
     // Log to the console to see if we are receiving requests
     console.log(req.body);
   
-    const newShipment = new Shipment({shipmentTraffic, company,
-      address,
+    const newShipment = new Shipment({traffic, company,
+      /*address,
       vehicleID,
       departureDate,
       arrivalDate,
       arrivalStatus,
       items
+      */
     });
   
     newShipment.save()

@@ -37,7 +37,6 @@ const manifestSchema = new Schema({
 const shipmentSchema = new Schema ({
     traffic: {
         type: String,
-        required: true,
         enum: ['Outgoing', 'Incoming']
     },
     company: {
@@ -46,12 +45,12 @@ const shipmentSchema = new Schema ({
         trim: true,
         minlength: 3
       },
-    address: customerAddress,
+    /*address: customerAddress,
     vehicleID: Number, // Change later to look only use valid IDs for the vehicles
     departureDate: Date,
     arrivalDate: Date,
     arrivalStatus: Boolean,
-    //drivers: String, // Make another schema data
+    *///drivers: String, // Make another schema data
     //manifest: manifestSchema
 });
 
