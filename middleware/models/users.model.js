@@ -49,7 +49,12 @@ const userSchema = new Schema({
     type: Number
   },
   tenure: {
-    type: Number
+    type: Number,
+    required: true
+  },
+  assignment:{
+    type: Schema.Types.ObjectId,
+    ref: 'Shipment'  
   }
   
 }, {

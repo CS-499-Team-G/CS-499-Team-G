@@ -1,25 +1,12 @@
+const mongoose = require('mongoose');
+
 const router = require('express').Router();
-let User = require('../models/users.model');
+let User = require('../models/users.model.js');
 const{check, validationResult} = require('express-validator'); // Allows us to use the express-validator to validate data from webpage https://express-validator.github.io/docs/
 
 /*  .get == > retrieve the data from the webpage without altering
     .post ==> retrieve the data from the webpage and alter
 */
-
-// Login for a specific user
-router.route('/login').get((req, res) => {
-  
-  // Get the username and password from the req.body
-  const {username, password} = req.body;
-
-  /** 
-   * Summary. Check if the provided username exists. This function
-   * returns an array containing all the infornation of every user.
-   * @param userName name of a user account from a webpage request.
-  */
-  User.find( {userName: username} )
-    .then(users => checkArray(users))
-    .catch(err => res.status(400).json('Error: ' + err));
 
  /** 
    * Summary. Check if the provided username exists. This function
@@ -27,15 +14,38 @@ router.route('/login').get((req, res) => {
    * @param array Mongodb query returns an array containing the
    * users with a given user name.
   */
-  function checkArray(queryResult){
-    
-    if(!queryResult.length == 0){
-      res.json(queryResult)
+ function checkArray(queryResult, type, res){
+  console.log('Check array function'); 
+  if(type == "users"){
+      model = "User";
     }else{
-      res.status(400).json('Error: User not found')
+      model = "Assignment";
     }
+  if(!queryResult.length == 0){
+    res.json(queryResult)
+  }else{
+    throw "Query returned 0 results. Incorrect information entered."
+  }
 
-  };
+};
+
+// Login for a specific user
+router.route('/login').post((req, res) => {
+  
+  // Get the username and password from the req.body
+  const {username, password} = req.body;
+
+  // Log to the console to see if we are receiving requests
+  console.log(req.body);
+
+  /** 
+   * Summary. Check if the provided username exists. This function
+   * returns an array containing all the infornation of every user.
+   * @param userName name of a user account from a webpage request.
+  */
+  User.find( {userName: username, password: password} )
+    .then(users => checkArray(users, "users", res))
+    .catch(err => res.status(400).json('Error: ' + err));
 
 });
 
@@ -46,6 +56,18 @@ router.route('/').get((req, res) => {
     .then(users => res.json(users))
     .catch(err => res.status(400).json('Error: ' + err));
 });
+
+// Show user work assignment
+router.route('/assignment').get((req, res) => {
+  
+  const username = req.body.username;
+
+  User.find({userName: username})
+  .populate('assignment')
+    .then(assignments => res.json(assignments))
+    .catch(err => res.status(400).json('Error9: ' + err));
+});
+ 
 
 // Create a user and add to the database
 router.route('/add').post((req, res) => {
@@ -66,15 +88,19 @@ router.route('/add').post((req, res) => {
 
   const payRate = req.body.payRate;
   const tenure = req.body.tenure;
+  const assignment = req.body.assignment;
 
   // Log to the console to see if we are receiving requests
   console.log(req.body);
 
-  const newUser = new User({userName, title,
+  const newUser = new User({userName, 
+    title,
+    password,
     fullName,
     address,
     payRate,
-    tenure
+    tenure,
+    assignment
   });
 
   // Save the newly created user in Mongodb
