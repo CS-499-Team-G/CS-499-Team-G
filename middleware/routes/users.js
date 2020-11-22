@@ -73,7 +73,7 @@ router.route('/assignment').post((req, res) => {
 
   User.findOne({userName: username})
   .populate('assignment')
-    .then(assignments => res.json(assignments))
+    .then(user => res.json(user.assignment))
     .catch(err => res.status(400).json('Error: ' + err));
 });
  
