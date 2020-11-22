@@ -53,8 +53,8 @@ const userSchema = new Schema({
     required: true
   },
   assignment:{
-    type: Schema.Types.ObjectId,
-    ref: 'Shipment'  
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'shipment'  
   }
   
 }, {

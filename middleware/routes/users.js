@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
-
 const router = require('express').Router();
 let User = require('../models/users.model.js');
+//var Shipments = require('../models/shipments.model.js')
+
 const{check, validationResult} = require('express-validator'); // Allows us to use the express-validator to validate data from webpage https://express-validator.github.io/docs/
 
 /*  .get == > retrieve the data from the webpage without altering
@@ -66,11 +67,11 @@ router.route('/payroll').post((req, res) => {
 });
 
 // Show user work assignment
-router.route('/assignment').get((req, res) => {
+router.route('/assignment').post((req, res) => {
   
   const username = req.body.username;
 
-  User.find({userName: username})
+  User.findOne({userName: username})
   .populate('assignment')
     .then(assignments => res.json(assignments))
     .catch(err => res.status(400).json('Error: ' + err));
