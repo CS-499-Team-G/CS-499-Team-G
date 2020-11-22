@@ -57,6 +57,14 @@ router.route('/').get((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
+// Show payroll for all users
+router.route('/payroll').post((req, res) => {
+  
+  User.find( {}, {payRate: 1, fullName: 1, title: 1} )
+    .then(users => res.json(users))
+    .catch(err => res.status(400).json('Error: ' + err));
+});
+
 // Show user work assignment
 router.route('/assignment').get((req, res) => {
   
@@ -65,7 +73,7 @@ router.route('/assignment').get((req, res) => {
   User.find({userName: username})
   .populate('assignment')
     .then(assignments => res.json(assignments))
-    .catch(err => res.status(400).json('Error9: ' + err));
+    .catch(err => res.status(400).json('Error: ' + err));
 });
  
 
