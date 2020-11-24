@@ -12,7 +12,7 @@ app.use(cors());
 app.use(express.json()); // This will let us analyze the body of a request
 app.use(express.urlencoded({ extended: false }));
 
-app.use(express.static(path.join(__dirname, "pages")));
+app.use(express.static("pages"));
 
 // Gives access to the data models
 const usersRouter = require("./middleware/routes/users"); // .require() lets us use the api calls in the Users.js
