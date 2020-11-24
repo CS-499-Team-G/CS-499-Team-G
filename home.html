@@ -7,25 +7,26 @@
 		<link
 			rel="stylesheet"
 			type="text/css"
-			href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css"
+			href="pages/fonts/Linearicons-Free-v1.0.0/icon-font.min.css"
 		/>
 		<link
 			rel="stylesheet"
 			type="text/css"
-			href="vendor/select2/select2.min.css"
+			href="pages/vendor/select2/select2.min.css"
 		/>
 		<link
 			rel="stylesheet"
 			type="text/css"
-			href="css/hamburgers.min.css"
+			href="pages/css/hamburgers.min.css"
 		/>
-		<link rel="stylesheet" type="text/css" href="css/animate.css" />
+		<link rel="stylesheet" type="text/css" href="pages/css/animate.css" />
 		<link
 			rel="stylesheet"
 			type="text/css"
-			href="vendor/bootstrap/css/bootstrap.min.css"
+			href="pages/vendor/bootstrap/css/bootstrap.min.css"
 		/>
-		<link rel="stylesheet" type="text/css" href="css/main.css" />
+		<link rel="stylesheet" type="text/css" href="pages/css/main.css" />
+		<script src="pages/login.js" type="text/javascript"></script>
 	</head>
 	<body>
 		<div class="limiter">
@@ -39,15 +40,15 @@
 						>
 							<input
 								class="input100"
-								id="email"
-								type="email"
-								placeholder="Email"
-								name="email"
+								id="username"
+								type="text"
+								placeholder="Username"
+								name="username"
 								required
 							/>
 							<span class="focus-input100"></span>
 							<span class="symbol-input100">
-								<span class="lnr lnr-envelope"></span>
+								<span class="lnr lnr-user"></span>
 							</span>
 						</div>
 
@@ -70,15 +71,12 @@
 						</div>
 
 						<div class="container-login100-form-btn p-t-25">
-							<input type="button" class="login100-form-btn" onclick="location.href='pages/reports.html';" value="Login"/>
-						</div>
-
-						<div class="text-center w-full p-t-115">
-							<span class="txt1"> Don't have an account? </span>
-
-							<a class="txt1 bo1 hov1" href="pages/sign-up.html">
-								Create account
-							</a>
+							<input
+								type="button"
+								class="login100-form-btn"
+								onclick="login()"
+								value="Login"
+							/>
 						</div>
 					</form>
 				</div>

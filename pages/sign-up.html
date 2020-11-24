@@ -7,31 +7,48 @@
 		<link
 			rel="stylesheet"
 			type="text/css"
-			href="../fonts/Linearicons-Free-v1.0.0/icon-font.min.css"
+			href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css"
 		/>
 		<link
 			rel="stylesheet"
 			type="text/css"
-			href="../vendor/select2/select2.min.css"
+			href="vendor/select2/select2.min.css"
 		/>
-		<link rel="stylesheet" type="text/css" href="../css/hamburgers.min.css" />
-		<link rel="stylesheet" type="text/css" href="../css/animate.css" />
+		<link rel="stylesheet" type="text/css" href="css/hamburgers.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/animate.css" />
 		<link
 			rel="stylesheet"
 			type="text/css"
-			href="../vendor/bootstrap/css/bootstrap.min.css"
+			href="vendor/bootstrap/css/bootstrap.min.css"
 		/>
-		<link rel="stylesheet" type="text/css" href="../css/main.css" />
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+		<script>
+			//Is the user authenticated?
+			if (sessionStorage.getItem("AuthenticationState") === null) {
+				window.location.href = "access-denied.html";
+			}
+			//Is their authentication token still valid?
+			else if (
+				Date.now > new Date(sessionStorage.getItem("AuthenticationExpires"))
+			) {
+				window.location.href = "access-denied.html";
+			} else {
+				//The user is authenticated and the authentication has not expired.
+			}
+		</script>
 	</head>
 	<body>
 		<div class="limiter">
 			<div class="container-login100">
-				<div class="wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30">
+				<div class="wrap-signup100 p-l-50 p-r-50 p-t-77 p-b-30">
 					<form class="login100-form validate-form" method="POST">
 						<span class="login100-form-title p-b-55">Create New Account</span>
+						<span class="signup100-form-label p-b-20"
+							>Personal Information</span
+						>
 						<div class="wrap-input100 validate-input m-b-16">
 							<input
-								class="input100"
+								class="firstname-input100"
 								id="firstname"
 								type="text"
 								placeholder="First Name"
@@ -39,10 +56,20 @@
 								required
 							/>
 							<span class="focus-input100"></span>
-						</div>
-						<div class="wrap-input100 validate-input m-b-16">
+							<span class="symbol-input100">
+								<span class="lnr lnr-users"></span>
+							</span>
 							<input
-								class="input100"
+								class="middlename-input100"
+								id="middlename"
+								type="text"
+								placeholder="Middle Name"
+								name="middlename"
+								required
+							/>
+							<span class="focus-input100"></span>
+							<input
+								class="lastname-input100"
 								id="lastname"
 								type="text"
 								placeholder="Last Name"
@@ -50,6 +77,146 @@
 								required
 							/>
 							<span class="focus-input100"></span>
+						</div>
+						<div class="wrap-input100 validate-input m-b-16">
+							<input
+								class="username-input100"
+								id="username"
+								type="text"
+								placeholder="Username"
+								name="username"
+								required
+							/>
+							<span class="focus-input100"></span>
+							<span class="symbol-input100">
+								<span class="lnr lnr-user"></span>
+							</span>
+						</div>
+						<div class="wrap-input100 validate-input m-b-16">
+							<input
+								class="password-input100"
+								id="password"
+								type="password"
+								placeholder="Password"
+								name="password"
+								required
+							/>
+							<span class="focus-input100"></span>
+							<span class="symbol-input100">
+								<span class="lnr lnr-lock"></span>
+							</span>
+							<input
+								class="confirm-password-input100"
+								id="password-confirm"
+								type="password"
+								placeholder="Confirm Password"
+								name="password-confirm"
+								required
+							/>
+							<span class="focus-input100"></span>
+						</div>
+						<div class="wrap-input100 validate-input m-b-16">
+							<input
+								class="street-input100"
+								id="street"
+								type="text"
+								placeholder="Address"
+								name="street"
+								required
+							/>
+							<span class="focus-input100"></span>
+							<span class="symbol-input100">
+								<span class="lnr lnr-home"></span>
+							</span>
+						</div>
+						<div class="wrap-input100 validate-input m-b-16">
+							<input
+								class="zip-input100"
+								id="zip"
+								type="text"
+								placeholder="Zip Code"
+								name="zip"
+								required
+							/>
+							<span class="focus-input100"></span>
+							<input
+								class="city-input100"
+								id="city"
+								type="text"
+								placeholder="City"
+								name="city"
+								required
+							/>
+							<span class="focus-input100"></span>
+
+							<select class="state-input100" name="states" id="states" required>
+								<option value="0">[State]</option>
+								<option value="AK">AK</option>
+								<option value="AL">AL</option>
+								<option value="AR">AR</option>
+								<option value="AZ">AZ</option>
+								<option value="CA">CA</option>
+								<option value="CO">CO</option>
+								<option value="CT">CT</option>
+								<option value="DE">DE</option>
+								<option value="FL">FL</option>
+								<option value="GA">GA</option>
+								<option value="HI">HI</option>
+								<option value="IA">IA</option>
+								<option value="ID">ID</option>
+								<option value="IL">IL</option>
+								<option value="IN">IN</option>
+								<option value="KS">KS</option>
+								<option value="KY">KY</option>
+								<option value="LA">LA</option>
+								<option value="MA">MA</option>
+								<option value="MD">MD</option>
+								<option value="ME">ME</option>
+								<option value="MI">MI</option>
+								<option value="MN">MN</option>
+								<option value="MO">MO</option>
+								<option value="MS">MS</option>
+								<option value="MT">MT</option>
+								<option value="NC">NC</option>
+								<option value="ND">ND</option>
+								<option value="NE">NE</option>
+								<option value="NH">NH</option>
+								<option value="NJ">NJ</option>
+								<option value="NM">NM</option>
+								<option value="NV">NV</option>
+								<option value="NY">NY</option>
+								<option value="OH">OH</option>
+								<option value="OK">OK</option>
+								<option value="OR">OR</option>
+								<option value="PA">PA</option>
+								<option value="RI">RI</option>
+								<option value="SC">SC</option>
+								<option value="SD">SD</option>
+								<option value="TN">TN</option>
+								<option value="TX">TX</option>
+								<option value="UT">UT</option>
+								<option value="VA">VA</option>
+								<option value="VT">VT</option>
+								<option value="WA">WA</option>
+								<option value="WI">WI</option>
+								<option value="WV">WV</option>
+								<option value="WY">WY</option>
+							</select>
+							<span class="focus-input100"></span>
+						</div>
+						<div class="container-signup100-form-btn p-t-25">
+							<input
+								type="button"
+								class="signup100-form-btn"
+								onclick="location.href='../home.html';"
+								value="Create Account"
+							/>
+							<input
+								type="button"
+								class="signup100-form-btn"
+								onclick="location.href='reports.html';"
+								value="Cancel"
+							/>
 						</div>
 					</form>
 				</div>
