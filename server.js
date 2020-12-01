@@ -21,6 +21,22 @@ app.use("/users", usersRouter); // Use the instance of Users that we just create
 const shipmentsRouter = require("./middleware/routes/shipments"); // .require() lets us use the api calls in the Users.js
 app.use("/shipments", shipmentsRouter); // Use the instance of Users that we just created
 
+ap.use(function (req, res, next) {
+	res.status(404);
+
+	if (req.accepts("html")) {
+		res.render("404", { url: req.url });
+		return;
+	}
+
+	if (req.accepts("json")) {
+		res.send({ error: "Not found" });
+		return;
+	}
+
+	res.type("txt").send("Not found");
+});
+
 // Use the connection code in the .env file to create a connection to mongoDB database
 const uri = process.env.ATLAS_URI;
 mongoose.connect(uri, {
