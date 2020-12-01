@@ -21,7 +21,7 @@ app.use("/users", usersRouter); // Use the instance of Users that we just create
 const shipmentsRouter = require("./middleware/routes/shipments"); // .require() lets us use the api calls in the Users.js
 app.use("/shipments", shipmentsRouter); // Use the instance of Users that we just created
 
-ap.use(function (req, res, next) {
+app.use(function (req, res, next) {
 	res.status(404);
 
 	if (req.accepts("html")) {
