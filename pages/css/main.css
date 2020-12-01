@@ -963,3 +963,7 @@ header .wrap img {
 .hamburger input:checked ~ ul {
 	transform: none;
 }
+
+.report-btns {
+	padding-top: 60px;
+}
