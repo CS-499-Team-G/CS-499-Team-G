@@ -1,23 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<title>Generate Reports</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+		<script>
+			//Is the user authenticated?
+			if (sessionStorage.getItem("AuthenticationState") === null) {
+				window.location.href = "access-denied.html";
+			}
+			//Is their authentication token still valid?
+			else if (
+				Date.now > new Date(sessionStorage.getItem("AuthenticationExpires"))
+			) {
+				window.location.href = "access-denied.html";
+			} else {
+				//The user is authenticated and the authentication has not expired.
+			}
+		</script>
+	</head>
+	<body>
+		<header>
+			<div class="wrap">
+				<img src="images/logo.png" />
+				<nav role="navigation">
+					<div class="hamburger">
+						<input type="checkbox" />
 
-<head>
-    <title>Generate Reports</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-</head>
+						<span></span>
+						<span></span>
+						<span></span>
 
-<body>
-    <table>
-        <td>
-            <th>
-                test
-            </th>
-            <th>
-                another test
-            </th>
-        </td>
-    </table>
-</body>
-
+						<ul class="h-options">
+							<a href="sign-up.html"><li>Create Account</li></a>
+							<a href="../home.html"><li>Log Out</li></a>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</header>
+		<div>
+			<input type="button" class="reports100-btn" value="Generate Report" />
+		</div>
+	</body>
 </html>
