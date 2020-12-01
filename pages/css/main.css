@@ -965,8 +965,8 @@ header .wrap img {
 }
 
 .wrap-report-btns {
+	margin: auto;
 	position: relative;
-	align-items: center;
 	width: 50%;
 	z-index: 1;
 }
