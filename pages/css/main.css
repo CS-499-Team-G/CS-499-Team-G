@@ -959,7 +959,7 @@ header .wrap img {
 	display: inline-block;
 	width: 49.5%;
 	background: #feae7b;
-	height: 62px;
+	height: 100px;
 	border-radius: 3px;
 
 	-webkit-transition: all 0.4s;
