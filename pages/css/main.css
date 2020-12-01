@@ -632,28 +632,6 @@ iframe {
 	transition: all 0.4s;
 }
 
-.reports100-btn {
-	font-family: Raleway-Bold;
-	font-size: 16px;
-	line-height: 1.5;
-	color: #fff;
-	text-transform: uppercase;
-
-	width: 49.5%;
-	height: 62px;
-	border-radius: 3px;
-	background: #feae7b;
-
-	display: inline-block;
-	justify-content: center;
-	padding: 0 25px;
-
-	-webkit-transition: all 0.4s;
-	-o-transition: all 0.4s;
-	-moz-transition: all 0.4s;
-	transition: all 0.4s;
-}
-
 /*------------------------------------------------------------------
 [ Button sign in with ]*/
 .btn-face,
@@ -972,16 +950,24 @@ header .wrap img {
 }
 
 .report-btn100 {
-	font-family: Raleway-SemiBold;
-	font-size: 18px;
-	line-height: 1.2;
-	color: #686868;
+	font-family: Raleway-Bold;
+	font-size: 16px;
+	line-height: 1.5;
+	color: #fff;
+	text-transform: uppercase;
 
 	display: inline-block;
 	width: 49.5%;
-	background: #e6e6e6;
-	height: 150px;
+	background: #feae7b;
+	height: 62px;
 	border-radius: 3px;
+	justify-content: center;
+	padding: 0 25px;
+
+	-webkit-transition: all 0.4s;
+	-o-transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	transition: all 0.4s;
 }
 
 .test-btn100 {
