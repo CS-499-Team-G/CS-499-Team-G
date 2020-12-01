@@ -50,7 +50,7 @@ app.get("/pages/sign-up.html", (req, res) =>
 );
 
 app.get("*", function (req, res) {
-	res.send("what???", 404);
+	res.send("Error 404: Page not found", 404);
 });
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
