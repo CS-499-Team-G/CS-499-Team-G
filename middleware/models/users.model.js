@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 // Needed to define the schema for a "table"
 const Schema = mongoose.Schema;
 
-const employeeName = new Schema({
+
+const employeeNameSchema = new Schema({
   firstName: {
     type: String
   },
@@ -15,9 +16,8 @@ const employeeName = new Schema({
   }
 });
 
-const maintenanceSchema = new Schema({/* Stuff here */});
+const employeeAddressSchema = new Schema({
 
-const employeeAddress = new Schema({
   streetAddress: {
     type: String
   },
@@ -42,16 +42,21 @@ const userSchema = new Schema({
   },
   title: {
     type: String,
-    enum: ['President', 'Chief Financial Officer', 'Office Personnel'],
+    enum: ['President', 'Chief Financial Officer', 'Office Personnel', 'Driver'],
     required: true
   },
-  fullName: employeeName,
-  address: employeeAddress,
+  fullName: employeeNameSchema,
+  address: employeeAddressSchema,
   payRate: {
     type: Number
   },
   tenure: {
-    type: Number
+    type: Number,
+    required: true
+  },
+  assignment:{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'shipment'  
   }
   
 }, {
