@@ -52,4 +52,8 @@ app.get("/pages/sign-up.html", (req, res) =>
 	res.sendFile(path.resolve(__dirname, "pages", "sign-up.html"))
 );
 
+app.get("*", function (req, res) {
+	res.send("Error 404: Page not found", 404);
+});
+
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));

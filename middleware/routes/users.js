@@ -99,8 +99,8 @@ router.route('/add').post((req, res) => {
   const city = req.body.city;
   const state = req.body.state;
   const zip = req.body.zip;
-  const address = {streetAddress, city, state, zip}
-
+  const address = {streetAddress, city, state, zip};
+  
   const payRate = req.body.payRate;
   const tenure = req.body.tenure;
   const assignment = req.body.assignment;

@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 // Needed to define the schema for a "table"
 const Schema = mongoose.Schema;
 
+
 const employeeNameSchema = new Schema({
   firstName: {
     type: String
@@ -16,6 +17,7 @@ const employeeNameSchema = new Schema({
 });
 
 const employeeAddressSchema = new Schema({
+
   streetAddress: {
     type: String
   },
