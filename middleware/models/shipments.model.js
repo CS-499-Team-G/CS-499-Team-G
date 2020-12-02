@@ -1,59 +1,80 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 // Needed to define the schema for a "table"
 const Schema = mongoose.Schema;
 
-const customerAddress = new Schema({
-	streetAddress: {
-		type: String,
-	},
-	city: {
-		type: String,
-	},
-	state: {
-		type: String,
-	},
-	zip: {
-		type: Number,
-	},
-});
+const oCustomerAddress = new Schema({
+  oCompany: {
+      type: String
+  },  
+  oStreetAddress: {
+      type: String
+    },
+  oCity: {
+    type: String
+  },
+  oState: {
+    type: String
+  },
+  oZip: {
+    type: Number
+  }
+  });
+
+const dCustomerAddress = new Schema({
+  dCompany: {
+      type: String
+  },  
+  dStreetAddress: {
+      type: String
+    },
+  dCity: {
+    type: String
+  },
+  dState: {
+    type: String
+  },
+  dZip: {
+    type: Number
+  }
+  });  
 
 const itemSchema = new Schema({
-	name: {
-		type: String,
-	},
-	quantity: {
-		type: Number,
-	},
-	cost: Number,
+    name: {
+        type: String
+    },
+    quantity: {
+        type: Number
+    },
+    cost: Number,
+    backOrder: Boolean
 });
 
 const manifestSchema = new Schema({
-	items: itemSchema,
-	totalCost: Number, //  Sum of the costs of all the orders in a shipment
-	totalBalance: Number, // Sum of the costs pluys shipping and handling
+    items: itemSchema,
+    totalCost: Number, //  Sum of the costs of all the orders in a shipment
+    totalBalance: Number // Sum of the costs pluys shipping and handling
 });
 
-const shipmentSchema = new Schema({
-	traffic: {
-		type: String,
-		enum: ["Outgoing", "Incoming"],
-	},
-	company: {
-		type: String,
-		required: true,
-		trim: true,
-		minlength: 3,
-	},
-	/*address: customerAddress,
-    vehicleID: Number, // Change later to look only use valid IDs for the vehicles
+const shipmentSchema = new Schema ({
+    traffic: {
+        type: String,
+        enum: ['Outgoing', 'Incoming']
+    },
+    origin: oCustomerAddress,
+    destination: dCustomerAddress,
+    //vehicleID: Number, // Change later to look only use valid IDs for the vehicles
     departureDate: Date,
     arrivalDate: Date,
     arrivalStatus: Boolean,
-    */ //drivers: String, // Make another schema data
-	//manifest: manifestSchema
+    payment: Boolean,
+    drivers: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'user' 
+    },
+    manifest: manifestSchema
 });
 
-const Shipment = mongoose.model("shipment", shipmentSchema);
+const Shipment = mongoose.model('shipment', shipmentSchema);
 
 module.exports = Shipment;
