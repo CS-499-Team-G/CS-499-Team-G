@@ -2,27 +2,49 @@ const router = require('express').Router();
 let Shipment = require('../models/shipments.model');
 const{check, validationResult} = require('express-validator'); // Allows us to use the express-validator to validate data from webpage https://express-validator.github.io/docs/
 
+ /** 
+   * Summary. Check if the provided username exists. This function
+   * returns an array containing all the infornation of every user.
+   * @param array Mongodb query returns an array containing the
+   * users with a given user name.
+  */
+ function checkArray(queryResult, type, res){
+  console.log('Check array function'); 
+  if(type == "shipments"){
+      model = "Shipment";
+    }/*else{
+      model = "Assignment";
+    }*/
+  if(!queryResult.length == 0){
+    res.json(queryResult)
+  }else{
+    console.log("Query result: " + queryResult);
+    throw "Query returned 0 results. Incorrect information entered."
+  }
+
+};
+
 router.route('/').get((req, res) => {
 
     // Returns all shipments found in the database
     Shipment.find()
-      .then(users => res.json(users))
+      .then(shipments => res.json(shipments))
       .catch(err => res.status(400).json('Error: ' + err));
   });
 
 router.route('/incoming').post((req, res) => {
 
-  // Returns all shipments found in the database
+  // Returns all incoming shipments found in the database
   Shipment.find( {traffic: "Incoming"} )
-    .then(users => res.json(users))
+    .then(shipments => res.json(shipments))
     .catch(err => res.status(400).json('Error: ' + err));
 });  
 
 router.route('/outgoing').post((req, res) => {
 
-  // Returns all shipments found in the database
+  // Returns all outgoing shipments found in the database
   Shipment.find( {traffic: "Outgoing"} )
-    .then(users => res.json(users))
+    .then(shipments => res.json(shipments))
     .catch(err => res.status(400).json('Error: ' + err));
 }); 
 
@@ -80,4 +102,25 @@ router.route('/add').post((req, res) => {
       .catch(err => res.status(400).json('Error: ' + err));
   });
   
+router.route('/:id/item').post((req, res) => {
+
+  const {id,name, quantity, cost, backOrder} = req.body;
+  console.log(req.body);
+
+  const items = {name, quantity, cost, backOrder};
+
+  const orderCost = quantity *cost;
+  console.log("Order cost: " + orderCost);
+  const totalCost = orderCost; // Remember to get totalCost from existing totalCost
+  const totalBalance = totalCost + 10;
+  console.log("Total balance: " + totalBalance);
+  const manifest = {items, totalCost, totalBalance}
+  // create manifest to hold data of several items
+
+  // Returns a shipment with the provided id from the database
+  Shipment.updateMany( {_id: id }, {$set: { manifest: manifest } } )
+    .then(shipments => res.json(shipments))
+    .catch(err => res.status(400).json('Error: ' + err));
+}); 
+
 module.exports = router;

@@ -51,7 +51,7 @@ const itemSchema = new Schema({
 });
 
 const manifestSchema = new Schema({
-    items: itemSchema,
+    items: [itemSchema],
     totalCost: Number, //  Sum of the costs of all the orders in a shipment
     totalBalance: Number // Sum of the costs pluys shipping and handling
 });
