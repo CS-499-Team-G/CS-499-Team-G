@@ -958,9 +958,9 @@ header .wrap img {
 	text-transform: uppercase;
 
 	display: inline-block;
-	width: 49.5%;
+	width: 25%;
 	background: #feae7b;
-	height: 62px;
+	height: 40px;
 	border-radius: 3px;
 
 	-webkit-transition: all 0.4s;
@@ -976,9 +976,9 @@ header .wrap img {
 	color: #686868;
 
 	display: inline-block;
-	width: 25%;
+	width: 50%;
 	background: #e6e6e6;
-	height: 62px;
+	height: 40px;
 	border-radius: 3px;
 	padding: 0 30px 0 15px;
 }
