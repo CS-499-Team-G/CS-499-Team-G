@@ -44,7 +44,8 @@ function payrollTable(data) {
 
 	// Create header elements and initial header row
 	var headerRow = document.createElement("tr");
-	var name = document.createElement("th onclick='sortTable(0)'");
+	var name = document.createElement("th");
+	name.onclick = "sortTable(0)";
 	var title = document.createElement("th");
 	var payrate = document.createElement("th");
 	var tenure = document.createElement("th");
