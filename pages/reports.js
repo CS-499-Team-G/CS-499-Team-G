@@ -79,6 +79,17 @@ function payrollTable(data) {
 	}
 }
 
+function vehicleMaintenanceTable(data) {
+	// Get table and clear if it has data already
+	var table = document.getElementById("reports");
+	while (table.rows.length > 0) {
+		table.deleteRow(0);
+	}
+
+	// Create header elements and initial header row
+	var headerRow = document.createElement("tr");
+}
+
 function incomingShipmentTable(data) {
 	// Get table and clear if it has data already
 	var table = document.getElementById("reports");
