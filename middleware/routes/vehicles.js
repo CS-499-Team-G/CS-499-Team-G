@@ -10,7 +10,7 @@ router.route('/').get((req, res) => {
 })
 
 router.route('/maintenance').post((req, res) => {
-    Vehicles.find( {}, {brand: 1, year: 1, model: 1, kind: 1, "maintenanceRecord.repairRecords": 1} )
+    Vehicles.find( {}, {brand: 1, year: 1, model: 1, kind: 1, "maintenanceRecord.repairRecords": 1,"maintenanceRecord.maintenance": 1} )
     .then(vehicles => res.json(vehicles))
     .catch(err => res.status(400).json('Error: ' + err));
 })
