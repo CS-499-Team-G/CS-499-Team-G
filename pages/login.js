@@ -1,4 +1,4 @@
-function login() {
+function login(data) {
 	var req = new XMLHttpRequest();
 	req.open("POST", "http://68.93.20.191:5000/users/login", false);
 	req.send(
@@ -8,12 +8,7 @@ function login() {
 			document.getElementById("password").value
 	);
 
-	console.log(
-		"username=" +
-			document.getElementById("username").value +
-			"&password=" +
-			document.getElementById("password").value
-	);
+	console.log(data);
 
 	if (req.responseText === "Valid") {
 		window.location.href = "reports.html";
