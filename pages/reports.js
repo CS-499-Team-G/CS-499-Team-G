@@ -1,3 +1,5 @@
+const { header } = require("express-validator");
+
 function getData() {
 	var req = new XMLHttpRequest();
 	if (document.getElementById("selection").value === "1") {
@@ -39,6 +41,7 @@ function incomingShipmentTable(data) {
 	// Create header elements and initial header row
 	var headerRow = document.createElement("tr");
 	var traffic = document.createElement("th");
+	var driver = document.createElement("th");
 	var origin = document.createElement("th");
 	var destination = document.createElement("th");
 	var vim = document.createElement("th");
@@ -49,6 +52,7 @@ function incomingShipmentTable(data) {
 
 	// Populate header elements with text nodes
 	traffic.appendChild(document.createTextNode("Traffic"));
+	driver.appendChild(document.createTextNode("Driver"));
 	origin.appendChild(document.createTextNode("Origin"));
 	destination.appendChild(document.createTextNode("Destination"));
 	vim.appendChild(document.createTextNode("Vehicle ID"));
@@ -59,6 +63,7 @@ function incomingShipmentTable(data) {
 
 	// Append the header elements to the row element
 	headerRow.appendChild(traffic);
+	headerRow.appendChild(driver);
 	headerRow.appendChild(origin);
 	headerRow.appendChild(destination);
 	headerRow.appendChild(vim);
@@ -83,23 +88,25 @@ function incomingShipmentTable(data) {
 		var cell6 = document.createElement("td");
 		var cell7 = document.createElement("td");
 		var cell8 = document.createElement("td");
+		var cell9 = document.createElement("td");
 
 		// Populate each data field with a text node
 		cell1.appendChild(document.createTextNode(data[i].traffic));
-		cell2.appendChild(document.createTextNode(data[i].origin.oCompany));
-		cell3.appendChild(document.createTextNode(data[i].destination.dCompany));
-		cell4.appendChild(document.createTextNode("N/A"));
-		cell5.appendChild(document.createTextNode(data[i].departureDate));
-		cell6.appendChild(document.createTextNode(data[i].arrivalDate));
+		cell2.appendChild(document.createTextNode(data[i].driver.fullName));
+		cell3.appendChild(document.createTextNode(data[i].origin.oCompany));
+		cell4.appendChild(document.createTextNode(data[i].destination.dCompany));
+		cell5.appendChild(document.createTextNode("N/A"));
+		cell6.appendChild(document.createTextNode(data[i].departureDate));
+		cell7.appendChild(document.createTextNode(data[i].arrivalDate));
 		if (data[i].arrivalStatus) {
-			cell7.appendChild(document.createTextNode("Arrived"));
+			cell8.appendChild(document.createTextNode("Arrived"));
 		} else {
-			cell7.appendChild(document.createTextNode("In Process"));
+			cell8.appendChild(document.createTextNode("In Process"));
 		}
 		if (data[i].payment) {
-			cell8.appendChild(document.createTextNode("Yes"));
+			cell9.appendChild(document.createTextNode("Yes"));
 		} else {
-			cell8.appendChild(document.createTextNode("No"));
+			cell9.appendChild(document.createTextNode("No"));
 		}
 
 		row.appendChild(cell1);
@@ -110,6 +117,7 @@ function incomingShipmentTable(data) {
 		row.appendChild(cell6);
 		row.appendChild(cell7);
 		row.appendChild(cell8);
+		row.appendChild(cell9);
 
 		table.appendChild(row);
 	}
@@ -125,6 +133,7 @@ function outgoingShipmentTable(data) {
 	// Create header elements and initial header row
 	var headerRow = document.createElement("tr");
 	var traffic = document.createElement("th");
+	var driver = document.createElement("th");
 	var origin = document.createElement("th");
 	var destination = document.createElement("th");
 	var vim = document.createElement("th");
@@ -135,6 +144,7 @@ function outgoingShipmentTable(data) {
 
 	// Populate header elements with text nodes
 	traffic.appendChild(document.createTextNode("Traffic"));
+	driver.appendChild(document.createTextNode("Driver"));
 	origin.appendChild(document.createTextNode("Origin"));
 	destination.appendChild(document.createTextNode("Destination"));
 	vim.appendChild(document.createTextNode("Vehicle ID"));
@@ -145,6 +155,7 @@ function outgoingShipmentTable(data) {
 
 	// Append the header elements to the row element
 	headerRow.appendChild(traffic);
+	headerRow.appendChild(driver);
 	headerRow.appendChild(origin);
 	headerRow.appendChild(destination);
 	headerRow.appendChild(vim);
@@ -169,23 +180,25 @@ function outgoingShipmentTable(data) {
 		var cell6 = document.createElement("td");
 		var cell7 = document.createElement("td");
 		var cell8 = document.createElement("td");
+		var cell9 = document.createElement("td");
 
 		// Populate each data field with a text node
 		cell1.appendChild(document.createTextNode(data[i].traffic));
-		cell2.appendChild(document.createTextNode(data[i].origin.oCompany));
-		cell3.appendChild(document.createTextNode(data[i].destination.dCompany));
-		cell4.appendChild(document.createTextNode("N/A"));
-		cell5.appendChild(document.createTextNode(data[i].departureDate));
-		cell6.appendChild(document.createTextNode(data[i].arrivalDate));
+		cell2.appendChild(document.createTextNode(data[i].driver.fullName));
+		cell3.appendChild(document.createTextNode(data[i].origin.oCompany));
+		cell4.appendChild(document.createTextNode(data[i].destination.dCompany));
+		cell5.appendChild(document.createTextNode("N/A"));
+		cell6.appendChild(document.createTextNode(data[i].departureDate));
+		cell7.appendChild(document.createTextNode(data[i].arrivalDate));
 		if (data[i].arrivalStatus) {
-			cell7.appendChild(document.createTextNode("Arrived"));
+			cell8.appendChild(document.createTextNode("Arrived"));
 		} else {
-			cell7.appendChild(document.createTextNode("In Process"));
+			cell8.appendChild(document.createTextNode("In Process"));
 		}
 		if (data[i].payment) {
-			cell8.appendChild(document.createTextNode("Yes"));
+			cell9.appendChild(document.createTextNode("Yes"));
 		} else {
-			cell8.appendChild(document.createTextNode("No"));
+			cell9.appendChild(document.createTextNode("No"));
 		}
 
 		row.appendChild(cell1);
@@ -196,6 +209,7 @@ function outgoingShipmentTable(data) {
 		row.appendChild(cell6);
 		row.appendChild(cell7);
 		row.appendChild(cell8);
+		row.appendChild(cell9);
 
 		table.appendChild(row);
 	}

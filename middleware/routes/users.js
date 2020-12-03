@@ -29,12 +29,6 @@ function checkArray(queryResult, type, res) {
 		//res.json(queryResult)
 		app.use(express.static(path.join(__dirname, "/../../pages")));
 		console.log("Dirname: " + __dirname);
-		sessionStorage.setItem("AuthenticationState", "Authenticated");
-
-		sessionStorage.setItem(
-			"AuthenticationExpires",
-			Date.now() + 60 * 60 * 1000
-		);
 		res.sendFile(path.resolve(__dirname, "..", "..", "pages", "reports.html"));
 	} else {
 		throw "Query returned 0 results. Incorrect information entered.";
