@@ -27,10 +27,11 @@
 		<div class="limiter">
 			<div class="container-login100">
 				<div class="wrap-signup100 p-l-50 p-r-50 p-t-77 p-b-30">
-					<form 
-					class="login100-form validate-form" 
-					action="http://68.93.20.191:5000/users/add"
-					method="POST">
+					<form
+						class="login100-form validate-form"
+						action="http://68.93.20.191:5000/users/add"
+						method="POST"
+					>
 						<span class="login100-form-title p-b-55">Create New Account</span>
 						<span class="signup100-form-label p-b-20"
 							>Personal Information</span
@@ -193,9 +194,28 @@
 							</select>
 							<span class="focus-input100"></span>
 						</div>
+						<div class="wrap-input100 validate-input m-b-16">
+							<select class="title-input100" name="title" id="title" required>
+								<option value="0">[Job Title]</option>
+								<option value="1">President</option>
+								<option value="2">Chief Financial Officer</option>
+								<option value="3">Office Personnel</option>
+								<option value="4">Driver</option>
+							</select>
+
+							<input
+								class="tenure-input100"
+								id="tenure"
+								type="text"
+								placeholder="Tenure"
+								name="tenure"
+								required
+							/>
+							<span class="focus-input100"></span>
+						</div>
 						<div class="container-signup100-form-btn p-t-25">
-							<button type="submit" class="login100-form-btn">
-								Login
+							<button type="submit" class="signup100-form-btn">
+								Create Account
 							</button>
 							<input
 								type="button"
