@@ -1,10 +1,16 @@
+function getData() {
+	fetch("http://68.93.20.191:5000/shipments/outgoing").then((response) => {
+		shipmentTable(response.json());
+	});
+}
+
 function reportDecision() {
 	if (document.getElementById("selection").value === "3") {
 		shipmentTable();
 	}
 }
 
-function shipmentTable() {
+function shipmentTable(data) {
 	var table = document.getElementById("reports");
 
 	// Create header elements and initial header row
@@ -37,29 +43,13 @@ function shipmentTable() {
 
 	// Append the row to the table
 	table.appendChild(headerRow);
-}
 
-function fetchData() {
-	fetch("http:localhost:5000/users/login")
-		.then((response) => {
-			console.log(response.body);
-			if (!response.ok) {
-				throw Error("ERROR");
-			}
-			return response.json();
-		})
-		.then((data) => {
-			console.log(data.data);
-			const html = data.data.map((user) => {
-				return `<p>Name: ${user.userName}</p>`;
-			});
-		})
-		.catch((error) => {
-			console.log(error);
-		});
-}
-function msg() {
-	alert("Request: " + response.body);
-}
+	var dataRow = document.createElement("tr");
+	var cell1 = document.createElement("th");
 
-msg();
+	cell1.appendChild(document.createTextNode(data.zip));
+
+	dataRow.appendChild(cell1);
+
+	table.appendChild(dataRow);
+}
