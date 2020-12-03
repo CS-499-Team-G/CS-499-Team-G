@@ -1,12 +1,10 @@
 const express = require("express");
 const mongoose = require("mongoose");
-var bodyParser = require("body-parser");
 const router = require("express").Router();
 let User = require("../models/users.model.js");
 const path = require("path"); // Needed so that we can serve pages
 const app = express();
 
-app.use(bodyParser.json());
 //app.use(express.static(path.join(__dirname, "/../../pages")));
 
 const { check, validationResult } = require("express-validator"); // Allows us to use the express-validator to validate data from webpage https://express-validator.github.io/docs/
