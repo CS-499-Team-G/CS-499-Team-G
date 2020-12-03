@@ -962,6 +962,7 @@ header .wrap img {
 	background: #feae7b;
 	height: 40px;
 	border-radius: 3px;
+	padding-right: 12%;
 
 	-webkit-transition: all 0.4s;
 	-o-transition: all 0.4s;
@@ -977,6 +978,7 @@ header .wrap img {
 
 	display: inline-block;
 	width: 50%;
+	padding-left: 12%;
 	background: #e6e6e6;
 	height: 40px;
 	border-radius: 3px;
