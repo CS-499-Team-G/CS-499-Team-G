@@ -1,10 +1,12 @@
 function shipmentTable() {
-	var headerRow = document.createElement("TR");
-	var traffic = document.createElement("TH");
+	var table = document.getElementById("reports");
+
+	var headerRow = document.createElement("tr");
+	var traffic = document.createElement("th");
 	traffic.innerHTML("TEST");
 
-	document.getElementById("reports").appendChild(headerRow);
-	document.getElementById("reports").tr.appendChild(traffic);
+	table.appendChild(headerRow);
+	table.tr.appendChild(traffic);
 }
 
 function fetchData() {
