@@ -5,8 +5,8 @@ function shipmentTable() {
 	var traffic = document.createElement("th");
 	traffic.innerHTML("TEST");
 
-	table.appendChild(headerRow);
 	headerRow.appendChild(traffic);
+	table.appendChild(headerRow);
 }
 
 function fetchData() {
