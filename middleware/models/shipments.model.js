@@ -64,12 +64,15 @@ const shipmentSchema = new Schema ({
     },
     origin: oCustomerAddress,
     destination: dCustomerAddress,
-    //vehicleID: Number, // Change later to look only use valid IDs for the vehicles
+    vehicleID: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'vehicle' 
+    },
     departureDate: Date,
     arrivalDate: Date,
     arrivalStatus: Boolean,
     payment: Boolean,
-    drivers: {
+    driver: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'user' 
     },
