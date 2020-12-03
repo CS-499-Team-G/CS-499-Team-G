@@ -3,9 +3,28 @@ function shipmentTable() {
 
 	var headerRow = document.createElement("tr");
 	var traffic = document.createElement("th");
-	traffic.appendChild(document.createTextNode("Test"));
+	var company = document.createElement("th");
+	var address = document.createElement("th");
+	var vim = document.createElement("th");
+	var depart = document.createElement("th");
+	var arrive = document.createElement("th");
+	var status = document.createElement("th");
+
+	traffic.appendChild(document.createTextNode("Traffic"));
+	company.appendChild(document.createTextNode("Company"));
+	address.appendChild(document.createTextNode("Address"));
+	vim.appendChild(document.createTextNode("Vehicle ID"));
+	depart.appendChild(document.createTextNode("Departure Date"));
+	arrive.appendChild(document.createTextNode("Arrival Date"));
+	status.appendChild(document.createTextNode("Status"));
 
 	headerRow.appendChild(traffic);
+	headerRow.appendChild(company);
+	headerRow.appendChild(address);
+	headerRow.appendChild(vim);
+	headerRow.appendChild(depart);
+	headerRow.appendChild(arrive);
+	headerRow.appendChild(status);
 	table.appendChild(headerRow);
 }
 
