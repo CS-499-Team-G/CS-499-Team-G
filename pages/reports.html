@@ -42,7 +42,7 @@
 			</div>
 		</header>
 		<div class="wrap-report-btns m-b-16">
-			<select class="report-selection100">
+			<select class="report-selection100" id="selection">
 				<option value="0">[Select Report Type]</option>
 				<option value="1">Payroll</option>
 				<option value="2">Vehicle Maintenance</option>
@@ -51,7 +51,7 @@
 			<input
 				type="button"
 				class="report-btn100"
-				onclick="shipmentTable()"
+				onclick="reportDecision()"
 				value="Generate Report"
 			/>
 		</div>

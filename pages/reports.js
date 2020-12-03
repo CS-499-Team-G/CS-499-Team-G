@@ -1,3 +1,9 @@
+function reportDecision() {
+	if (document.getElementById("selection").value === 3) {
+		shipmentTable();
+	}
+}
+
 function shipmentTable() {
 	var table = document.getElementById("reports");
 
