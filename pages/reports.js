@@ -9,11 +9,17 @@ function getData() {
 		var payrollJson = JSON.parse(req.responseText);
 		payrollTable(payrollJson);
 	} else if (document.getElementById("selection").value === "2") {
-		req.open("GET", "http://68.93.20.191:5000/vehicles", false);
+		req.open("GET", "http://68.93.20.191:5000/vehicles/maintenance", false);
+		req.send(null);
+
+		var costJson = JSON.parse(req.responseText);
+		vehicleMaintenanceTable(costJson);
+	} else if (document.getElementById("selection").value === "3") {
+		req.open("POST", "http://68.93.20.191:5000/vehicles", false);
 		req.send(null);
 
 		var vehicleJson = JSON.parse(req.responseText);
-		vehicleMaintenanceTable(vehicleJson);
+		totalMaintenanceTable(vehicleJson);
 	} else if (document.getElementById("selection").value === "4") {
 		req.open("POST", "http://68.93.20.191:5000/shipments/incoming", false);
 		req.send(null);
@@ -102,7 +108,6 @@ function vehicleMaintenanceTable(data) {
 	var description = document.createElement("th");
 	var parts = document.createElement("th");
 	var cost = document.createElement("th");
-	var inspections = document.createElement("th");
 
 	// Populate header elements with text nodes
 	make.appendChild(document.createTextNode("Make"));
@@ -113,7 +118,6 @@ function vehicleMaintenanceTable(data) {
 	description.appendChild(document.createTextNode("Description"));
 	parts.appendChild(document.createTextNode("Parts"));
 	cost.appendChild(document.createTextNode("Cost"));
-	inspections.appendChild(document.createTextNode("Inspections"));
 
 	headerRow.appendChild(make);
 	headerRow.appendChild(model);
@@ -123,7 +127,93 @@ function vehicleMaintenanceTable(data) {
 	headerRow.appendChild(description);
 	headerRow.appendChild(parts);
 	headerRow.appendChild(cost);
+
+	table.appendChild(headerRow);
+
+	for (let i = 0; i < data.length; i++) {
+		// Create row element
+		var row = document.createElement("tr");
+
+		// Create each data field element
+		var cell1 = document.createElement("td");
+		var cell2 = document.createElement("td");
+		var cell3 = document.createElement("td");
+		var cell4 = document.createElement("td");
+		var cell5 = document.createElement("td");
+		var cell6 = document.createElement("td");
+		var cell7 = document.createElement("td");
+		var cell8 = document.createElement("td");
+
+		cell1.appendChild(document.createTextNode(data[i].brand));
+		cell2.appendChild(document.createTextNode(data[i].model));
+		cell3.appendChild(document.createTextNode(data[i].year));
+		cell4.appendChild(document.createTextNode(data[i].kind));
+		cell5.appendChild(
+			document.createTextNode(data[i].maintenanceRecord.maintenance)
+		);
+		cell6.appendChild(
+			document.createTextNode(
+				data[i].maintenanceRecord.repairRecords.description
+			)
+		);
+		cell7.appendChild(
+			document.createTextNode(data[i].maintenanceRecord.repairRecords.parts)
+		);
+		cell8.appendChild(
+			document.createTextNode(data[i].maintenanceRecord.repairRecords.cost)
+		);
+
+		row.appendChild(cell1);
+		row.appendChild(cell2);
+		row.appendChild(cell3);
+		row.appendChild(cell4);
+		row.appendChild(cell5);
+		row.appendChild(cell6);
+		row.appendChild(cell7);
+		row.appendChild(cell8);
+		table.appendChild(row);
+	}
+}
+
+function totalMaintenanceTable(data) {
+	// Get table and clear if it has data already
+	var table = document.getElementById("reports");
+	while (table.rows.length > 0) {
+		table.deleteRow(0);
+	}
+
+	// Create header elements and initial header row
+	var headerRow = document.createElement("tr");
+	var make = document.createElement("th");
+	var model = document.createElement("th");
+	var year = document.createElement("th");
+	var kind = document.createElement("th");
+	var maintenance = document.createElement("th");
+	var description = document.createElement("th");
+	var parts = document.createElement("th");
+	var inspections = document.createElement("th");
+	var date = document.createElement("th");
+
+	// Populate header elements with text nodes
+	make.appendChild(document.createTextNode("Make"));
+	model.appendChild(document.createTextNode("Model"));
+	year.appendChild(document.createTextNode("Year"));
+	kind.appendChild(document.createTextNode("Body Style"));
+	maintenance.appendChild(document.createTextNode("Maintenance"));
+	description.appendChild(document.createTextNode("Description"));
+	parts.appendChild(document.createTextNode("Parts"));
+	inspections.appendChild(document.createTextNode("Inspections"));
+	date.appendChild(document.createTextNode("Date"));
+
+	headerRow.appendChild(make);
+	headerRow.appendChild(model);
+	headerRow.appendChild(year);
+	headerRow.appendChild(kind);
+	headerRow.appendChild(maintenance);
+	headerRow.appendChild(description);
+	headerRow.appendChild(parts);
 	headerRow.appendChild(inspections);
+	headerRow.appendChild(date);
 
 	table.appendChild(headerRow);
 
@@ -158,12 +248,12 @@ function vehicleMaintenanceTable(data) {
 			document.createTextNode(data[i].maintenanceRecord.repairRecords.parts)
 		);
 		cell8.appendChild(
-			document.createTextNode(data[i].maintenanceRecord.repairRecords.cost)
-		);
-		cell9.appendChild(
 			document.createTextNode(
 				data[i].maintenanceRecord.inspectionsRecords.inspections
 			)
+		);
+		cell9.appendChild(
+			document.createTextNode(data[i].maintenanceRecord.inspectionsRecords.date)
 		);
 
 		row.appendChild(cell1);
@@ -175,6 +265,7 @@ function vehicleMaintenanceTable(data) {
 		row.appendChild(cell7);
 		row.appendChild(cell8);
 		row.appendChild(cell9);
+
 		table.appendChild(row);
 	}
 }
