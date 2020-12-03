@@ -1,7 +1,7 @@
 function getData() {
 	var req = new XMLHttpRequest();
 	if (document.getElementById("selection").value === "3") {
-		req.open("GET", "http://68.93.20.191:5000/shipments/incoming", false);
+		req.open("POST", "http://68.93.20.191:5000/shipments/incoming", false);
 		req.send(null);
 
 		var jsonObj = JSON.parse(req.responseText);
