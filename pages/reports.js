@@ -1,7 +1,6 @@
 function getData() {
-	fetch("http://68.93.20.191:5000/shipments/").then((response) => {
-		console.log(response.body);
-		shipmentTable(response.json());
+	$.getJSON("http://68.93.20.191:5000/shipments/", function (response) {
+		console.log(response);
 	});
 }
 
