@@ -1,5 +1,5 @@
 function reportDecision() {
-	if (document.getElementById("selection").selectedIndex === 3) {
+	if (document.getElementById("selection").value === "3") {
 		shipmentTable();
 	}
 }
