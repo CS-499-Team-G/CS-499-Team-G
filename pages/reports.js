@@ -73,7 +73,7 @@ function payrollTable(data) {
 			)
 		);
 		cell2.appendChild(document.createTextNode(data[i].title));
-		cell3.appendChild(document.createTextNode(data[i].payRate));
+		cell3.appendChild(document.createTextNode("$" + data[i].payRate * 40 * 4));
 		cell4.appendChild(document.createTextNode(data[i].tenure));
 
 		row.appendChild(cell1);
@@ -99,19 +99,31 @@ function vehicleMaintenanceTable(data) {
 	var year = document.createElement("th");
 	var kind = document.createElement("th");
 	var maintenance = document.createElement("th");
+	var description = document.createElement("th");
+	var parts = document.createElement("th");
+	var cost = document.createElement("th");
+	var inspections = document.createElement("th");
 
 	// Populate header elements with text nodes
 	make.appendChild(document.createTextNode("Make"));
 	model.appendChild(document.createTextNode("Model"));
 	year.appendChild(document.createTextNode("Year"));
 	kind.appendChild(document.createTextNode("Body Style"));
-	maintenance.appendChild(document.createTextNode("Maintenance Record"));
+	maintenance.appendChild(document.createTextNode("Maintenance"));
+	description.appendChild(document.createTextNode("Description"));
+	parts.appendChild(document.createTextNode("Parts"));
+	cost.appendChild(document.createTextNode("Cost"));
+	inspections.appendChild(document.createTextNode("Inspections"));
 
 	headerRow.appendChild(make);
 	headerRow.appendChild(model);
 	headerRow.appendChild(year);
 	headerRow.appendChild(kind);
 	headerRow.appendChild(maintenance);
+	headerRow.appendChild(description);
+	headerRow.appendChild(parts);
+	headerRow.appendChild(cost);
+	headerRow.appendChild(inspections);
 
 	table.appendChild(headerRow);
 
@@ -125,6 +137,10 @@ function vehicleMaintenanceTable(data) {
 		var cell3 = document.createElement("td");
 		var cell4 = document.createElement("td");
 		var cell5 = document.createElement("td");
+		var cell6 = document.createElement("td");
+		var cell7 = document.createElement("td");
+		var cell8 = document.createElement("td");
+		var cell9 = document.createElement("td");
 
 		cell1.appendChild(document.createTextNode(data[i].brand));
 		cell2.appendChild(document.createTextNode(data[i].model));
@@ -133,13 +149,32 @@ function vehicleMaintenanceTable(data) {
 		cell5.appendChild(
 			document.createTextNode(data[i].maintenanceRecord.maintenance)
 		);
+		cell6.appendChild(
+			document.createTextNode(
+				data[i].maintenanceRecord.repairRecords.description
+			)
+		);
+		cell7.appendChild(
+			document.createTextNode(data[i].maintenanceRecord.repairRecords.parts)
+		);
+		cell8.appendChild(
+			document.createTextNode(data[i].maintenanceRecord.repairRecords.cost)
+		);
+		cell9.appendChild(
+			document.createTextNode(
+				data[i].maintenanceRecord.inspectionsRecords.inspections
+			)
+		);
 
 		row.appendChild(cell1);
 		row.appendChild(cell2);
 		row.appendChild(cell3);
 		row.appendChild(cell4);
 		row.appendChild(cell5);
-
+		row.appendChild(cell6);
+		row.appendChild(cell7);
+		row.appendChild(cell8);
+		row.appendChild(cell9);
 		table.appendChild(row);
 	}
 }
