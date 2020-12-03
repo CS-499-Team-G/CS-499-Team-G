@@ -4,7 +4,6 @@ const router = require("express").Router();
 let User = require("../models/users.model.js");
 const path = require("path"); // Needed so that we can serve pages
 const app = express();
-
 //app.use(express.static(path.join(__dirname, "/../../pages")));
 
 const { check, validationResult } = require("express-validator"); // Allows us to use the express-validator to validate data from webpage https://express-validator.github.io/docs/
@@ -26,11 +25,13 @@ function checkArray(queryResult, type, res) {
 	} else {
 		model = "Assignment";
 	}
-	if (queryResult.length != 0) {
+	if (!queryResult.length == 0) {
 		//res.json(queryResult)
-		res.send("Valid");
+		app.use(express.static(path.join(__dirname, "/../../pages")));
+		console.log("Dirname: " + __dirname);
+		res.sendFile(path.resolve(__dirname, "..", "..", "pages", "reports.html"));
 	} else {
-		res.send("Invalid");
+		throw "Query returned 0 results. Incorrect information entered.";
 	}
 }
 
