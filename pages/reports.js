@@ -3,7 +3,7 @@ function shipmentTable() {
 
 	var headerRow = document.createElement("tr");
 	var traffic = document.createElement("th");
-	traffic.innerHTML("TEST");
+	traffic.appendChild(document.createTextNode("Test"));
 
 	headerRow.appendChild(traffic);
 	table.appendChild(headerRow);
