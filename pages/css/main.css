@@ -969,21 +969,16 @@ header .wrap img {
 	transition: all 0.4s;
 }
 
-.test-btn100 {
-	font-family: Raleway-Bold;
-	font-size: 16px;
-	line-height: 1.5;
-	color: #fff;
-	text-transform: uppercase;
+.report-selection100 {
+	font-family: Raleway-SemiBold;
+	font-size: 18px;
+	line-height: 1.2;
+	color: #686868;
 
 	display: inline-block;
-	width: 49.5%;
-	background: #feae7b;
+	width: 25%;
+	background: #e6e6e6;
 	height: 62px;
 	border-radius: 3px;
-
-	-webkit-transition: all 0.4s;
-	-o-transition: all 0.4s;
-	-moz-transition: all 0.4s;
-	transition: all 0.4s;
+	padding: 0 30px 0 15px;
 }
