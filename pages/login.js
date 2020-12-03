@@ -10,5 +10,5 @@ function login() {
 
 	sessionStorage.setItem("AuthenticationExpires", Date.now() + 60 * 60 * 1000);
 
-	window.location.href = "reports.html";
+	// window.location.href = "reports.html";
 }

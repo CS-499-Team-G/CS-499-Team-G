@@ -1,6 +1,12 @@
 function getData() {
 	var req = new XMLHttpRequest();
-	if (document.getElementById("selection").value === "4") {
+	if (document.getElementById("selection").value === "1") {
+		req.open("POST", "http://68.93.20.191:5000/users/payroll", false);
+		req.send(null);
+
+		var payrollJson = JSON.parse(req.responseText);
+		payrollTable(payrollJson);
+	} else if (document.getElementById("selection").value === "4") {
 		req.open("POST", "http://68.93.20.191:5000/shipments/incoming", false);
 		req.send(null);
 
@@ -15,7 +21,16 @@ function getData() {
 	}
 }
 
+function payrollTable(data) {
+	// Get table and clear if it has data already
+	var table = document.getElementById("reports");
+	while (table.rows.length > 0) {
+		table.deleteRow(0);
+	}
+}
+
 function incomingShipmentTable(data) {
+	// Get table and clear if it has data already
 	var table = document.getElementById("reports");
 	while (table.rows.length > 0) {
 		table.deleteRow(0);
@@ -101,6 +116,7 @@ function incomingShipmentTable(data) {
 }
 
 function outgoingShipmentTable(data) {
+	// Get table and clear if it has data already
 	var table = document.getElementById("reports");
 	while (table.rows.length > 0) {
 		table.deleteRow(0);
