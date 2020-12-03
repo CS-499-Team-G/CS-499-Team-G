@@ -2,27 +2,6 @@ const router = require("express").Router();
 let Shipment = require("../models/shipments.model");
 const { check, validationResult } = require("express-validator"); // Allows us to use the express-validator to validate data from webpage https://express-validator.github.io/docs/
 
-/**
- * Summary. Check if the provided username exists. This function
- * returns an array containing all the infornation of every user.
- * @param array Mongodb query returns an array containing the
- * users with a given user name.
- */
-function checkArray(queryResult, type, res) {
-	console.log("Check array function");
-	if (type == "shipments") {
-		model = "Shipment";
-	} /*else{
-      model = "Assignment";
-    }*/
-	if (!queryResult.length == 0) {
-		res.json(queryResult);
-	} else {
-		console.log("Query result: " + queryResult);
-		throw "Query returned 0 results. Incorrect information entered.";
-	}
-}
-
 router.route("/").get((req, res) => {
 	// Returns all shipments found in the database
 	Shipment.find()
@@ -33,14 +12,14 @@ router.route("/").get((req, res) => {
 router.route("/incoming").post((req, res) => {
 	// Returns all incoming shipments found in the database
 	Shipment.find({ traffic: "Incoming" })
-		.then((shipments) => res.contentType("html").send(shipments))
+		.then((shipments) => res.json(shipments))
 		.catch((err) => res.status(400).json("Error: " + err));
 });
 
 router.route("/outgoing").post((req, res) => {
 	// Returns all outgoing shipments found in the database
 	Shipment.find({ traffic: "Outgoing" })
-		.then((shipments) => res.contentType("html").send(shipments))
+		.then((shipments) => res.json(shipments))
 		.catch((err) => res.status(400).json("Error: " + err));
 });
 
@@ -62,22 +41,12 @@ router.route("/add").post((req, res) => {
 	const dZip = req.body.dZip;
 	const destination = { dCompany, dStreetAddress, dCity, dState, dZip };
 
-	//const vehicleID = req.body.vehicleID;
+	const vehicleID = req.body.vehicleID;
 	const departureDate = req.body.departureDate;
 	const arrivalDate = req.body.arrivalDate;
 	const arrivalStatus = req.body.arrivalStatus;
 	const payment = req.body.payment;
 
-	/*
-    const items = req.body.items;
-    items.forEach(items => {
-        const totalCost = totalCost + item.cost;
-        console.log('Item cost' + item.cost)
-        console.log('Total cost' + totalCost);
-    });
-    const totalBalance = totalCost + 10;
-    const manifest = {items, totalCost, totalBalance};
-    */
 	// Log to the console to see if we are receiving requests
 	console.log(req.body);
 
@@ -86,7 +55,7 @@ router.route("/add").post((req, res) => {
 		driver,
 		origin,
 		destination,
-		//vehicleID,
+		vehicleID,
 		departureDate,
 		arrivalDate,
 		arrivalStatus,
@@ -109,12 +78,62 @@ router.route("/:id/item").post((req, res) => {
 	console.log("Order cost: " + orderCost);
 
 	Shipment.findOne({ _id: id }, { "manifest.totalCost": 1 })
-		//.then()
-		.then((queryResult) => JSON.stringify(queryResult))
-		.then((object) => JSON.parse(object))
-		.then((answer) => res.json(answer.manifest.totalCost))
-
+		.then((result) => checkArray(result))
+		/*.then(queryResult => JSON.stringify(queryResult))
+    .then(object => JSON.parse(object))
+    .then(answer => res.json(answer.manifest.totalCost))
+  */
 		.catch((err) => res.status(400).json("Error: " + err));
+
+	/**
+	 * Summary. Check if the provided username exists. This function
+	 * returns an array containing all the infornation of every user.
+	 * @param array Mongodb query returns an array containing the
+	 * users with a given user name.
+	 */
+	function checkArray(queryResult, res) {
+		console.log("Check array function");
+
+		if (!queryResult.length == 0) {
+			queryResult = JSON.stringify(queryResult);
+			queryResult = JSON.parse(object);
+			console.log(queryResult);
+			manifest = newTotalCost(queryResult);
+			updateShipment(manifest);
+		} else {
+			manifest = newTotalCost();
+			updateShipment(manifest);
+		}
+	}
+
+	function newTotalCost(totalCost) {
+		totalCost = totalCost || 0;
+		console.log("Total cost: " + totalCost);
+
+		console.log(
+			"Total cost (" +
+				totalCost +
+				") + Order cost (" +
+				orderCost +
+				")" +
+				"= Look down...."
+		);
+		totalCost = orderCost + totalCost; // Remember to get totalCost from existing totalCost
+		console.log("Total cost (" + totalCost);
+
+		const totalBalance = totalCost + 10;
+		console.log("Total balance: " + totalBalance);
+
+		const manifest = { items, totalCost, totalBalance };
+
+		return manifest;
+	}
+
+	function updateShipment(manifest) {
+		Shipment.updateMany({ _id: id }, { $set: { manifest: manifest } })
+			.then((shipments) => res.json(shipments))
+			.catch((err) => res.status(400).json("Error: " + err));
+	}
 
 	//console.log("Result of query: " + result);
 	/*

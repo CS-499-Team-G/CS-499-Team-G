@@ -56,23 +56,26 @@ const manifestSchema = new Schema({
 	totalBalance: Number, // Sum of the costs pluys shipping and handling
 });
 
-const shipmentSchema = new Schema({
-	traffic: {
-		type: String,
-		enum: ["Outgoing", "Incoming"],
-	},
-	origin: oCustomerAddress,
-	destination: dCustomerAddress,
-	//vehicleID: Number, // Change later to look only use valid IDs for the vehicles
-	departureDate: Date,
-	arrivalDate: Date,
-	arrivalStatus: Boolean,
-	payment: Boolean,
-	drivers: {
-		type: mongoose.Schema.Types.ObjectId,
-		ref: "user",
-	},
-	manifest: manifestSchema,
+const shipmentSchema = new Schema ({
+    traffic: {
+        type: String,
+        enum: ['Outgoing', 'Incoming']
+    },
+    origin: oCustomerAddress,
+    destination: dCustomerAddress,
+    vehicleID: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'vehicle' 
+    },
+    departureDate: Date,
+    arrivalDate: Date,
+    arrivalStatus: Boolean,
+    payment: Boolean,
+    driver: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'user' 
+    },
+    manifest: manifestSchema
 });
 
 const Shipment = mongoose.model("shipment", shipmentSchema);
