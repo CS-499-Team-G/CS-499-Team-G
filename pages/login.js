@@ -1,7 +1,9 @@
-function login(username, password) {
+function login(user, pass) {
 	var req = new XMLHttpRequest();
 	req.open("POST", "http://68.93.20.191:5000/users/login", false);
-	req.send("{ username: " + username + ", password: " + password + " }");
+	req.json({ username: user, password: pass });
+
+	console.log(req.body);
 
 	if (req.responseText === "Valid") {
 		window.location.href = "reports.html";
