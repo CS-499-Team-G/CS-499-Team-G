@@ -31,7 +31,7 @@ function checkArray(queryResult, type, res) {
 		console.log("Dirname: " + __dirname);
 		res.sendFile(path.resolve(__dirname, "..", "..", "pages", "reports.html"));
 	} else {
-		throw "Query returned 0 results. Incorrect information entered.";
+		alert("Query returned 0 results. Incorrect information entered.");
 	}
 }
 
