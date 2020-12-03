@@ -44,7 +44,7 @@ function payrollTable(data) {
 
 	// Create header elements and initial header row
 	var headerRow = document.createElement("tr");
-	var name = document.createElement("th");
+	var name = document.createElement("th onclick='sortTable(0)'");
 	var title = document.createElement("th");
 	var payrate = document.createElement("th");
 	var tenure = document.createElement("th");
@@ -52,7 +52,7 @@ function payrollTable(data) {
 	//
 	name.appendChild(document.createTextNode("Name"));
 	title.appendChild(document.createTextNode("Position"));
-	payrate.appendChild(document.createTextNode("Pay Rate"));
+	payrate.appendChild(document.createTextNode("Monthly Salary"));
 	tenure.appendChild(document.createTextNode("Tenure"));
 
 	// Append header elements to the row element
@@ -279,7 +279,6 @@ function incomingShipmentTable(data) {
 
 	// Create header elements and initial header row
 	var headerRow = document.createElement("tr");
-	var traffic = document.createElement("th");
 	var origin = document.createElement("th");
 	var destination = document.createElement("th");
 	var vim = document.createElement("th");
@@ -289,7 +288,6 @@ function incomingShipmentTable(data) {
 	var payment = document.createElement("th");
 
 	// Populate header elements with text nodes
-	traffic.appendChild(document.createTextNode("Traffic"));
 	origin.appendChild(document.createTextNode("Origin"));
 	destination.appendChild(document.createTextNode("Destination"));
 	vim.appendChild(document.createTextNode("Vehicle ID"));
@@ -299,7 +297,6 @@ function incomingShipmentTable(data) {
 	payment.appendChild(document.createTextNode("Paid"));
 
 	// Append the header elements to the row element
-	headerRow.appendChild(traffic);
 	headerRow.appendChild(origin);
 	headerRow.appendChild(destination);
 	headerRow.appendChild(vim);
@@ -317,40 +314,37 @@ function incomingShipmentTable(data) {
 
 		// Create each data field element
 		var cell1 = document.createElement("td");
+		var cell2 = document.createElement("td");
 		var cell3 = document.createElement("td");
 		var cell4 = document.createElement("td");
 		var cell5 = document.createElement("td");
 		var cell6 = document.createElement("td");
 		var cell7 = document.createElement("td");
-		var cell8 = document.createElement("td");
-		var cell9 = document.createElement("td");
 
 		// Populate each data field with a text node
-		cell1.appendChild(document.createTextNode(data[i].traffic));
-		cell3.appendChild(document.createTextNode(data[i].origin.oCompany));
-		cell4.appendChild(document.createTextNode(data[i].destination.dCompany));
-		cell5.appendChild(document.createTextNode("N/A"));
-		cell6.appendChild(document.createTextNode(data[i].departureDate));
-		cell7.appendChild(document.createTextNode(data[i].arrivalDate));
+		cell1.appendChild(document.createTextNode(data[i].origin.oCompany));
+		cell2.appendChild(document.createTextNode(data[i].destination.dCompany));
+		cell3.appendChild(document.createTextNode("N/A"));
+		cell4.appendChild(document.createTextNode(data[i].departureDate));
+		cell5.appendChild(document.createTextNode(data[i].arrivalDate));
 		if (data[i].arrivalStatus) {
-			cell8.appendChild(document.createTextNode("Arrived"));
+			cell6.appendChild(document.createTextNode("Arrived"));
 		} else {
-			cell8.appendChild(document.createTextNode("In Process"));
+			cell6.appendChild(document.createTextNode("In Process"));
 		}
 		if (data[i].payment) {
-			cell9.appendChild(document.createTextNode("Yes"));
+			cell7.appendChild(document.createTextNode("Yes"));
 		} else {
-			cell9.appendChild(document.createTextNode("No"));
+			cell7.appendChild(document.createTextNode("No"));
 		}
 
 		row.appendChild(cell1);
+		row.appendChild(cell2);
 		row.appendChild(cell3);
 		row.appendChild(cell4);
 		row.appendChild(cell5);
 		row.appendChild(cell6);
 		row.appendChild(cell7);
-		row.appendChild(cell8);
-		row.appendChild(cell9);
 
 		table.appendChild(row);
 	}
@@ -365,7 +359,6 @@ function outgoingShipmentTable(data) {
 
 	// Create header elements and initial header row
 	var headerRow = document.createElement("tr");
-	var traffic = document.createElement("th");
 	var origin = document.createElement("th");
 	var destination = document.createElement("th");
 	var vim = document.createElement("th");
@@ -375,7 +368,6 @@ function outgoingShipmentTable(data) {
 	var payment = document.createElement("th");
 
 	// Populate header elements with text nodes
-	traffic.appendChild(document.createTextNode("Traffic"));
 	origin.appendChild(document.createTextNode("Origin"));
 	destination.appendChild(document.createTextNode("Destination"));
 	vim.appendChild(document.createTextNode("Vehicle ID"));
@@ -385,7 +377,6 @@ function outgoingShipmentTable(data) {
 	payment.appendChild(document.createTextNode("Paid"));
 
 	// Append the header elements to the row element
-	headerRow.appendChild(traffic);
 	headerRow.appendChild(origin);
 	headerRow.appendChild(destination);
 	headerRow.appendChild(vim);
@@ -403,41 +394,101 @@ function outgoingShipmentTable(data) {
 
 		// Create each data field element
 		var cell1 = document.createElement("td");
+		var cell2 = document.createElement("td");
 		var cell3 = document.createElement("td");
 		var cell4 = document.createElement("td");
 		var cell5 = document.createElement("td");
 		var cell6 = document.createElement("td");
 		var cell7 = document.createElement("td");
-		var cell8 = document.createElement("td");
-		var cell9 = document.createElement("td");
 
 		// Populate each data field with a text node
-		cell1.appendChild(document.createTextNode(data[i].traffic));
-		cell3.appendChild(document.createTextNode(data[i].origin.oCompany));
-		cell4.appendChild(document.createTextNode(data[i].destination.dCompany));
-		cell5.appendChild(document.createTextNode("N/A"));
-		cell6.appendChild(document.createTextNode(data[i].departureDate));
-		cell7.appendChild(document.createTextNode(data[i].arrivalDate));
+		cell1.appendChild(document.createTextNode(data[i].origin.oCompany));
+		cell2.appendChild(document.createTextNode(data[i].destination.dCompany));
+		cell3.appendChild(document.createTextNode("N/A"));
+		cell4.appendChild(document.createTextNode(data[i].departureDate));
+		cell5.appendChild(document.createTextNode(data[i].arrivalDate));
 		if (data[i].arrivalStatus) {
-			cell8.appendChild(document.createTextNode("Arrived"));
+			cell6.appendChild(document.createTextNode("Arrived"));
 		} else {
-			cell8.appendChild(document.createTextNode("In Process"));
+			cell6.appendChild(document.createTextNode("In Process"));
 		}
 		if (data[i].payment) {
-			cell9.appendChild(document.createTextNode("Yes"));
+			cell7.appendChild(document.createTextNode("Yes"));
 		} else {
-			cell9.appendChild(document.createTextNode("No"));
+			cell7.appendChild(document.createTextNode("No"));
 		}
 
 		row.appendChild(cell1);
+		row.appendChild(cell2);
 		row.appendChild(cell3);
 		row.appendChild(cell4);
 		row.appendChild(cell5);
 		row.appendChild(cell6);
 		row.appendChild(cell7);
-		row.appendChild(cell8);
-		row.appendChild(cell9);
 
 		table.appendChild(row);
+	}
+}
+
+function sortTable(n) {
+	var table,
+		rows,
+		switching,
+		i,
+		x,
+		y,
+		shouldSwitch,
+		dir,
+		switchcount = 0;
+	table = document.getElementById("reports");
+	switching = true;
+	//Set the sorting direction to ascending:
+	dir = "asc";
+	/*Make a loop that will continue until
+  no switching has been done:*/
+	while (switching) {
+		//start by saying: no switching is done:
+		switching = false;
+		rows = table.rows;
+		/*Loop through all table rows (except the
+    first, which contains table headers):*/
+		for (i = 1; i < rows.length - 1; i++) {
+			//start by saying there should be no switching:
+			shouldSwitch = false;
+			/*Get the two elements you want to compare,
+      one from current row and one from the next:*/
+			x = rows[i].getElementsByTagName("td")[n];
+			y = rows[i + 1].getElementsByTagName("td")[n];
+			/*check if the two rows should switch place,
+      based on the direction, asc or desc:*/
+			if (dir == "asc") {
+				if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+					//if so, mark as a switch and break the loop:
+					shouldSwitch = true;
+					break;
+				}
+			} else if (dir == "desc") {
+				if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+					//if so, mark as a switch and break the loop:
+					shouldSwitch = true;
+					break;
+				}
+			}
+		}
+		if (shouldSwitch) {
+			/*If a switch has been marked, make the switch
+      and mark that a switch has been done:*/
+			rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+			switching = true;
+			//Each time a switch is done, increase this count by 1:
+			switchcount++;
+		} else {
+			/*If no switching has been done AND the direction is "asc",
+      set the direction to "desc" and run the while loop again.*/
+			if (switchcount == 0 && dir == "asc") {
+				dir = "desc";
+				switching = true;
+			}
+		}
 	}
 }
