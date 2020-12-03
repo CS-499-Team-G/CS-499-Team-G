@@ -965,7 +965,7 @@ header .wrap img {
 	text-transform: uppercase;
 
 	width: 25%;
-	height: 62px;
+	height: 40px;
 	border-radius: 3px;
 	background: #feae7b;
 	display: -webkit-box;
@@ -981,6 +981,10 @@ header .wrap img {
 	-o-transition: all 0.4s;
 	-moz-transition: all 0.4s;
 	transition: all 0.4s;
+}
+
+.report-btn100:hover {
+	background: #333333;
 }
 
 .report-selection100 {
