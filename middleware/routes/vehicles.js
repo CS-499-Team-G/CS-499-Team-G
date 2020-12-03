@@ -9,6 +9,12 @@ router.route('/').get((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 })
 
+router.route('/maintenance').post((req, res) => {
+    Vehicles.find( {}, {brand: 1, year: 1, model: 1, kind: 1, "maintenanceRecord.repairRecords": 1} )
+    .then(vehicles => res.json(vehicles))
+    .catch(err => res.status(400).json('Error: ' + err));
+})
+
 router.route('/add').post((req, res) => 
 {
     const brand = req.body.brand;
