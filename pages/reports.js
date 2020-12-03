@@ -47,7 +47,7 @@ function shipmentTable(data) {
 	var dataRow = document.createElement("tr");
 	var cell1 = document.createElement("td");
 
-	cell1.appendChild(document.createTextNode(data.traffic));
+	cell1.appendChild(document.createTextNode(data[0].traffic));
 
 	dataRow.appendChild(cell1);
 
