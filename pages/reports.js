@@ -45,7 +45,7 @@ function shipmentTable(data) {
 	// Append the row to the table
 	table.appendChild(headerRow);
 
-	for (let i = 0; i < jsonObj.length; i++) {
+	for (let i = 0; i < data.length; i++) {
 		// Create row element
 		var row = document.createElement("tr");
 
