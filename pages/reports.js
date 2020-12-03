@@ -17,10 +17,8 @@ function getData() {
 
 function incomingShipmentTable(data) {
 	var table = document.getElementById("reports");
-	if (table.rows.length > 0) {
-		for (let i = 0; i < table.rows.length; i++) {
-			table.deleteRow(i);
-		}
+	while (table.rows.length > 0) {
+		table.deleteRow(0);
 	}
 
 	// Create header elements and initial header row
@@ -104,10 +102,8 @@ function incomingShipmentTable(data) {
 
 function outgoingShipmentTable(data) {
 	var table = document.getElementById("reports");
-	if (table.rows.length > 0) {
-		for (let i = 0; i < table.rows.length; i++) {
-			table.deleteRow(i);
-		}
+	while (table.rows.length > 0) {
+		table.deleteRow(0);
 	}
 
 	// Create header elements and initial header row
