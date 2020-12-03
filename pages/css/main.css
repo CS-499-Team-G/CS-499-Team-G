@@ -961,6 +961,7 @@ header .wrap img {
 	height: 40px;
 	border-radius: 3px;
 	background: #feae7b;
+	display: inline-block;
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -moz-box;
