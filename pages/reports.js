@@ -1,5 +1,5 @@
 function getData() {
-	fetch("http://68.93.20.191:5000/shipments").then((response) => {
+	fetch("http://68.93.20.191:5000/shipments/outgoing").then((response) => {
 		shipmentTable(response.json());
 	});
 }
