@@ -957,7 +957,7 @@ header .wrap img {
 	color: #fff;
 	text-transform: uppercase;
 
-	margin: auto;
+	margin-left: 12%;
 	display: inline-block;
 	width: 25%;
 	background: #feae7b;
