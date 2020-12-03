@@ -6,7 +6,7 @@ function shipmentTable() {
 	traffic.innerHTML("TEST");
 
 	table.appendChild(headerRow);
-	table.tr.appendChild(traffic);
+	headerRow.appendChild(traffic);
 }
 
 function fetchData() {
