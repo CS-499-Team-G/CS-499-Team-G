@@ -18,7 +18,9 @@ function getData() {
 function incomingShipmentTable(data) {
 	var table = document.getElementById("reports");
 	if (table.rows.length > 0) {
-		table.remove();
+		for (let i = 0; i < table.rows.length; i++) {
+			table.deleteRow(i);
+		}
 	}
 
 	// Create header elements and initial header row
@@ -103,7 +105,9 @@ function incomingShipmentTable(data) {
 function outgoingShipmentTable(data) {
 	var table = document.getElementById("reports");
 	if (table.rows.length > 0) {
-		table.remove();
+		for (let i = 0; i < table.rows.length; i++) {
+			table.deleteRow(i);
+		}
 	}
 
 	// Create header elements and initial header row
