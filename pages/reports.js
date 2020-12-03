@@ -4,7 +4,7 @@ function getData() {
 	req.send(null);
 
 	var jsonObj = JSON.parse(req.responseText);
-	console.log(jsonObj);
+	shipmentTable(jsonObj);
 }
 
 function reportDecision() {
