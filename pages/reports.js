@@ -7,6 +7,7 @@ function reportDecision() {
 function shipmentTable() {
 	var table = document.getElementById("reports");
 
+	// Create header elements and initial header row
 	var headerRow = document.createElement("tr");
 	var traffic = document.createElement("th");
 	var company = document.createElement("th");
@@ -16,6 +17,7 @@ function shipmentTable() {
 	var arrive = document.createElement("th");
 	var status = document.createElement("th");
 
+	// Populate header elements with text nodes
 	traffic.appendChild(document.createTextNode("Traffic"));
 	company.appendChild(document.createTextNode("Company"));
 	address.appendChild(document.createTextNode("Address"));
@@ -24,6 +26,7 @@ function shipmentTable() {
 	arrive.appendChild(document.createTextNode("Arrival Date"));
 	status.appendChild(document.createTextNode("Status"));
 
+	// Append the header elements to the row element
 	headerRow.appendChild(traffic);
 	headerRow.appendChild(company);
 	headerRow.appendChild(address);
@@ -31,6 +34,8 @@ function shipmentTable() {
 	headerRow.appendChild(depart);
 	headerRow.appendChild(arrive);
 	headerRow.appendChild(status);
+
+	// Append the row to the table
 	table.appendChild(headerRow);
 }
 

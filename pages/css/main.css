@@ -946,7 +946,7 @@ header .wrap img {
 	margin: auto;
 	position: relative;
 	width: 50%;
-	padding-top: 80px;
+	padding-top: 100px;
 	z-index: 1;
 }
 
@@ -1019,6 +1019,6 @@ header .wrap img {
 	padding-top: 12px;
 	padding-bottom: 12px;
 	text-align: left;
-	background-color: #4caf50;
+	background-color: #3b1c71;
 	color: white;
 }
