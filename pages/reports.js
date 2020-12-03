@@ -17,6 +17,7 @@ function getData() {
 
 function incomingShipmentTable(data) {
 	var table = document.getElementById("reports");
+	table.remove();
 
 	// Create header elements and initial header row
 	var headerRow = document.createElement("tr");
@@ -99,6 +100,7 @@ function incomingShipmentTable(data) {
 
 function outgoingShipmentTable(data) {
 	var table = document.getElementById("reports");
+	table.remove();
 
 	// Create header elements and initial header row
 	var headerRow = document.createElement("tr");
