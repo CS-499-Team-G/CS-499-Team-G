@@ -948,6 +948,13 @@ header .wrap img {
 	width: 50%;
 	padding-top: 80px;
 	z-index: 1;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 
 .report-btn100 {
@@ -957,16 +964,18 @@ header .wrap img {
 	color: #fff;
 	text-transform: uppercase;
 
-	display: inline-block;
 	width: 25%;
+	height: 62px;
+	border-radius: 3px;
 	background: #feae7b;
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -moz-box;
 	display: -ms-flexbox;
 	display: flex;
-	height: 40px;
-	border-radius: 3px;
+	justify-content: center;
+	align-items: center;
+	padding: 0 25px;
 
 	-webkit-transition: all 0.4s;
 	-o-transition: all 0.4s;
