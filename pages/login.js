@@ -8,6 +8,13 @@ function login() {
 			document.getElementById("password").value
 	);
 
+	console.log(
+		"username=" +
+			document.getElementById("username").value +
+			"&password=" +
+			document.getElementById("password").value
+	);
+
 	if (req.responseText === "Valid") {
 		window.location.href = "reports.html";
 	} else {
