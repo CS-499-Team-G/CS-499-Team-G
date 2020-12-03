@@ -22,20 +22,6 @@
 			href="vendor/bootstrap/css/bootstrap.min.css"
 		/>
 		<link rel="stylesheet" type="text/css" href="css/main.css" />
-		<script>
-			//Is the user authenticated?
-			if (sessionStorage.getItem("AuthenticationState") === null) {
-				window.location.href = "access-denied.html";
-			}
-			//Is their authentication token still valid?
-			else if (
-				Date.now > new Date(sessionStorage.getItem("AuthenticationExpires"))
-			) {
-				window.location.href = "access-denied.html";
-			} else {
-				//The user is authenticated and the authentication has not expired.
-			}
-		</script>
 	</head>
 	<body>
 		<div class="limiter">

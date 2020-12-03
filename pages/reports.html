@@ -5,20 +5,6 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" type="text/css" href="css/main.css" />
-		<script>
-			//Is the user authenticated?
-			if (sessionStorage.getItem("AuthenticationState") === null) {
-				window.location.href = "access-denied.html";
-			}
-			//Is their authentication token still valid?
-			else if (
-				Date.now > new Date(sessionStorage.getItem("AuthenticationExpires"))
-			) {
-				window.location.href = "access-denied.html";
-			} else {
-				//The user is authenticated and the authentication has not expired.
-			}
-		</script>
 		<script src="reports.js" type="text/javascript"></script>
 	</head>
 	<body>
