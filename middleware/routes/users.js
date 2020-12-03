@@ -62,7 +62,7 @@ router.route("/").get((req, res) => {
 
 // Show payroll for all users
 router.route("/payroll").post((req, res) => {
-	User.find({}, { payRate: 1, fullName: 1, title: 1 })
+	User.find({}, { payRate: 1, fullName: 1, title: 1 , tenure: 1})
 		.then((users) => res.json(users))
 		.catch((err) => res.status(400).json("Error: " + err));
 });
