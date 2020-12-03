@@ -31,4 +31,3 @@ function msg() {
 }
 
 msg();
-shipmentTable();

@@ -19,6 +19,7 @@
 				//The user is authenticated and the authentication has not expired.
 			}
 		</script>
+		<script src="reports.js" type="text/javascript"></script>
 	</head>
 	<body>
 		<header>
@@ -47,7 +48,12 @@
 				<option value="2">Vehicle Maintenance</option>
 				<option value="3">Shipment Data</option>
 			</select>
-			<input type="button" class="report-btn100" value="Generate Report" />
+			<input
+				type="button"
+				class="report-btn100"
+				onclick="shipmentTable()"
+				value="Generate Report"
+			/>
 		</div>
 		<div class="wrap-report-table">
 			<table id="reports"></table>
