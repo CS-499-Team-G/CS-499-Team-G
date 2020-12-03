@@ -4,9 +4,12 @@
   "description": "Management system for a trucking company",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server",
+    "server": "nodemon server",
+    "heroku-postbuild": "npm install"
   },
-  "author": "Dant'e Peaks, Cameron Howell, Jasmine Funchess",
+  "proxy": "http://localhost:5000",
+  "author": "Dant'e Peaks, Cameron Howell, Jazmine Funchess",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
