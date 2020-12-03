@@ -27,11 +27,9 @@ function checkArray(queryResult, type, res) {
 	}
 	if (queryResult.length != 0) {
 		//res.json(queryResult)
-		app.use(express.static(path.join(__dirname, "/../../pages")));
-		console.log("Dirname: " + __dirname);
-		res.sendFile(path.resolve(__dirname, "..", "..", "pages", "reports.html"));
+		res.send("Valid");
 	} else {
-		alert("Query returned 0 results. Incorrect information entered.");
+		res.send("Invalid");
 	}
 }
 
