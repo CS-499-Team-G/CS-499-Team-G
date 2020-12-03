@@ -25,7 +25,7 @@ function checkArray(queryResult, type, res) {
 	} else {
 		model = "Assignment";
 	}
-	if (!queryResult.length == 0) {
+	if (queryResult.length != 0) {
 		//res.json(queryResult)
 		app.use(express.static(path.join(__dirname, "/../../pages")));
 		console.log("Dirname: " + __dirname);
