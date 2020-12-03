@@ -30,14 +30,14 @@ router.route("/").get((req, res) => {
 		.catch((err) => res.status(400).json("Error: " + err));
 });
 
-router.route("/incoming").post((req, res) => {
+router.route("/incoming").get((req, res) => {
 	// Returns all incoming shipments found in the database
 	Shipment.find({ traffic: "Incoming" })
 		.then((shipments) => res.contentType("html").send(shipments))
 		.catch((err) => res.status(400).json("Error: " + err));
 });
 
-router.route("/outgoing").post((req, res) => {
+router.route("/outgoing").get((req, res) => {
 	// Returns all outgoing shipments found in the database
 	Shipment.find({ traffic: "Outgoing" })
 		.then((shipments) => res.contentType("html").send(shipments))
