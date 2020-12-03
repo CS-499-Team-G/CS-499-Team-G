@@ -41,6 +41,7 @@ function shipmentTable(data) {
 	headerRow.appendChild(depart);
 	headerRow.appendChild(arrive);
 	headerRow.appendChild(status);
+	headerRow.appendChild(payment);
 
 	// Append the row to the table
 	table.appendChild(headerRow);
@@ -76,5 +77,16 @@ function shipmentTable(data) {
 		} else {
 			cell8.appendChild(document.createTextNode("No"));
 		}
+
+		row.appendChild(cell1);
+		row.appendChild(cell2);
+		row.appendChild(cell3);
+		row.appendChild(cell4);
+		row.appendChild(cell5);
+		row.appendChild(cell6);
+		row.appendChild(cell7);
+		row.appendChild(cell8);
+
+		table.appendChild(row);
 	}
 }
