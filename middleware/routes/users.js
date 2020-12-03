@@ -36,7 +36,8 @@ function checkArray(queryResult, type, res) {
 // Login for a specific user
 router.route("/login").post((req, res) => {
 	// Get the username and password from the req.body
-	const { username, password } = req.body;
+	const username = req.body.username;
+	const password = req.body.password;
 
 	// Log to the console to see if we are receiving requests
 	console.log(req.body);
