@@ -6,7 +6,7 @@ function login(user, pass) {
 	);
 	req.send(data);
 
-	console.log(req.body);
+	console.log(user + " " + pass);
 
 	if (req.responseText === "Valid") {
 		window.location.href = "reports.html";
