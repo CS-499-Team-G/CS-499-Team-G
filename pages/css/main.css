@@ -960,6 +960,11 @@ header .wrap img {
 	display: inline-block;
 	width: 25%;
 	background: #feae7b;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
 	height: 40px;
 	border-radius: 3px;
 
