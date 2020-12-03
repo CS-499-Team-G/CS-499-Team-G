@@ -9,13 +9,13 @@ function getData() {
 		var payrollJson = JSON.parse(req.responseText);
 		payrollTable(payrollJson);
 	} else if (document.getElementById("selection").value === "2") {
-		req.open("GET", "http://68.93.20.191:5000/vehicles/maintenance", false);
+		req.open("POST", "http://68.93.20.191:5000/vehicles/maintenance", false);
 		req.send(null);
 
 		var costJson = JSON.parse(req.responseText);
 		vehicleMaintenanceTable(costJson);
 	} else if (document.getElementById("selection").value === "3") {
-		req.open("POST", "http://68.93.20.191:5000/vehicles", false);
+		req.open("GET", "http://68.93.20.191:5000/vehicles", false);
 		req.send(null);
 
 		var vehicleJson = JSON.parse(req.responseText);
