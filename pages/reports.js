@@ -1,7 +1,10 @@
 function getData() {
-	$.getJSON("http://68.93.20.191:5000/shipments/", function (response) {
-		console.log(response);
-	});
+	var req = new XMLHttpRequest();
+	req.open("GET", "http://68.93.20.191:5000/shipments/", false);
+	req.send(null);
+
+	var jsonObj = JSON.parse(req.responseText);
+	console.log(jsonObj);
 }
 
 function reportDecision() {
