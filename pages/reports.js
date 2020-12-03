@@ -29,6 +29,54 @@ function payrollTable(data) {
 	while (table.rows.length > 0) {
 		table.deleteRow(0);
 	}
+
+	// Create header elements and initial header row
+	var headerRow = document.createElement("tr");
+	var name = document.createElement("th");
+	var title = document.createElement("th");
+	var payrate = document.createElement("th");
+	var tenure = document.createElement("th");
+
+	//
+	name.appendChild(document.createTextNode("Name"));
+	title.appendChild(document.createTextNode("Position"));
+	payrate.appendChild(document.createTextNode("Pay Rate"));
+	tenure.appendChild(document.createTextNode("Tenure"));
+
+	// Append header elements to the row element
+	headerRow.appendChild(name);
+	headerRow.appendChild(title);
+	headerRow.appendChild(payrate);
+	headerRow.appendChild(tenure);
+
+	// Append the row to the table
+	table.appendChild(headerRow);
+
+	for (let i = 0; i < data.length; i++) {
+		// Create row element
+		var row = document.createElement("tr");
+
+		var cell1 = document.createElement("td");
+		var cell2 = document.createElement("td");
+		var cell3 = document.createElement("td");
+		var cell4 = document.createElement("td");
+
+		cell1.appendChild(
+			document.createTextNode(
+				data[i].fullName.firstName + " " + data[i].fullName.lastName
+			)
+		);
+		cell2.appendChild(document.createTextNode(data[i].title));
+		cell3.appendChild(document.createTextNode(data[i].payRate));
+		cell4.appendChild(document.createTextNode(data[i].tenure));
+
+		row.appendChild(cell1);
+		row.appendChild(cell2);
+		row.appendChild(cell3);
+		row.appendChild(cell4);
+
+		table.appendChild(row);
+	}
 }
 
 function incomingShipmentTable(data) {
@@ -92,7 +140,13 @@ function incomingShipmentTable(data) {
 
 		// Populate each data field with a text node
 		cell1.appendChild(document.createTextNode(data[i].traffic));
-		cell2.appendChild(document.createTextNode(data[i].driver.fullName));
+		cell2.appendChild(
+			document.createTextNode(
+				data[i].driver.fullName.firstName +
+					" " +
+					data[i].driver.fullName.lastName
+			)
+		);
 		cell3.appendChild(document.createTextNode(data[i].origin.oCompany));
 		cell4.appendChild(document.createTextNode(data[i].destination.dCompany));
 		cell5.appendChild(document.createTextNode("N/A"));
@@ -184,7 +238,9 @@ function outgoingShipmentTable(data) {
 
 		// Populate each data field with a text node
 		cell1.appendChild(document.createTextNode(data[i].traffic));
-		cell2.appendChild(document.createTextNode(data[i].driver.fullName));
+		cell2.appendChild(
+			document.createTextNode(data[i].driver.fullName.firstName)
+		);
 		cell3.appendChild(document.createTextNode(data[i].origin.oCompany));
 		cell4.appendChild(document.createTextNode(data[i].destination.dCompany));
 		cell5.appendChild(document.createTextNode("N/A"));
