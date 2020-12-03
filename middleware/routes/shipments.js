@@ -26,7 +26,7 @@ function checkArray(queryResult, type, res) {
 router.route("/").get((req, res) => {
 	// Returns all shipments found in the database
 	Shipment.find()
-		.then((shipments) => res.json(shipments))
+		.then((shipments) => res.contentType("html").send(shipments))
 		.catch((err) => res.status(400).json("Error: " + err));
 });
 
@@ -107,16 +107,28 @@ router.route("/:id/item").post((req, res) => {
 
 	const orderCost = quantity * cost;
 	console.log("Order cost: " + orderCost);
-	const totalCost = orderCost; // Remember to get totalCost from existing totalCost
-	const totalBalance = totalCost + 10;
-	console.log("Total balance: " + totalBalance);
-	const manifest = { items, totalCost, totalBalance };
-	// create manifest to hold data of several items
 
-	// Returns a shipment with the provided id from the database
-	Shipment.updateMany({ _id: id }, { $set: { manifest: manifest } })
-		.then((shipments) => res.json(shipments))
+	Shipment.findOne({ _id: id }, { "manifest.totalCost": 1 })
+		//.then()
+		.then((queryResult) => JSON.stringify(queryResult))
+		.then((object) => JSON.parse(object))
+		.then((answer) => res.json(answer.manifest.totalCost))
+
 		.catch((err) => res.status(400).json("Error: " + err));
+
+	//console.log("Result of query: " + result);
+	/*
+  const totalCost = orderCost; // Remember to get totalCost from existing totalCost
+  const totalBalance = totalCost + 10;
+  console.log("Total balance: " + totalBalance);
+  const manifest = {items, totalCost, totalBalance}
+  // create manifest to hold data of several items
+
+  // Returns a shipment with the provided id from the database
+  Shipment.updateMany( {_id: id }, {$set: { manifest: manifest } } )
+    .then(shipments => res.json(shipments))
+    .catch(err => res.status(400).json('Error: ' + err));
+    */
 });
 
 module.exports = router;
