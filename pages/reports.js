@@ -618,7 +618,7 @@ function outgoingShipmentTable(data) {
 		a.href = "../../manifest.html";
 		a.setAttribute(
 			"onclick",
-			"sessionStorage.setItem('objID', row.id); window.open(this.href, 'Shipment Manifest', 'width=500, height=500, left=100, top=100, scrollbars, resizable'); return false;"
+			"sessionStorage.setItem('objID', this.parentElement.parentElement.id; window.open(this.href, 'Shipment Manifest', 'width=500, height=500, left=100, top=100, scrollbars, resizable'); return false;"
 		);
 		cell8.appendChild(a);
 
