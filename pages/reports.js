@@ -559,6 +559,8 @@ function outgoingShipmentTable(data) {
 
 		row.setAttribute("id", data[i]._id.toString());
 
+		console.log(data[i]._id.toString());
+
 		// Create each data field element
 		var cell1 = document.createElement("td");
 		var cell2 = document.createElement("td");
