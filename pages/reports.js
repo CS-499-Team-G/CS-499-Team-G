@@ -638,22 +638,22 @@ function outgoingShipmentTable(data) {
 		table.rows[i + 1].cells[7].getElementsByTagName(
 			"a"
 		)[0].onclick = function () {
-			setSessionStorage(this.href, i);
+			setSessionStorage(i);
+			window.open(
+				this.href,
+				"Shipment Manifest",
+				"width=500, height=500, left=100, top=100, scrollbars, resizable"
+			);
+			return false;
 		};
 	}
 }
 
-function setSessionStorage(ref, index) {
+function setSessionStorage(index) {
 	sessionStorage.setItem(
 		"objID",
 		document.getElementById("dataStore" + index).innerHTML
 	);
-	window.open(
-		ref,
-		"Shipment Manifest",
-		"width=500, height=500, left=100, top=100, scrollbars, resizable"
-	);
-	return false;
 }
 
 function sortTable(n) {
