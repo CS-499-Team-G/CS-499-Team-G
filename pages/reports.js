@@ -639,7 +639,7 @@ function outgoingShipmentTable(data) {
 			"a"
 		)[0].onclick = function () {
 			setSessionStorage(this.href, i);
-		}.bind(this);
+		};
 	}
 }
 
