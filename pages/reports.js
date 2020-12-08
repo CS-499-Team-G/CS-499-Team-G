@@ -67,6 +67,9 @@ function payrollTable(data) {
 	table.rows[0].cells[0].addEventListener("click", function () {
 		sortTable(0);
 	});
+	table.rows[0].cells[1].addEventListener("click", function () {
+		sortTable(1);
+	});
 
 	for (let i = 0; i < data.length; i++) {
 		// Create row element
@@ -133,6 +136,36 @@ function vehicleMaintenanceTable(data) {
 	headerRow.appendChild(cost);
 
 	table.appendChild(headerRow);
+
+	// Sort by make
+	table.rows[0].cells[0].addEventListener("click", function () {
+		sortTable(0);
+	});
+
+	// Sort by model
+	table.rows[0].cells[1].addEventListener("click", function () {
+		sortTable(1);
+	});
+
+	// Sort by body style
+	table.rows[0].cells[3].addEventListener("click", function () {
+		sortTable(3);
+	});
+
+	// Sort by maintenance
+	table.rows[0].cells[4].addEventListener("click", function () {
+		sortTable(4);
+	});
+
+	// Sort by description
+	table.rows[0].cells[5].addEventListener("click", function () {
+		sortTable(5);
+	});
+
+	// Sort by parts
+	table.rows[0].cells[6].addEventListener("click", function () {
+		sortTable(6);
+	});
 
 	for (let i = 0; i < data.length; i++) {
 		// Create row element
@@ -221,6 +254,41 @@ function totalMaintenanceTable(data) {
 
 	table.appendChild(headerRow);
 
+	// Sort by make
+	table.rows[0].cells[0].addEventListener("click", function () {
+		sortTable(0);
+	});
+
+	// Sort by model
+	table.rows[0].cells[0].addEventListener("click", function () {
+		sortTable(0);
+	});
+
+	// Sort by body style
+	table.rows[0].cells[0].addEventListener("click", function () {
+		sortTable(0);
+	});
+
+	// Sort by maintenance
+	table.rows[0].cells[0].addEventListener("click", function () {
+		sortTable(0);
+	});
+
+	// Sort by description
+	table.rows[0].cells[0].addEventListener("click", function () {
+		sortTable(0);
+	});
+
+	// Sort by parts
+	table.rows[0].cells[0].addEventListener("click", function () {
+		sortTable(0);
+	});
+
+	// Sort by inspection
+	table.rows[0].cells[0].addEventListener("click", function () {
+		sortTable(0);
+	});
+
 	for (let i = 0; i < data.length; i++) {
 		// Create row element
 		var row = document.createElement("tr");
@@ -256,9 +324,21 @@ function totalMaintenanceTable(data) {
 				data[i].maintenanceRecord.inspectionsRecords.inspections
 			)
 		);
-		cell9.appendChild(
-			document.createTextNode(data[i].maintenanceRecord.inspectionsRecords.date)
+
+		var convertedDate = new Date(
+			data[i].maintenanceRecord.inspectionsRecords.date
 		);
+		var dateString =
+			(convertedDate.getMonth().toString().length > 1
+				? convertedDate.getMonth() + 1
+				: "0" + (convertedDate.getMonth() + 1)) +
+			"/" +
+			(convertedDate.getDate().toString().length > 1
+				? convertedDate.getDate()
+				: "0" + convertedDate.getDate()) +
+			"/" +
+			convertedDate.getFullYear();
+		cell9.appendChild(document.createTextNode(dateString));
 
 		row.appendChild(cell1);
 		row.appendChild(cell2);
@@ -312,6 +392,26 @@ function incomingShipmentTable(data) {
 	// Append the row to the table
 	table.appendChild(headerRow);
 
+	// Sort by origin
+	table.rows[0].cells[0].addEventListener("click", function () {
+		sortTable(0);
+	});
+
+	// Sort by destination
+	table.rows[0].cells[1].addEventListener("click", function () {
+		sortTable(1);
+	});
+
+	// Sort by status
+	table.rows[0].cells[5].addEventListener("click", function () {
+		sortTable(5);
+	});
+
+	// Sort by paid
+	table.rows[0].cells[6].addEventListener("click", function () {
+		sortTable(6);
+	});
+
 	for (let i = 0; i < data.length; i++) {
 		// Create row element
 		var row = document.createElement("tr");
@@ -329,8 +429,34 @@ function incomingShipmentTable(data) {
 		cell1.appendChild(document.createTextNode(data[i].origin.oCompany));
 		cell2.appendChild(document.createTextNode(data[i].destination.dCompany));
 		cell3.appendChild(document.createTextNode("N/A"));
-		cell4.appendChild(document.createTextNode(data[i].departureDate));
-		cell5.appendChild(document.createTextNode(data[i].arrivalDate));
+
+		var dConvertedDate = new Date(data[i].departureDate);
+		var dDateString =
+			(dConvertedDate.getMonth().toString().length > 1
+				? dConvertedDate.getMonth() + 1
+				: "0" + (dConvertedDate.getMonth() + 1)) +
+			"/" +
+			(dConvertedDate.getDate().toString().length > 1
+				? dConvertedDate.getDate()
+				: "0" + dConvertedDate.getDate()) +
+			"/" +
+			dConvertedDate.getFullYear();
+
+		cell4.appendChild(document.createTextNode(dDateString));
+
+		var aConvertedDate = new Date(data[i].arrivalDate);
+		var aDateString =
+			(aConvertedDate.getMonth().toString().length > 1
+				? aConvertedDate.getMonth() + 1
+				: "0" + (aConvertedDate.getMonth() + 1)) +
+			"/" +
+			(aConvertedDate.getDate().toString().length > 1
+				? aConvertedDate.getDate()
+				: "0" + aConvertedDate.getDate()) +
+			"/" +
+			aConvertedDate.getFullYear();
+
+		cell5.appendChild(document.createTextNode(aDateString));
 		if (data[i].arrivalStatus) {
 			cell6.appendChild(document.createTextNode("Arrived"));
 		} else {
@@ -392,6 +518,26 @@ function outgoingShipmentTable(data) {
 	// Append the row to the table
 	table.appendChild(headerRow);
 
+	// Sort by origin
+	table.rows[0].cells[0].addEventListener("click", function () {
+		sortTable(0);
+	});
+
+	// Sort by destination
+	table.rows[0].cells[1].addEventListener("click", function () {
+		sortTable(1);
+	});
+
+	// Sort by status
+	table.rows[0].cells[5].addEventListener("click", function () {
+		sortTable(5);
+	});
+
+	// Sort by paid
+	table.rows[0].cells[6].addEventListener("click", function () {
+		sortTable(6);
+	});
+
 	for (let i = 0; i < data.length; i++) {
 		// Create row element
 		var row = document.createElement("tr");
@@ -409,8 +555,34 @@ function outgoingShipmentTable(data) {
 		cell1.appendChild(document.createTextNode(data[i].origin.oCompany));
 		cell2.appendChild(document.createTextNode(data[i].destination.dCompany));
 		cell3.appendChild(document.createTextNode("N/A"));
-		cell4.appendChild(document.createTextNode(data[i].departureDate));
-		cell5.appendChild(document.createTextNode(data[i].arrivalDate));
+
+		var dConvertedDate = new Date(data[i].departureDate);
+		var dDateString =
+			(dConvertedDate.getMonth().toString().length > 1
+				? dConvertedDate.getMonth() + 1
+				: "0" + (dConvertedDate.getMonth() + 1)) +
+			"/" +
+			(dConvertedDate.getDate().toString().length > 1
+				? dConvertedDate.getDate()
+				: "0" + dConvertedDate.getDate()) +
+			"/" +
+			dConvertedDate.getFullYear();
+
+		cell4.appendChild(document.createTextNode(dDateString));
+
+		var aConvertedDate = new Date(data[i].arrivalDate);
+		var aDateString =
+			(aConvertedDate.getMonth().toString().length > 1
+				? aConvertedDate.getMonth() + 1
+				: "0" + (aConvertedDate.getMonth() + 1)) +
+			"/" +
+			(aConvertedDate.getDate().toString().length > 1
+				? aConvertedDate.getDate()
+				: "0" + aConvertedDate.getDate()) +
+			"/" +
+			aConvertedDate.getFullYear();
+
+		cell5.appendChild(document.createTextNode(aDateString));
 		if (data[i].arrivalStatus) {
 			cell6.appendChild(document.createTextNode("Arrived"));
 		} else {
