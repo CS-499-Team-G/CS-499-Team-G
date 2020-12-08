@@ -72,13 +72,14 @@ router.route("/:id/item").post((req, res) => {
 	const { id, name, quantity, cost, backOrder } = req.body;
 	console.log(req.body);
 
-	const items = { name, quantity, cost, backOrder };
+	const item = { name, quantity, cost, backOrder };
 
 	const orderCost = quantity * cost;
 	console.log("Order cost: " + orderCost);
 
 	Shipment.findOne({ _id: id }, { "manifest.totalCost": 1 })
-		.then((result) => checkArray(result))
+		.then(result => checkArray(result, res))
+		//.then((result) => checkArray(result))
 		/*.then(queryResult => JSON.stringify(queryResult))
     .then(object => JSON.parse(object))
     .then(answer => res.json(answer.manifest.totalCost))
@@ -93,22 +94,27 @@ router.route("/:id/item").post((req, res) => {
 	 */
 	function checkArray(queryResult, res) {
 		console.log("Check array function");
+		
+		object = JSON.stringify(queryResult);
+		json = JSON.parse(object);
 
-		if (!queryResult.length == 0) {
-			queryResult = JSON.stringify(queryResult);
-			queryResult = JSON.parse(object);
-			console.log(queryResult);
-			manifest = newTotalCost(queryResult);
-			updateShipment(manifest);
-		} else {
+		try {
+			totalCost = json.manifest.totalCost;
+		}catch(err){
+			console.log("Total cost not defined.")
 			manifest = newTotalCost();
-			updateShipment(manifest);
 		}
+		if(totalCost){
+			console.log("Returned total cost of: " + totalCost);
+			manifest = newTotalCost(totalCost);
+		}
+			//updateShipment(manifest);
+		
 	}
 
 	function newTotalCost(totalCost) {
 		totalCost = totalCost || 0;
-		console.log("Total cost: " + totalCost);
+		console.log("Total cost in database: " + totalCost);
 
 		console.log(
 			"Total cost (" +
@@ -116,38 +122,35 @@ router.route("/:id/item").post((req, res) => {
 				") + Order cost (" +
 				orderCost +
 				")" +
-				"= Look down...."
+				" = Look down...."
 		);
 		totalCost = orderCost + totalCost; // Remember to get totalCost from existing totalCost
-		console.log("Total cost (" + totalCost);
+		console.log("Total cost (" + totalCost + ")");
 
 		const totalBalance = totalCost + 10;
 		console.log("Total balance: " + totalBalance);
 
-		const manifest = { items, totalCost, totalBalance };
-
-		return manifest;
+		// Add item to shipment
+		//addShipItem(item);
+		
+		const manifest = { totalCost, totalBalance };
+		updateShipment(manifest)
+		//return manifest;
 	}
 
-	function updateShipment(manifest) {
-		Shipment.updateMany({ _id: id }, { $set: { manifest: manifest } })
-			.then((shipments) => res.json(shipments))
+	function addShipItem(newItem){
+		console.log("New item: " + newItem)
+		Shipment.updateOne( { _id: id}, {$push: {"manifest.items": newItem} } )
+			.then( update => res.json(update) )
 			.catch((err) => res.status(400).json("Error: " + err));
 	}
 
-	//console.log("Result of query: " + result);
-	/*
-  const totalCost = orderCost; // Remember to get totalCost from existing totalCost
-  const totalBalance = totalCost + 10;
-  console.log("Total balance: " + totalBalance);
-  const manifest = {items, totalCost, totalBalance}
-  // create manifest to hold data of several items
+	function updateShipment(manifest) {
+		Shipment.updateOne({ _id: id }, { $set: { manifest: manifest } })
+			.then((shipments) => addShipItem(item))
+			.catch((err) => res.status(400).json("Error: " + err));
+	}
 
-  // Returns a shipment with the provided id from the database
-  Shipment.updateMany( {_id: id }, {$set: { manifest: manifest } } )
-    .then(shipments => res.json(shipments))
-    .catch(err => res.status(400).json('Error: ' + err));
-    */
 });
 
 module.exports = router;
