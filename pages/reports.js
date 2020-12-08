@@ -359,6 +359,11 @@ function incomingShipmentTable(data) {
 		table.deleteRow(0);
 	}
 
+	var pNodes = document.getElementsByTagName("p");
+	for (let i = 0; i < pNodes.length; i++) {
+		pNodes[i].parentNode.removeChild(pNodes[i]);
+	}
+
 	// Create header elements and initial header row
 	var headerRow = document.createElement("tr");
 	var origin = document.createElement("th");
@@ -512,6 +517,11 @@ function outgoingShipmentTable(data) {
 	var table = document.getElementById("reports");
 	while (table.rows.length > 0) {
 		table.deleteRow(0);
+	}
+
+	var pNodes = document.getElementsByTagName("p");
+	for (let i = 0; i < pNodes.length; i++) {
+		pNodes[i].parentNode.removeChild(pNodes[i]);
 	}
 
 	// Create header elements and initial header row
