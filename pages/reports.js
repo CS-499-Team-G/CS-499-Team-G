@@ -1,5 +1,3 @@
-const { header } = require("express-validator");
-
 function getData() {
 	var req = new XMLHttpRequest();
 	if (document.getElementById("selection").value === "1") {
@@ -556,6 +554,8 @@ function outgoingShipmentTable(data) {
 		// Create row element
 		var row = document.createElement("tr");
 
+		row.setAttribute("id", data[i]._id);
+
 		// Create each data field element
 		var cell1 = document.createElement("td");
 		var cell2 = document.createElement("td");
@@ -564,6 +564,7 @@ function outgoingShipmentTable(data) {
 		var cell5 = document.createElement("td");
 		var cell6 = document.createElement("td");
 		var cell7 = document.createElement("td");
+		var cell8 = document.createElement("td");
 
 		// Populate each data field with a text node
 		cell1.appendChild(document.createTextNode(data[i].origin.oCompany));
@@ -608,6 +609,16 @@ function outgoingShipmentTable(data) {
 			cell7.appendChild(document.createTextNode("No"));
 		}
 
+		var a = document.createElement("a");
+		var text = document.createTextNode("[Click to Expand]");
+		a.appendChild(text);
+		a.href = "../../manifest.html";
+		a.setAttribute(
+			"onclick",
+			"sessionStorage.setItem('objID', row.id); window.open(this.href, 'Shipment Manifest', 'width=500, height=500, left=100, top=100, scrollbars, resizable'); return false;"
+		);
+		cell8.appendChild(a);
+
 		row.appendChild(cell1);
 		row.appendChild(cell2);
 		row.appendChild(cell3);
@@ -615,6 +626,7 @@ function outgoingShipmentTable(data) {
 		row.appendChild(cell5);
 		row.appendChild(cell6);
 		row.appendChild(cell7);
+		row.appendChild(cell8);
 
 		table.appendChild(row);
 	}
