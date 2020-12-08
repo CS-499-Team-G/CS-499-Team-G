@@ -557,7 +557,7 @@ function outgoingShipmentTable(data) {
 		// Create row element
 		var row = document.createElement("tr");
 
-		row.setAttribute("id", data[i]._id.toString());
+		row.setAttribute("id", data[i].manifest.items[0].name);
 
 		// Create each data field element
 		var cell1 = document.createElement("td");
@@ -633,7 +633,7 @@ function outgoingShipmentTable(data) {
 			.getElementsByTagName("a")[0]
 			.setAttribute(
 				"onclick",
-				"sessionStorage.setItem('objID', data[i].manifest); window.open(this.href, 'Shipment Manifest', 'width=500, height=500, left=100, top=100, scrollbars, resizable'); return false;"
+				"sessionStorage.setItem('objID', this.parentNode.parentNode.id); window.open(this.href, 'Shipment Manifest', 'width=500, height=500, left=100, top=100, scrollbars, resizable'); return false;"
 			);
 	}
 }
