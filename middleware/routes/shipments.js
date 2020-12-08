@@ -98,16 +98,15 @@ router.route("/:id/item").post((req, res) => {
 		object = JSON.stringify(queryResult);
 		json = JSON.parse(object);
 
+		
 		try {
 			totalCost = json.manifest.totalCost;
+			manifest = newTotalCost(totalCost);
 		} catch (err) {
 			console.log("Total cost not defined.");
-			manifest = newTotalCost();
+			newTotalCost();
 		}
-		if (totalCost) {
-			console.log("Returned total cost of: " + totalCost);
-			manifest = newTotalCost(totalCost);
-		}
+		
 		//updateShipment(manifest);
 	}
 
@@ -132,8 +131,8 @@ router.route("/:id/item").post((req, res) => {
 		// Add item to shipment
 		//addShipItem(item);
 
-		const manifest = { totalCost, totalBalance };
-		updateShipment(manifest);
+		//const manifest = { totalCost, totalBalance };
+		updateShipment(totalCost, totalBalance);
 		//return manifest;
 	}
 
@@ -144,8 +143,8 @@ router.route("/:id/item").post((req, res) => {
 			.catch((err) => res.status(400).json("Error: " + err));
 	}
 
-	function updateShipment(manifest) {
-		Shipment.updateOne({ _id: id }, { $set: { manifest: manifest } })
+	function updateShipment(totalCost, totalBalance) {
+		Shipment.updateOne({ _id: id }, { $set: { "manifest.totalCost": totalCost, "manifest.totalBalance": totalBalance } })
 			.then((shipments) => addShipItem(item))
 			.catch((err) => res.status(400).json("Error: " + err));
 	}
