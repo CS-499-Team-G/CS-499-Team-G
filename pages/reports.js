@@ -629,10 +629,12 @@ function outgoingShipmentTable(data) {
 
 		table.appendChild(row);
 
-		table.rows[i + 1].cells[7].getElementsByTagName[0].setAttribute(
-			"onclick",
-			"sessionStorage.setItem('objID', this.parentNode.parentNode.id; window.open(this.href, 'Shipment Manifest', 'width=500, height=500, left=100, top=100, scrollbars, resizable'); return false;"
-		);
+		table.rows[i + 1].cells[7]
+			.getElementsByTagName("a")[0]
+			.setAttribute(
+				"onclick",
+				"sessionStorage.setItem('objID', this.parentNode.parentNode.id; window.open(this.href, 'Shipment Manifest', 'width=500, height=500, left=100, top=100, scrollbars, resizable'); return false;"
+			);
 	}
 }
 
