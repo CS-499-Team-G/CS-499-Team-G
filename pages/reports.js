@@ -556,7 +556,7 @@ function outgoingShipmentTable(data) {
 	for (let i = 0; i < data.length; i++) {
 		var dataStore = document.createElement("p");
 		dataStore.hidden = true;
-		dataStore.id = "dataStore";
+		dataStore.id = "dataStore" + i;
 		dataStore.innerHTML = JSON.stringify(data[i].manifest.items);
 
 		var divStore = document.getElementById("divStore");
@@ -639,7 +639,7 @@ function outgoingShipmentTable(data) {
 			.getElementsByTagName("a")[0]
 			.setAttribute(
 				"onclick",
-				"sessionStorage.setItem('objID', document.getElementById('dataStore').innerHTML); window.open(this.href, 'Shipment Manifest', 'width=500, height=500, left=100, top=100, scrollbars, resizable'); return false;"
+				"sessionStorage.setItem('objID', document.getElementById('dataStore' + i).innerHTML); window.open(this.href, 'Shipment Manifest', 'width=500, height=500, left=100, top=100, scrollbars, resizable'); return false;"
 			);
 	}
 }
