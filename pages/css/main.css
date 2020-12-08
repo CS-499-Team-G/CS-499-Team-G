@@ -1065,3 +1065,34 @@ header .wrap img {
 	background-color: #3b1c71;
 	color: white;
 }
+
+/*//////////////////////////////////////////////////////////////////
+[ manifests-popup ]*/
+
+#manifests {
+	font-family: Raleway-SemiBold;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+#manifests td,
+#manifests th {
+	border: 1px solid #ddd;
+	padding: 8px;
+}
+
+#manifests tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+#manifests tr:hover {
+	background-color: #ddd;
+}
+
+#manifests th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #3b1c71;
+	color: white;
+}
