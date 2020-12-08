@@ -474,10 +474,9 @@ function incomingShipmentTable(data) {
 		var a = document.createElement("a");
 		var text = document.createTextNode("[Click to Expand]");
 		a.appendChild(text);
-		a.href("#");
-		a.onclick(
-			"window.open(this.href, 'windowName', 'width=1000, height=700, left=24, top=24, scrollbars, resizable'); return false;"
-		);
+		a.href = "#";
+		a.onclick =
+			"window.open(this.href, 'windowName', 'width=1000, height=700, left=24, top=24, scrollbars, resizable'); return false;";
 		cell8.appendChild(a);
 
 		row.appendChild(cell1);
