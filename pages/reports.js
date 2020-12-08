@@ -559,6 +559,8 @@ function outgoingShipmentTable(data) {
 		dataStore.id = "dataStore";
 		dataStore.innerHTML = JSON.stringify(data[i].manifest.items);
 
+		document.appendChild(dataStore);
+
 		// Create row element
 		var row = document.createElement("tr");
 
