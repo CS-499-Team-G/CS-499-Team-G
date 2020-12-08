@@ -7,8 +7,56 @@
 		<script>
 			var manifest = sessionStorage.getItem("objID");
 			var toJson = JSON.parse(manifest);
-			console.log(toJson[0].name);
+
+			var table = document.getElementById("manifests");
+
+			var headerRow = document.createElement("tr");
+			var name = document.createElement("th");
+			var quantity = document.createElement("th");
+			var cost = document.createElement("th");
+			var backorder = document.createElement("th");
+
+			name.appendChild(document.createTextNode("Item"));
+			quantity.appendChild(document.createTextNode("Quantity"));
+			cost.appendChild(document.createTextNode("Cost"));
+			backorder.appendChild(document.createTextNode("Status"));
+
+			headerRow.appendChild(name);
+			headerRow.appendChild(quantity);
+			headerRow.appendChild(cost);
+			headerRow.appendChild(backorder);
+
+			table.appendChild(headerRow);
+			for (let i = 0; i < toJson.length; i++) {
+				var row = document.createElement("tr");
+
+				// Create each data field element
+				var cell1 = document.createElement("td");
+				var cell2 = document.createElement("td");
+				var cell3 = document.createElement("td");
+				var cell4 = document.createElement("td");
+
+				cell1.appendChild(document.createTextNode(toJson[i].name));
+				cell2.appendChild(document.createTextNode(toJson[i].quantity));
+				cell3.appendChild(document.createTextNode(toJson[i].cost));
+				if (toJson[i].backorder) {
+					cell4.appendChild(document.createTextNode("Backordered"));
+				} else {
+					cell4.appendChild(document.createTextNode("Ready to Ship"));
+				}
+
+				row.appendChild(cell1);
+				row.appendChild(cell2);
+				row.appendChild(cell3);
+				row.appendChild(cell4);
+
+				table.appendChild(row);
+			}
 		</script>
 	</head>
-	<body></body>
+	<body>
+		<div class="wrap-report-table">
+			<table id="manifests"></table>
+		</div>
+	</body>
 </html>
