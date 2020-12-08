@@ -68,7 +68,7 @@ router.route("/add").post((req, res) => {
 		.catch((err) => res.status(400).json("Error: " + err));
 });
 
-router.route("/:id/item").post((req, res) => {
+router.route("/id/item").post((req, res) => {
 	const { id, name, quantity, cost, backOrder } = req.body;
 	console.log(req.body);
 
