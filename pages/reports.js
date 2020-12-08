@@ -499,10 +499,6 @@ function outgoingShipmentTable(data) {
 		table.deleteRow(0);
 	}
 
-	var dataStore = document.createElement("p");
-	dataStore.hidden = true;
-	dataStore.innerHTML(JSON.stringify(data[i].manifest.items));
-
 	// Create header elements and initial header row
 	var headerRow = document.createElement("tr");
 	var origin = document.createElement("th");
@@ -558,6 +554,10 @@ function outgoingShipmentTable(data) {
 	});
 
 	for (let i = 0; i < data.length; i++) {
+		var dataStore = document.createElement("p");
+		dataStore.hidden = true;
+		dataStore.innerHTML(JSON.stringify(data[i].manifest.items));
+
 		// Create row element
 		var row = document.createElement("tr");
 
