@@ -49,6 +49,9 @@ const userSchema = new Schema(
 			],
 			required: true,
 		},
+		password: {
+			type: String,
+		},
 		fullName: employeeNameSchema,
 		address: employeeAddressSchema,
 		payRate: {
