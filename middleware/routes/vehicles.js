@@ -1,19 +1,28 @@
-const router = require('express').Router();
-let Vehicles = require('../models/vehicles.model');
-const {check, validationResult} = require('express-validator');
+const router = require("express").Router();
+let Vehicles = require("../models/vehicles.model");
+const { check, validationResult } = require("express-validator");
 
+router.route("/").get((req, res) => {
+	Vehicles.find()
+		.then((vehicles) => res.json(vehicles))
+		.catch((err) => res.status(400).json("Error: " + err));
+});
 
-router.route('/').get((req, res) => {
-    Vehicles.find()
-    .then(vehicles => res.json(vehicles))
-    .catch(err => res.status(400).json('Error: ' + err));
-})
-
-router.route('/maintenance').post((req, res) => {
-    Vehicles.find( {}, {brand: 1, year: 1, model: 1, kind: 1, "maintenanceRecord.repairRecords": 1,"maintenanceRecord.maintenance": 1} )
-    .then(vehicles => res.json(vehicles))
-    .catch(err => res.status(400).json('Error: ' + err));
-})
+router.route("/maintenance").post((req, res) => {
+	Vehicles.find(
+		{},
+		{
+			brand: 1,
+			year: 1,
+			model: 1,
+			kind: 1,
+			"maintenanceRecord.repairRecords": 1,
+			"maintenanceRecord.maintenance": 1,
+		}
+	)
+		.then((vehicles) => res.json(vehicles))
+		.catch((err) => res.status(400).json("Error: " + err));
+});
 
 router.route("/add").post((req, res) => {
 	const brand = req.body.brand;
