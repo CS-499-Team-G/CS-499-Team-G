@@ -35,6 +35,38 @@ function checkArray(queryResult, type, res) {
 	}
 }
 
+function setSelection (title){
+	//var selection = document.getElementById("selection");
+	console.log("Set selections function");
+	console.log("Title: " + title);
+
+	if(title == "Chief Financial Officer"){
+		var payroll = document.createElement("option");
+		payroll.innerText = "Monthly Payroll";
+
+		var maintenance = document.createElement("option");
+		maintenance.innerText = "Total Maintenance Cost";
+
+		var vehicle = document.createElement("option");
+		vehicle.innerText = "Total Vehicle Maintenance";
+
+		var incoming = document.createElement("option");
+		incoming.innerText = "Incoming Shipments";
+
+		var outgoing = document.createElement("option");
+		outgoing.innerText = "Outgoing Shipments";
+
+		var selectElem = document.getElementById("selection");
+  		selectElem.append(element);
+
+	}else if(title){
+
+	}else{
+
+	}
+
+}
+
 // Login for a specific user
 router.route("/login").post((req, res) => {
 	// Get the username and password from the req.body
@@ -48,9 +80,15 @@ router.route("/login").post((req, res) => {
 	 * returns an array containing all the infornation of every user.
 	 * @param userName name of a user account from a webpage request.
 	 */
-	User.find({ userName: username, password: password })
-		.then((users) => checkArray(users, "users", res))
-		.catch((err) => res.status(400).json("Error: " + err));
+	User.findOne({ userName: username, password: password })
+		//.then(resp => res.json(resp))
+		.then(newResult => JSON.stringify(newResult))
+		.then(result => JSON.parse(result))
+		.then(info => title = info.title)
+		//.then(title => res.contentType("html").send(title))
+		.then(page => res.sendFile(path.resolve(__dirname, "..", "..", "pages", "reports.html")))
+		//.then(s => setSelection(title))
+		//.catch((err) => res.status(400).json("Error: " + err));
 });
 
 // Show all users
