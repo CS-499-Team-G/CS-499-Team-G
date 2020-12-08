@@ -559,8 +559,6 @@ function outgoingShipmentTable(data) {
 
 		row.setAttribute("id", data[i]._id.toString());
 
-		console.log(data[i]._id.toString());
-
 		// Create each data field element
 		var cell1 = document.createElement("td");
 		var cell2 = document.createElement("td");
@@ -620,7 +618,7 @@ function outgoingShipmentTable(data) {
 		a.href = "../../manifest.html";
 		a.setAttribute(
 			"onclick",
-			"sessionStorage.setItem('objID', this.parentElement.parentElement.id; window.open(this.href, 'Shipment Manifest', 'width=500, height=500, left=100, top=100, scrollbars, resizable'); return false;"
+			"sessionStorage.setItem('objID', this.parentNode.parentNode.id; window.open(this.href, 'Shipment Manifest', 'width=500, height=500, left=100, top=100, scrollbars, resizable'); return false;"
 		);
 		cell8.appendChild(a);
 
