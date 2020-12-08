@@ -4,13 +4,14 @@
 		<title>Shipment Manifest</title>
 		<meta charset="UTF-8" />
 		<link rel="stylesheet" type="text/css" href="/../../css/main.css" />
-		<script type="text/javascript">
+		<script>
 			var id = sessionStorage.getItem("objID");
 			var req = new XMLHttpRequest();
 			req.open("POST", "http://68.93.20.191:5000/:" + id + "/item", false);
 			req.send(null);
 
-			var itemJson = JSON.parse(req.responseText);
+			var toJson = JSON.stringify(req.responseText);
+			var itemJson = JSON.parse(toJson);
 			console.log(itemJSON);
 		</script>
 	</head>
