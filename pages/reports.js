@@ -616,10 +616,6 @@ function outgoingShipmentTable(data) {
 		var text = document.createTextNode("[Click to Expand]");
 		a.appendChild(text);
 		a.href = "../../manifest.html";
-		a.setAttribute(
-			"onclick",
-			"sessionStorage.setItem('objID', this.parentNode.parentNode.id; window.open(this.href, 'Shipment Manifest', 'width=500, height=500, left=100, top=100, scrollbars, resizable'); return false;"
-		);
 		cell8.appendChild(a);
 
 		row.appendChild(cell1);
@@ -630,6 +626,11 @@ function outgoingShipmentTable(data) {
 		row.appendChild(cell6);
 		row.appendChild(cell7);
 		row.appendChild(cell8);
+
+		table.rows[i].cells[7].a.setAttribute(
+			"onclick",
+			"sessionStorage.setItem('objID', this.parentNode.parentNode.id; window.open(this.href, 'Shipment Manifest', 'width=500, height=500, left=100, top=100, scrollbars, resizable'); return false;"
+		);
 
 		table.appendChild(row);
 	}
