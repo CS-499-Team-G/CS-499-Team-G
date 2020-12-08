@@ -474,10 +474,10 @@ function incomingShipmentTable(data) {
 		var a = document.createElement("a");
 		var text = document.createTextNode("[Click to Expand]");
 		a.appendChild(text);
-		a.href = "#";
+		a.href = "../../manifest.html";
 		a.setAttribute(
 			"onclick",
-			"window.open(this.href, 'windowName', 'width=1000, height=700, left=24, top=24, scrollbars, resizable'); return false;"
+			"window.open(this.href, 'Shipment Manifest', 'width=500, height=500, left=100, top=100, scrollbars, resizable'); return false;"
 		);
 		cell8.appendChild(a);
 
