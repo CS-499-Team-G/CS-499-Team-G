@@ -448,6 +448,20 @@ iframe {
 	padding: 0 30px 0 15px;
 }
 
+.payrate-input100 {
+	font-family: Raleway-SemiBold;
+	font-size: 18px;
+	line-height: 1.2;
+	color: #686868;
+
+	display: inline-block;
+	width: 24.75%;
+	background: #e6e6e6;
+	height: 62px;
+	border-radius: 3px;
+	padding: 0 30px 0 15px;
+}
+
 .tenure-input100 {
 	font-family: Raleway-SemiBold;
 	font-size: 18px;
@@ -455,7 +469,7 @@ iframe {
 	color: #686868;
 
 	display: inline-block;
-	width: 49.5%;
+	width: 24.75%;
 	background: #e6e6e6;
 	height: 62px;
 	border-radius: 3px;
