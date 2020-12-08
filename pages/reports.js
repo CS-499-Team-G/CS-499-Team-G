@@ -629,7 +629,7 @@ function outgoingShipmentTable(data) {
 
 		table.appendChild(row);
 
-		table.rows[i].cells[7].a.setAttribute(
+		table.rows[i + 1].cells[7].a.setAttribute(
 			"onclick",
 			"sessionStorage.setItem('objID', this.parentNode.parentNode.id; window.open(this.href, 'Shipment Manifest', 'width=500, height=500, left=100, top=100, scrollbars, resizable'); return false;"
 		);
