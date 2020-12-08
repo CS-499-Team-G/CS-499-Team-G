@@ -370,6 +370,7 @@ function incomingShipmentTable(data) {
 	var arrive = document.createElement("th");
 	var status = document.createElement("th");
 	var payment = document.createElement("th");
+	var manifest = document.createElement("th");
 
 	// Populate header elements with text nodes
 	origin.appendChild(document.createTextNode("Origin"));
@@ -379,6 +380,7 @@ function incomingShipmentTable(data) {
 	arrive.appendChild(document.createTextNode("Arrival Date"));
 	status.appendChild(document.createTextNode("Status"));
 	payment.appendChild(document.createTextNode("Paid"));
+	manifest.appendChild(document.createTextNode("Items"));
 
 	// Append the header elements to the row element
 	headerRow.appendChild(origin);
@@ -388,6 +390,7 @@ function incomingShipmentTable(data) {
 	headerRow.appendChild(arrive);
 	headerRow.appendChild(status);
 	headerRow.appendChild(payment);
+	headerRow.appendChild(manifest);
 
 	// Append the row to the table
 	table.appendChild(headerRow);
@@ -424,6 +427,7 @@ function incomingShipmentTable(data) {
 		var cell5 = document.createElement("td");
 		var cell6 = document.createElement("td");
 		var cell7 = document.createElement("td");
+		var cell8 = document.createElement("td");
 
 		// Populate each data field with a text node
 		cell1.appendChild(document.createTextNode(data[i].origin.oCompany));
@@ -467,6 +471,15 @@ function incomingShipmentTable(data) {
 		} else {
 			cell7.appendChild(document.createTextNode("No"));
 		}
+		var a = document.createElement("a");
+		var text = document.createTextNode("[Click to Expand]");
+		a.appendChild(text);
+		a.title("[Click to Expand]");
+		a.href("#");
+		a.onclick(
+			"window.open(this.href, 'windowName', 'width=1000, height=700, left=24, top=24, scrollbars, resizable'); return false;"
+		);
+		cell8.appendChild(a);
 
 		row.appendChild(cell1);
 		row.appendChild(cell2);
@@ -475,6 +488,7 @@ function incomingShipmentTable(data) {
 		row.appendChild(cell5);
 		row.appendChild(cell6);
 		row.appendChild(cell7);
+		row.appendChild(cell8);
 
 		table.appendChild(row);
 	}
