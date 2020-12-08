@@ -414,6 +414,13 @@ function incomingShipmentTable(data) {
 	});
 
 	for (let i = 0; i < data.length; i++) {
+		var dataStore = document.createElement("p");
+		dataStore.hidden = true;
+		dataStore.id = "dataStore" + i;
+		dataStore.innerHTML = JSON.stringify(data[i].manifest.items);
+
+		var divStore = document.getElementById("divStore");
+		divStore.appendChild(dataStore);
 		// Create row element
 		var row = document.createElement("tr");
 
@@ -473,10 +480,6 @@ function incomingShipmentTable(data) {
 		var text = document.createTextNode("[Click to Expand]");
 		a.appendChild(text);
 		a.href = "../../manifest.html";
-		a.setAttribute(
-			"onclick",
-			"window.open(this.href, 'Shipment Manifest', 'width=500, height=500, left=100, top=100, scrollbars, resizable'); return false;"
-		);
 		cell8.appendChild(a);
 
 		row.appendChild(cell1);
@@ -489,6 +492,18 @@ function incomingShipmentTable(data) {
 		row.appendChild(cell8);
 
 		table.appendChild(row);
+
+		table.rows[i + 1].cells[7].getElementsByTagName(
+			"a"
+		)[0].onclick = function () {
+			setSessionStorage(i);
+			window.open(
+				this.href,
+				"Shipment Manifest",
+				"width=500, height=500, left=100, top=100, scrollbars, resizable"
+			);
+			return false;
+		};
 	}
 }
 
