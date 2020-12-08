@@ -627,12 +627,12 @@ function outgoingShipmentTable(data) {
 		row.appendChild(cell7);
 		row.appendChild(cell8);
 
+		table.appendChild(row);
+
 		table.rows[i].cells[7].a.setAttribute(
 			"onclick",
 			"sessionStorage.setItem('objID', this.parentNode.parentNode.id; window.open(this.href, 'Shipment Manifest', 'width=500, height=500, left=100, top=100, scrollbars, resizable'); return false;"
 		);
-
-		table.appendChild(row);
 	}
 }
 
