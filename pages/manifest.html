@@ -11,17 +11,17 @@
 			var table = document.getElementById("manifests");
 
 			var headerRow = document.createElement("tr");
-			var name = document.createElement("th");
+			var nameHeader = document.createElement("th");
 			var quantity = document.createElement("th");
 			var cost = document.createElement("th");
 			var backorder = document.createElement("th");
 
-			name.appendChild(document.createTextNode("Item"));
+			nameHeader.appendChild(document.createTextNode("Item"));
 			quantity.appendChild(document.createTextNode("Quantity"));
 			cost.appendChild(document.createTextNode("Cost"));
 			backorder.appendChild(document.createTextNode("Status"));
 
-			headerRow.appendChild(name);
+			headerRow.appendChild(nameHeader);
 			headerRow.appendChild(quantity);
 			headerRow.appendChild(cost);
 			headerRow.appendChild(backorder);
