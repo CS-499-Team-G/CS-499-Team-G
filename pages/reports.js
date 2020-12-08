@@ -45,9 +45,6 @@ function payrollTable(data) {
 	// Create header elements and initial header row
 	var headerRow = document.createElement("tr");
 	var name = document.createElement("th");
-	name.addEventListener("click", function () {
-		sortTable(0);
-	});
 	var title = document.createElement("th");
 	var payrate = document.createElement("th");
 	var tenure = document.createElement("th");
@@ -66,6 +63,10 @@ function payrollTable(data) {
 
 	// Append the row to the table
 	table.appendChild(headerRow);
+
+	table.rows[0].cells[0].addEventListener("click", function () {
+		sortTable(0);
+	});
 
 	for (let i = 0; i < data.length; i++) {
 		// Create row element
