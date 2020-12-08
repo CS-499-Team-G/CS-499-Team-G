@@ -6,7 +6,8 @@
 		<link rel="stylesheet" type="text/css" href="/../../css/main.css" />
 		<script>
 			var manifest = sessionStorage.getItem("objID");
-			console.log(manifest);
+			var toJson = JSON.parse(manifest);
+			console.log(toJson[0].name);
 		</script>
 	</head>
 	<body></body>
