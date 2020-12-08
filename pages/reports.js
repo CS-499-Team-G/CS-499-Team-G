@@ -508,6 +508,7 @@ function outgoingShipmentTable(data) {
 	var arrive = document.createElement("th");
 	var status = document.createElement("th");
 	var payment = document.createElement("th");
+	var manifest = document.createElement("th");
 
 	// Populate header elements with text nodes
 	origin.appendChild(document.createTextNode("Origin"));
@@ -517,6 +518,7 @@ function outgoingShipmentTable(data) {
 	arrive.appendChild(document.createTextNode("Arrival Date"));
 	status.appendChild(document.createTextNode("Status"));
 	payment.appendChild(document.createTextNode("Paid"));
+	manifest.appendChild(document.createTextNode("Manifest"));
 
 	// Append the header elements to the row element
 	headerRow.appendChild(origin);
@@ -526,6 +528,7 @@ function outgoingShipmentTable(data) {
 	headerRow.appendChild(arrive);
 	headerRow.appendChild(status);
 	headerRow.appendChild(payment);
+	headerRow.appendChild(manifest);
 
 	// Append the row to the table
 	table.appendChild(headerRow);
