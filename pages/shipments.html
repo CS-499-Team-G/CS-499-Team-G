@@ -32,16 +32,9 @@
 						action="http://68.93.20.191:5000/shipments/add"
 						method="POST"
 					>
-                        <span class="login100-form-title p-b-55">Add Shipment</span>
-                        
-                        <div class="wrap-input100 validate-input m-b-16">
-                            <select class="traffic-input100" name="traffic" id="traffic" required>
-                                <option value="0">[Traffic]</option>
-                                <option value="Incoming">Incoming</option>
-                                <option value="Outgoing">Outgoing</option>
-                            </select>
-                        </div>
+						<span class="login100-form-title p-b-55">Add Shipment</span>
 
+<<<<<<< HEAD
                         <div class="wrap-input100 validate-input m-b-16">
                             <select class="driver-input100" name="driver" id="driver" required>
                                 <option value="0">[Driver]</option>
@@ -53,9 +46,37 @@
                                 <option value="Steve Lower">Steve Lower</option>
                             </select>
                         </div>
+=======
+						<div class="wrap-input100 validate-input m-b-16">
+							<select
+								class="traffic-selection100"
+								name="traffic"
+								id="traffic"
+								required
+							>
+								<option value="0">[Traffic]</option>
+								<option value="Incoming">Incoming</option>
+								<option value="Outgoing">Outgoing</option>
+							</select>
+							<select
+								class="driver-selection100"
+								name="driver"
+								id="driver"
+								required
+							>
+								<option value="0">[Driver]</option>
+								<option value="5fb4b7925afbd433503a4080">Jrue Holiday</option>
+								<option value="5fbaf281b098272bd00beaa0">Frank Sinatra</option>
+								<option value="5fbaf371fdb8561f208459d2">Gloria O'Neal</option>
+								<option value="5fbc400e77bab71e546a453a">Cam Netwon</option>
+								<option value="5fbc405277bab71e546a453d">Diane Grown</option>
+								<option value="5fbc408d77bab71e546a4540">Steve Lower</option>
+							</select>
+						</div>
+>>>>>>> 1058ec8a17067530c2154641273cde8eb0aaf856
 
 						<div class="wrap-input100 validate-input m-b-16">
-                            <input
+							<input
 								class="oCompany-input100"
 								id="oCompany"
 								type="text"
@@ -70,17 +91,22 @@
 								type="text"
 								placeholder="Origin Company Street Address"
 								name="oStreetAddress"
-                                required
-                            />
-                            <input
+								required
+							/>
+							<input
 								class="oCity-input100"
 								id="oCity"
 								type="text"
 								placeholder="Origin Company City"
 								name="oCity"
 								required
-                            />
-                            <select class="oState-input100" name="oState" id="oState" required>
+							/>
+							<select
+								class="oState-input100"
+								name="oState"
+								id="oState"
+								required
+							>
 								<option value="0">[State]</option>
 								<option value="AK">AK</option>
 								<option value="AL">AL</option>
@@ -140,12 +166,12 @@
 								type="text"
 								placeholder="Origin Company Zip Code"
 								name="oZip"
-                                required
-                            />
+								required
+							/>
 						</div>
 
-                        <div class="wrap-input100 validate-input m-b-16">
-                            <input
+						<div class="wrap-input100 validate-input m-b-16">
+							<input
 								class="dCompany-input100"
 								id="dCompany"
 								type="text"
@@ -160,17 +186,22 @@
 								type="text"
 								placeholder="Destination Company Street Address"
 								name="dStreetAddress"
-                                required
-                            />
-                            <input
+								required
+							/>
+							<input
 								class="dCity-input100"
 								id="dCity"
 								type="text"
 								placeholder="Destination Company City"
 								name="dCity"
 								required
-                            />
-                            <select class="dState-input100" name="dState" id="dState" required>
+							/>
+							<select
+								class="dState-input100"
+								name="dState"
+								id="dState"
+								required
+							>
 								<option value="0">[State]</option>
 								<option value="AK">AK</option>
 								<option value="AL">AL</option>
@@ -230,33 +261,34 @@
 								type="text"
 								placeholder="Destination Company Zip Code"
 								name="dZip"
-                                required
-                            />
+								required
+							/>
 						</div>
 
-                        <div class="wrap-input100 validate-input m-b-16">
-                            <input
+						<div class="wrap-input100 validate-input m-b-16">
+							<input
 								class="vehicleID-input100"
 								id="vehicleID"
 								type="text"
 								placeholder="Vehicle ID"
 								name="vehicleID"
-                                required
-                            />
-                            <input
+								required
+							/>
+							<input
 								class="departureDate-input100"
 								id="departureDate"
 								type="date"
 								placeholder="Departure Date"
 								name="departureDate"
-                                required
-                            />
-                            <input
+								required
+							/>
+							<input
 								class="arrivalDate-input100"
 								id="arrivalDate"
 								type="date"
 								placeholder="Arrival Date"
 								name="arrivalDate"
+<<<<<<< HEAD
                                 required
                             />
                             <select class="arrivalStatus-input100" name="arrivalStatus" id="arrivalStatus" required>
@@ -271,6 +303,27 @@
                             </select>
                             
                         </div>
+=======
+								required
+							/>
+							<input
+								class="arrivalStatus-input100"
+								id="arrivalStatus"
+								type="checkbox"
+								placeholder="Arrival Status"
+								name="arrivalStatus"
+								required
+							/>
+							<input
+								class="payment-input100"
+								id="payment"
+								type="checkbox"
+								placeholder="Payment Status"
+								name="paymentStatus"
+								required
+							/>
+						</div>
+>>>>>>> 1058ec8a17067530c2154641273cde8eb0aaf856
 
 						<div class="container-signup100-form-btn p-t-25">
                             <button 

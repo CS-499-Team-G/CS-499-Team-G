@@ -1096,3 +1096,34 @@ header .wrap img {
 	background-color: #3b1c71;
 	color: white;
 }
+
+/*//////////////////////////////////////////////////////////////////
+[ shipments ]*/
+
+.traffic-selection100 {
+	font-family: Raleway-SemiBold;
+	font-size: 18px;
+	line-height: 1.2;
+	color: #686868;
+
+	margin-left: 12%;
+	display: inline-block;
+	width: 49.5%;
+	background: #e6e6e6;
+	height: 40px;
+	border-radius: 3px;
+}
+
+.driver-selection100 {
+	font-family: Raleway-SemiBold;
+	font-size: 18px;
+	line-height: 1.2;
+	color: #686868;
+
+	margin-left: 12%;
+	display: inline-block;
+	width: 49.5%;
+	background: #e6e6e6;
+	height: 40px;
+	border-radius: 3px;
+}
