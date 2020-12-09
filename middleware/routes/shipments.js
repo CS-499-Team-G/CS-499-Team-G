@@ -27,7 +27,9 @@ router.route("/add").post((req, res) => {
 	const traffic = req.body.traffic;
 	var driver = req.body.driver;
 
-	const { firstName, lastName } = driver.split(" ");
+	object = JSON.stringify(driver);
+	json = JSON.parse(object);
+	const { firstName, lastName } = json.split(" ");
 	console.log("First Name: " + firstName + "Last Name: " + lastName);
 	driver = { firstName, lastName };
 
