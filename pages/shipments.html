@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Add Shipment</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="vendor/select2/select2.min.css"
+		/>
+		<link rel="stylesheet" type="text/css" href="css/hamburgers.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/animate.css" />
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="vendor/bootstrap/css/bootstrap.min.css"
+		/>
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+	</head>
+	<body>
+		<div class="limiter">
+			<div class="container-login100">
+				<div class="wrap-signup100 p-l-50 p-r-50 p-t-77 p-b-30">
+					<form
+						class="login100-form validate-form"
+						action="http://68.93.20.191:5000/shipments/add"
+						method="POST"
+					>
+						<span class="login100-form-title p-b-55">Add Shipment</span>
+                        <select class="traffic-input100" name="traffic" id="traffic" required>
+                            <option value="0">[Traffic]</option>
+                            <option value="Incoming">Incoming</option>
+                            <option value="Outgoing">Outgoing</option>
+                        </select>
+                        <select class="driver-input100" name="driver" id="driver" required>
+                            <option value="0">[Driver]</option>
+                            <option value="5fb4b7925afbd433503a4080">Jrue Holiday</option>
+                            <option value="5fbaf281b098272bd00beaa0">Frank Sinatra</option>
+                            <option value="5fbaf371fdb8561f208459d2">Gloria O'Neal</option>
+                            <option value="5fbc400e77bab71e546a453a">Cam Netwon</option>
+                            <option value="5fbc405277bab71e546a453d">Diane Grown</option>
+                            <option value="5fbc408d77bab71e546a4540">Steve Lower</option>
+                        </select>
+						<div class="container-signup100-form-btn p-t-25">
+							<button type="submit" class="signup100-form-btn">
+								Add Shipment
+							</button>
+							<input
+								type="button"
+								class="signup100-form-btn"
+								onclick="location.href='reports.html';"
+								value="Cancel"
+							/>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
