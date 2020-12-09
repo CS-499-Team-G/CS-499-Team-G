@@ -47,9 +47,9 @@
 				cell3.appendChild(
 					document.createTextNode("$" + toJson[i].cost * toJson[i].quantity)
 				);
-				if (toJson[i].backorder) {
+				if (toJson[i].backOrder == true) {
 					cell4.appendChild(document.createTextNode("Backordered"));
-				} else {
+				} else if (toJson[i].backOrder == false) {
 					cell4.appendChild(document.createTextNode("Ready to Ship"));
 				}
 
