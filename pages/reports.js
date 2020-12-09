@@ -500,19 +500,12 @@ function incomingShipmentTable(data) {
 			aConvertedDate.getFullYear();
 
 		cell5.appendChild(document.createTextNode(aDateString));
-		if (data[i].arrivalStatus === true || data[i].arrivalStatus === "True") {
-			cell6.appendChild(document.createTextNode("Arrived"));
-		} else if (
-			data[i].arrivalStatus === false ||
-			data[i].arrivalStatus === "False"
-		) {
-			cell6.appendChild(document.createTextNode("In Process"));
-		}
-		if (data[i].payment === true || data[i].payment === "True") {
-			cell7.appendChild(document.createTextNode("Yes"));
-		} else if (data[i].payment === false || data[i].payment === "False") {
-			cell7.appendChild(document.createTextNode("No"));
-		}
+		data[i].arrivalStatus === true || data[i].arrivalStatus === "True"
+			? cell6.appendChild(document.createTextNode("Arrived"))
+			: cell6.appendChild(document.createTextNode("In Process"));
+		data[i].payment === true || data[i].payment === "True"
+			? cell7.appendChild(document.createTextNode("Yes"))
+			: cell7.appendChild(document.createTextNode("No"));
 		if (data[i].manifest) {
 			var a = document.createElement("a");
 			var text = document.createTextNode("[Click to Expand]");
@@ -677,19 +670,12 @@ function outgoingShipmentTable(data) {
 			aConvertedDate.getFullYear();
 
 		cell5.appendChild(document.createTextNode(aDateString));
-		if (data[i].arrivalStatus === true || data[i].arrivalStatus === "True") {
-			cell6.appendChild(document.createTextNode("Arrived"));
-		} else if (
-			data[i].arrivalStatus === false ||
-			data[i].arrivalStatus === "False"
-		) {
-			cell6.appendChild(document.createTextNode("In Process"));
-		}
-		if (data[i].payment === true || data[i].payment === "True") {
-			cell7.appendChild(document.createTextNode("Yes"));
-		} else if (data[i].payment === false || data[i].payment === "False") {
-			cell7.appendChild(document.createTextNode("No"));
-		}
+		data[i].arrivalStatus === true || data[i].arrivalStatus === "True"
+			? cell6.appendChild(document.createTextNode("Arrived"))
+			: cell6.appendChild(document.createTextNode("In Process"));
+		data[i].payment === true || data[i].payment === "True"
+			? cell7.appendChild(document.createTextNode("Yes"))
+			: cell7.appendChild(document.createTextNode("No"));
 
 		if (data[i].manifest) {
 			var a = document.createElement("a");
