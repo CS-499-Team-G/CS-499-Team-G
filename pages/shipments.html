@@ -45,12 +45,12 @@
                         <div class="wrap-input100 validate-input m-b-16">
                             <select class="driver-input100" name="driver" id="driver" required>
                                 <option value="0">[Driver]</option>
-                                <option value="5fb4b7925afbd433503a4080">Jrue Holiday</option>
-                                <option value="5fbaf281b098272bd00beaa0">Frank Sinatra</option>
-                                <option value="5fbaf371fdb8561f208459d2">Gloria O'Neal</option>
-                                <option value="5fbc400e77bab71e546a453a">Cam Netwon</option>
-                                <option value="5fbc405277bab71e546a453d">Diane Grown</option>
-                                <option value="5fbc408d77bab71e546a4540">Steve Lower</option>
+                                <option value="Jrue Holiday">Jrue Holiday</option>
+                                <option value="Frank Sinatra">Frank Sinatra</option>
+                                <option value="Gloria O'Neal">Gloria O'Neal</option>
+                                <option value="Cam Netwon">Cam Netwon</option>
+                                <option value="Diane Grown">Diane Grown</option>
+                                <option value="Steve Lower">Steve Lower</option>
                             </select>
                         </div>
 
@@ -259,26 +259,24 @@
 								name="arrivalDate"
                                 required
                             />
-                            <input
-								class="arrivalStatus-input100"
-								id="arrivalStatus"
-								type="checkbox"
-								placeholder="Arrival Status"
-								name="arrivalStatus"
-                                required
-                            />
-                            <input
-								class="payment-input100"
-								id="payment"
-								type="checkbox"
-								placeholder="Payment Status"
-								name="paymentStatus"
-                                required
-                            />
+                            <select class="arrivalStatus-input100" name="arrivalStatus" id="arrivalStatus" required>
+                                <option value="0">[Arrival Status]</option>
+                                <option value="True">True</option>
+                                <option value="False">False</option>
+                            </select>
+                            <select class="paymentStatus-input100" name="paymentStatus" id="paymentStatus" required>
+                                <option value="0">[Payment Status]</option>
+                                <option value="True">True</option>
+                                <option value="False">False</option>
+                            </select>
+                            
                         </div>
 
 						<div class="container-signup100-form-btn p-t-25">
-							<button type="submit" class="signup100-form-btn">
+                            <button 
+                            type="submit"
+                            class="signup100-form-btn"
+                            onclick="location.href='../home.html';">
 								Add Shipment
 							</button>
 							<input
