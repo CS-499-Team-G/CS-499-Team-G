@@ -79,8 +79,8 @@ const shipmentSchema = new Schema ({
     vehicleID: String,
     departureDate: Date,
     arrivalDate: Date,
-    arrivalStatus: Boolean,
-    payment: Boolean,
+    arrivalStatus: String,
+    payment: String,
     driver: employeeNameSchema,
     manifest: manifestSchema
 });
