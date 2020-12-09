@@ -25,7 +25,11 @@ router.route("/outgoing").post((req, res) => {
 
 router.route("/add").post((req, res) => {
 	const traffic = req.body.traffic;
-	const driver = req.body.driver;
+	var driver = req.body.driver;
+
+	const {firstName, lastName} = driver.split(" ");
+	console.log("First Name: " + firstName + "Last Name: " + lastName);
+	driver = {firstName, lastName}
 
 	const oCompany = req.body.oCompany;
 	const oStreetAddress = req.body.oStreetAddress;
@@ -64,7 +68,7 @@ router.route("/add").post((req, res) => {
 
 	newShipment
 		.save()
-		.then(() => res.json("Shipment added!"))
+		.then(page => res.sendFile(path.resolve(__dirname, "..", "..", "pages", "reports.html")))
 		.catch((err) => res.status(400).json("Error: " + err));
 });
 
