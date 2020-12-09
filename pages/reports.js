@@ -445,7 +445,7 @@ function incomingShipmentTable(data) {
 	});
 
 	for (let i = 0; i < data.length; i++) {
-		if (data[i].manifest.items) {
+		if (data[i].manifest) {
 			var dataStore = document.createElement("p");
 			dataStore.hidden = true;
 			dataStore.id = "dataStore" + i;
@@ -613,7 +613,7 @@ function outgoingShipmentTable(data) {
 	});
 
 	for (let i = 0; i < data.length; i++) {
-		if (data[i].manifest.items) {
+		if (data[i].manifest) {
 			var dataStore = document.createElement("p");
 			dataStore.hidden = true;
 			dataStore.id = "dataStore" + i;
