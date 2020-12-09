@@ -500,14 +500,17 @@ function incomingShipmentTable(data) {
 			aConvertedDate.getFullYear();
 
 		cell5.appendChild(document.createTextNode(aDateString));
-		if (data[i].arrivalStatus) {
+		if (data[i].arrivalStatus == true || data[i].arrivalStatus === "True") {
 			cell6.appendChild(document.createTextNode("Arrived"));
-		} else {
+		} else if (
+			data[i].arrivalStatus == false ||
+			data[i].arrivalStatus === "False"
+		) {
 			cell6.appendChild(document.createTextNode("In Process"));
 		}
-		if (data[i].payment) {
+		if (data[i].payment == true || data[i].payment === "True") {
 			cell7.appendChild(document.createTextNode("Yes"));
-		} else {
+		} else if (data[i].payment == false || data[i].payment === "False") {
 			cell7.appendChild(document.createTextNode("No"));
 		}
 		if (data[i].manifest) {
@@ -674,14 +677,17 @@ function outgoingShipmentTable(data) {
 			aConvertedDate.getFullYear();
 
 		cell5.appendChild(document.createTextNode(aDateString));
-		if (data[i].arrivalStatus) {
+		if (data[i].arrivalStatus == true || data[i].arrivalStatus === "True") {
 			cell6.appendChild(document.createTextNode("Arrived"));
-		} else {
+		} else if (
+			data[i].arrivalStatus == false ||
+			data[i].arrivalStatus === "False"
+		) {
 			cell6.appendChild(document.createTextNode("In Process"));
 		}
-		if (data[i].payment) {
+		if (data[i].payment == true || data[i].payment === "True") {
 			cell7.appendChild(document.createTextNode("Yes"));
-		} else {
+		} else if (data[i].payment == false || data[i].payment === "False") {
 			cell7.appendChild(document.createTextNode("No"));
 		}
 
