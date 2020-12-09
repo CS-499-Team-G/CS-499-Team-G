@@ -202,7 +202,9 @@ function vehicleMaintenanceTable(data) {
 			document.createTextNode(data[i].maintenanceRecord.repairRecords.parts)
 		);
 		cell8.appendChild(
-			document.createTextNode(data[i].maintenanceRecord.repairRecords.cost)
+			document.createTextNode(
+				"$" + data[i].maintenanceRecord.repairRecords.cost
+			)
 		);
 
 		row.appendChild(cell1);
@@ -447,7 +449,7 @@ function incomingShipmentTable(data) {
 		var cell8 = document.createElement("td");
 
 		// Populate each data field with a text node
-		cell1.appendChild(document.createTextNode("N/A"));
+		cell1.appendChild(document.createTextNode(data[i].vehicleID));
 		cell2.appendChild(document.createTextNode(data[i].origin.oCompany));
 		cell3.appendChild(document.createTextNode(data[i].destination.dCompany));
 
@@ -608,7 +610,7 @@ function outgoingShipmentTable(data) {
 		var cell8 = document.createElement("td");
 
 		// Populate each data field with a text node
-		cell1.appendChild(document.createTextNode("N/A"));
+		cell1.appendChild(document.createTextNode(data[i].vehicleID));
 		cell2.appendChild(document.createTextNode(data[i].origin.oCompany));
 		cell3.appendChild(document.createTextNode(data[i].destination.dCompany));
 
