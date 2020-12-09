@@ -1106,7 +1106,6 @@ header .wrap img {
 	line-height: 1.2;
 	color: #686868;
 
-	margin-left: 12%;
 	display: inline-block;
 	width: 49.5%;
 	background: #e6e6e6;
@@ -1120,10 +1119,78 @@ header .wrap img {
 	line-height: 1.2;
 	color: #686868;
 
-	margin-left: 12%;
 	display: inline-block;
 	width: 49.5%;
 	background: #e6e6e6;
 	height: 40px;
 	border-radius: 3px;
+}
+
+.oCompany-input100 {
+	font-family: Raleway-SemiBold;
+	font-size: 18px;
+	line-height: 1.2;
+	color: #686868;
+
+	display: inline-block;
+	width: 33%;
+	background: #e6e6e6;
+	height: 62px;
+	border-radius: 3px;
+	padding: 0 30px 0 65px;
+}
+
+.oStreetAddress-input100 {
+	font-family: Raleway-SemiBold;
+	font-size: 18px;
+	line-height: 1.2;
+	color: #686868;
+
+	display: inline-block;
+	width: 33%;
+	background: #e6e6e6;
+	height: 62px;
+	border-radius: 3px;
+	padding: 0 30px 0 65px;
+}
+
+.oCity-input100 {
+	font-family: Raleway-SemiBold;
+	font-size: 18px;
+	line-height: 1.2;
+	color: #686868;
+
+	display: inline-block;
+	width: 33%;
+	background: #e6e6e6;
+	height: 62px;
+	border-radius: 3px;
+	padding: 0 30px 0 65px;
+}
+
+.oState-input100 {
+	font-family: Raleway-SemiBold;
+	font-size: 18px;
+	line-height: 1.2;
+	color: #686868;
+
+	display: inline-block;
+	width: 25%;
+	background: #e6e6e6;
+	height: 40px;
+	border-radius: 3px;
+}
+
+.oZip-input100 {
+	font-family: Raleway-SemiBold;
+	font-size: 18px;
+	line-height: 1.2;
+	color: #686868;
+
+	display: inline-block;
+	width: 25%;
+	background: #e6e6e6;
+	height: 62px;
+	border-radius: 3px;
+	padding: 0 30px 0 65px;
 }
