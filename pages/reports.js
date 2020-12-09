@@ -84,7 +84,14 @@ function payrollTable(data) {
 			)
 		);
 		cell2.appendChild(document.createTextNode(data[i].title));
-		cell3.appendChild(document.createTextNode("$" + data[i].payRate * 40 * 4));
+		if (data[i].payRate) {
+			cell3.appendChild(
+				document.createTextNode("$" + data[i].payRate * 40 * 4)
+			);
+		} else {
+			cell3.appendChild(document.createTextNode("Not Specified"));
+		}
+
 		cell4.appendChild(document.createTextNode(data[i].tenure));
 
 		row.appendChild(cell1);
