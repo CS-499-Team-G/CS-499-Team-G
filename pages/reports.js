@@ -575,6 +575,11 @@ function outgoingShipmentTable(data) {
 	// Append the row to the table
 	table.appendChild(headerRow);
 
+	// Sort by vehicle ID
+	table.rows[0].cells[0].addEventListener("click", function () {
+		sortTable(0);
+	});
+
 	// Sort by origin
 	table.rows[0].cells[1].addEventListener("click", function () {
 		sortTable(1);
