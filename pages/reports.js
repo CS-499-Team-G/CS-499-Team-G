@@ -331,9 +331,13 @@ function totalMaintenanceTable(data) {
 				data[i].maintenanceRecord.repairRecords.description
 			)
 		);
-		cell7.appendChild(
-			document.createTextNode(data[i].maintenanceRecord.repairRecords.parts)
-		);
+		if (data[i].maintenanceRecord.repairRecords.parts) {
+			cell7.appendChild(
+				document.createTextNode(data[i].maintenanceRecord.repairRecords.parts)
+			);
+		} else {
+			cell7.appendChild(document.createTextNode("-"));
+		}
 		cell8.appendChild(
 			document.createTextNode(
 				data[i].maintenanceRecord.inspectionsRecords.inspections
