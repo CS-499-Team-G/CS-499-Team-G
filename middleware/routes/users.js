@@ -23,12 +23,13 @@ router.route("/login").post((req, res) => {
 	 */
 	User.findOne({ userName: username, password: password })
 		//.then(resp => res.json(resp))
-		.then(newResult => JSON.stringify(newResult))
-		.then(result => JSON.parse(result))
-		.then(info => title = info.title)
+		.then((newResult) => JSON.stringify(newResult))
+		.then((result) => JSON.parse(result))
+		.then((info) => (title = info.title))
 
-		.then(page => res.sendFile(path.resolve(__dirname, "..", "..", "pages", "reports.html")))
-
+		.then((page) =>
+			res.sendFile(path.resolve(__dirname, "..", "..", "pages", "reports.html"))
+		);
 });
 
 // Show all users
@@ -40,7 +41,7 @@ router.route("/").get((req, res) => {
 
 // Show payroll for all users
 router.route("/payroll").post((req, res) => {
-	User.find({}, { payRate: 1, fullName: 1, title: 1 , tenure: 1})
+	User.find({}, { payRate: 1, fullName: 1, title: 1, tenure: 1 })
 		.then((users) => res.json(users))
 		.catch((err) => res.status(400).json("Error: " + err));
 });
@@ -93,7 +94,9 @@ router.route("/add").post((req, res) => {
 	// Save the newly created user in Mongodb
 	newUser
 		.save()
-		.then(page => res.sendFile(path.resolve(__dirname, "..", "..", "pages", "reports.html")))
+		.then((page) =>
+			res.sendFile(path.resolve(__dirname, "..", "..", "pages", "reports.html"))
+		)
 		.catch((err) => res.status(400).json("Error: " + err));
 });
 

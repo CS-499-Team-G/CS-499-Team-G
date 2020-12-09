@@ -1,6 +1,7 @@
 const router = require("express").Router();
 let Shipment = require("../models/shipments.model");
 const { check, validationResult } = require("express-validator"); // Allows us to use the express-validator to validate data from webpage https://express-validator.github.io/docs/
+const path = require("path");
 
 router.route("/").get((req, res) => {
 	// Returns all shipments found in the database
