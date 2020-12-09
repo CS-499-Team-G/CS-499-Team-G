@@ -1263,3 +1263,71 @@ header .wrap img {
 	border-radius: 3px;
 	padding: 0 30px;
 }
+
+.vehicleID-input100 {
+	font-family: Raleway-SemiBold;
+	font-size: 18px;
+	line-height: 1.2;
+	color: #686868;
+
+	display: inline-block;
+	width: 33%;
+	background: #e6e6e6;
+	height: 62px;
+	border-radius: 3px;
+	padding: 0 30px;
+}
+
+.departureDate-input100 {
+	font-family: Raleway-SemiBold;
+	font-size: 18px;
+	line-height: 1.2;
+	color: #686868;
+
+	display: inline-block;
+	width: 33%;
+	background: #e6e6e6;
+	height: 62px;
+	border-radius: 3px;
+	padding: 0 30px;
+}
+
+.arrivalDate-input100 {
+	font-family: Raleway-SemiBold;
+	font-size: 18px;
+	line-height: 1.2;
+	color: #686868;
+
+	display: inline-block;
+	width: 33%;
+	background: #e6e6e6;
+	height: 62px;
+	border-radius: 3px;
+	padding: 0 30px;
+}
+
+.arrivalStatus-input100 {
+	font-family: Raleway-SemiBold;
+	font-size: 18px;
+	line-height: 1.2;
+	color: #686868;
+
+	display: inline-block;
+	width: 25%;
+	background: #e6e6e6;
+	height: 62px;
+	border-radius: 3px;
+}
+
+.paymentStatus-input100 {
+	font-family: Raleway-SemiBold;
+	font-size: 18px;
+	line-height: 1.2;
+	color: #686868;
+
+	display: inline-block;
+	width: 25%;
+	background: #e6e6e6;
+	height: 62px;
+	border-radius: 3px;
+}

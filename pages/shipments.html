@@ -33,7 +33,7 @@
 						method="POST"
 					>
 						<span class="login100-form-title p-b-55">Add Shipment</span>
-
+						<span class="signup100-form-label p-b-20">General Information</span>
 						<div class="wrap-input100 validate-input m-b-16">
 							<select
 								class="traffic-input100"
@@ -41,7 +41,7 @@
 								id="traffic"
 								required
 							>
-								<option value="0">[Arrival Status]</option>
+								<option value="0">[Transit Status]</option>
 								<option value="Incoming">Incoming</option>
 								<option value="Outgoing">Outgoing</option>
 							</select>
@@ -60,6 +60,56 @@
 								<option value="Steve Lower">Steve Lower</option>
 							</select>
 						</div>
+
+						<div class="wrap-input100 validate-input m-b-16">
+							<input
+								class="vehicleID-input100"
+								id="vehicleID"
+								type="text"
+								placeholder="Vehicle ID"
+								name="vehicleID"
+								required
+							/>
+							<input
+								class="departureDate-input100"
+								id="departureDate"
+								type="date"
+								placeholder="Departure Date"
+								name="departureDate"
+								required
+							/>
+							<input
+								class="arrivalDate-input100"
+								id="arrivalDate"
+								type="date"
+								placeholder="Arrival Date"
+								name="arrivalDate"
+								required
+							/>
+						</div>
+						<div class="wrap-input100 validate-input m-b-16">
+							<select
+								class="arrivalStatus-input100"
+								name="arrivalStatus"
+								id="arrivalStatus"
+								required
+							>
+								<option value="0">[Arrival Status]</option>
+								<option value="True">Arrived</option>
+								<option value="False">In Progress</option>
+							</select>
+							<select
+								class="paymentStatus-input100"
+								name="paymentStatus"
+								id="paymentStatus"
+								required
+							>
+								<option value="0">[Payment Status]</option>
+								<option value="True">Paid</option>
+								<option value="False">Not Paid</option>
+							</select>
+						</div>
+
 						<span class="signup100-form-label p-b-20"
 							>Origin Company Information</span
 						>
@@ -258,53 +308,6 @@
 								name="dZip"
 								required
 							/>
-						</div>
-
-						<div class="wrap-input100 validate-input m-b-16">
-							<input
-								class="vehicleID-input100"
-								id="vehicleID"
-								type="text"
-								placeholder="Vehicle ID"
-								name="vehicleID"
-								required
-							/>
-							<input
-								class="departureDate-input100"
-								id="departureDate"
-								type="date"
-								placeholder="Departure Date"
-								name="departureDate"
-								required
-							/>
-							<input
-								class="arrivalDate-input100"
-								id="arrivalDate"
-								type="date"
-								placeholder="Arrival Date"
-								name="arrivalDate"
-								required
-							/>
-							<select
-								class="arrivalStatus-input100"
-								name="arrivalStatus"
-								id="arrivalStatus"
-								required
-							>
-								<option value="0">[Arrival Status]</option>
-								<option value="True">True</option>
-								<option value="False">False</option>
-							</select>
-							<select
-								class="paymentStatus-input100"
-								name="paymentStatus"
-								id="paymentStatus"
-								required
-							>
-								<option value="0">[Payment Status]</option>
-								<option value="True">True</option>
-								<option value="False">False</option>
-							</select>
 						</div>
 
 						<div class="container-signup100-form-btn p-t-25">
