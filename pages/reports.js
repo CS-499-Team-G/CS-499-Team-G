@@ -445,13 +445,16 @@ function incomingShipmentTable(data) {
 	});
 
 	for (let i = 0; i < data.length; i++) {
-		var dataStore = document.createElement("p");
-		dataStore.hidden = true;
-		dataStore.id = "dataStore" + i;
-		dataStore.innerHTML = JSON.stringify(data[i].manifest.items);
+		if (data[i].manifest.items) {
+			var dataStore = document.createElement("p");
+			dataStore.hidden = true;
+			dataStore.id = "dataStore" + i;
+			dataStore.innerHTML = JSON.stringify(data[i].manifest.items);
 
-		var divStore = document.getElementById("divStore");
-		divStore.appendChild(dataStore);
+			var divStore = document.getElementById("divStore");
+			divStore.appendChild(dataStore);
+		}
+
 		// Create row element
 		var row = document.createElement("tr");
 
@@ -610,13 +613,15 @@ function outgoingShipmentTable(data) {
 	});
 
 	for (let i = 0; i < data.length; i++) {
-		var dataStore = document.createElement("p");
-		dataStore.hidden = true;
-		dataStore.id = "dataStore" + i;
-		dataStore.innerHTML = JSON.stringify(data[i].manifest.items);
+		if (data[i].manifest.items) {
+			var dataStore = document.createElement("p");
+			dataStore.hidden = true;
+			dataStore.id = "dataStore" + i;
+			dataStore.innerHTML = JSON.stringify(data[i].manifest.items);
 
-		var divStore = document.getElementById("divStore");
-		divStore.appendChild(dataStore);
+			var divStore = document.getElementById("divStore");
+			divStore.appendChild(dataStore);
+		}
 
 		// Create row element
 		var row = document.createElement("tr");

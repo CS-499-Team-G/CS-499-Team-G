@@ -23,5 +23,3 @@ This is a website for a Trucking Company Management System. Information about ve
 - Clicking "Add Shipment" will bring the user to a form that must be entirely filled out to be submitted. Populate the form with shipment data, and then submit the results to add a new shipment to the database.
 - Clicking "Create a User" will bring the user to a form that will allow for the creation of a new user entity.
 - Clicking "Log Out" will bring the user back to the login page.
-
-
