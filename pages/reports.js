@@ -500,10 +500,10 @@ function incomingShipmentTable(data) {
 			aConvertedDate.getFullYear();
 
 		cell5.appendChild(document.createTextNode(aDateString));
-		data[i].arrivalStatus === "True"
+		data[i].arrivalStatus === "True" || data[i].arrivalStatus === "true"
 			? cell6.appendChild(document.createTextNode("Arrived"))
 			: cell6.appendChild(document.createTextNode("In Process"));
-		data[i].payment === "True"
+		data[i].payment === "True" || data[i].payment === "true"
 			? cell7.appendChild(document.createTextNode("Yes"))
 			: cell7.appendChild(document.createTextNode("No"));
 		if (data[i].manifest) {
@@ -670,10 +670,10 @@ function outgoingShipmentTable(data) {
 			aConvertedDate.getFullYear();
 
 		cell5.appendChild(document.createTextNode(aDateString));
-		data[i].arrivalStatus === "True"
+		data[i].arrivalStatus === "True" || data[i].arrivalStatus === "true"
 			? cell6.appendChild(document.createTextNode("Arrived"))
 			: cell6.appendChild(document.createTextNode("In Process"));
-		data[i].payment === "True"
+		data[i].payment === "True" || data[i].payment === "true"
 			? cell7.appendChild(document.createTextNode("Yes"))
 			: cell7.appendChild(document.createTextNode("No"));
 
