@@ -198,14 +198,22 @@ function vehicleMaintenanceTable(data) {
 				data[i].maintenanceRecord.repairRecords.description
 			)
 		);
-		cell7.appendChild(
-			document.createTextNode(data[i].maintenanceRecord.repairRecords.parts)
-		);
-		cell8.appendChild(
-			document.createTextNode(
-				"$" + data[i].maintenanceRecord.repairRecords.cost
-			)
-		);
+		if (data[i].maintenanceRecord.repairRecords.parts) {
+			cell7.appendChild(
+				document.createTextNode(data[i].maintenanceRecord.repairRecords.parts)
+			);
+		} else {
+			cell7.appendChild(document.createTextNode("-"));
+		}
+		if (data[i].maintenanceRecord.repairRecords.cost) {
+			cell8.appendChild(
+				document.createTextNode(
+					"$" + data[i].maintenanceRecord.repairRecords.cost
+				)
+			);
+		} else {
+			cell8.appendChild(document.createTextNode("-"));
+		}
 
 		row.appendChild(cell1);
 		row.appendChild(cell2);
@@ -336,11 +344,11 @@ function totalMaintenanceTable(data) {
 			data[i].maintenanceRecord.inspectionsRecords.date
 		);
 		var dateString =
-			(convertedDate.getMonth().toString().length > 1
+			((convertedDate.getMonth() + 1).toString().length > 1
 				? convertedDate.getMonth() + 1
 				: "0" + (convertedDate.getMonth() + 1)) +
 			"/" +
-			(convertedDate.getDate().toString().length > 1
+			((convertedDate.getDate() + 1).toString().length > 1
 				? convertedDate.getDate()
 				: "0" + convertedDate.getDate()) +
 			"/" +
