@@ -1100,7 +1100,7 @@ header .wrap img {
 /*//////////////////////////////////////////////////////////////////
 [ shipments ]*/
 
-.traffic-selection100 {
+.traffic-input100 {
 	font-family: Raleway-SemiBold;
 	font-size: 18px;
 	line-height: 1.2;
@@ -1114,7 +1114,7 @@ header .wrap img {
 	border-radius: 3px;
 }
 
-.driver-selection100 {
+.driver-input100 {
 	font-family: Raleway-SemiBold;
 	font-size: 18px;
 	line-height: 1.2;
