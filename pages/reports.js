@@ -510,11 +510,15 @@ function incomingShipmentTable(data) {
 		} else {
 			cell7.appendChild(document.createTextNode("No"));
 		}
-		var a = document.createElement("a");
-		var text = document.createTextNode("[Click to Expand]");
-		a.appendChild(text);
-		a.href = "../../manifest.html";
-		cell8.appendChild(a);
+		if (data[i].manifest) {
+			var a = document.createElement("a");
+			var text = document.createTextNode("[Click to Expand]");
+			a.appendChild(text);
+			a.href = "../../manifest.html";
+			cell8.appendChild(a);
+		} else {
+			cell8.appendChild(document.createTextNode("No items"));
+		}
 
 		row.appendChild(cell1);
 		row.appendChild(cell2);
@@ -681,11 +685,15 @@ function outgoingShipmentTable(data) {
 			cell7.appendChild(document.createTextNode("No"));
 		}
 
-		var a = document.createElement("a");
-		var text = document.createTextNode("[Click to Expand]");
-		a.appendChild(text);
-		a.href = "../../manifest.html";
-		cell8.appendChild(a);
+		if (data[i].manifest) {
+			var a = document.createElement("a");
+			var text = document.createTextNode("[Click to Expand]");
+			a.appendChild(text);
+			a.href = "../../manifest.html";
+			cell8.appendChild(a);
+		} else {
+			cell8.appendChild(document.createTextNode("No items"));
+		}
 
 		row.appendChild(cell1);
 		row.appendChild(cell2);
