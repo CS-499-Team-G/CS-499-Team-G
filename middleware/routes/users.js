@@ -8,65 +8,6 @@ const app = express();
 
 const { check, validationResult } = require("express-validator"); // Allows us to use the express-validator to validate data from webpage https://express-validator.github.io/docs/
 
-/*  .get == > retrieve the data from the webpage without altering
-    .post ==> retrieve the data from the webpage and alter
-*/
-
-/**
- * Summary. Check if the provided username exists. This function
- * returns an array containing all the infornation of every user.
- * @param array Mongodb query returns an array containing the
- * users with a given user name.
- */
-function checkArray(queryResult, type, res) {
-	console.log("Check array function");
-	if (type == "users") {
-		model = "User";
-	} else {
-		model = "Assignment";
-	}
-	if (!queryResult.length == 0) {
-		//res.json(queryResult)
-		app.use(express.static(path.join(__dirname, "/../../pages")));
-		console.log("Dirname: " + __dirname);
-		res.sendFile(path.resolve(__dirname, "..", "..", "pages", "reports.html"));
-	} else {
-		throw "Query returned 0 results. Incorrect information entered.";
-	}
-}
-
-function setSelection (title){
-	//var selection = document.getElementById("selection");
-	console.log("Set selections function");
-	console.log("Title: " + title);
-
-	if(title == "Chief Financial Officer"){
-		var payroll = document.createElement("option");
-		payroll.innerText = "Monthly Payroll";
-
-		var maintenance = document.createElement("option");
-		maintenance.innerText = "Total Maintenance Cost";
-
-		var vehicle = document.createElement("option");
-		vehicle.innerText = "Total Vehicle Maintenance";
-
-		var incoming = document.createElement("option");
-		incoming.innerText = "Incoming Shipments";
-
-		var outgoing = document.createElement("option");
-		outgoing.innerText = "Outgoing Shipments";
-
-		var selectElem = document.getElementById("selection");
-  		selectElem.append(element);
-
-	}else if(title){
-
-	}else{
-
-	}
-
-}
-
 // Login for a specific user
 router.route("/login").post((req, res) => {
 	// Get the username and password from the req.body
@@ -85,10 +26,9 @@ router.route("/login").post((req, res) => {
 		.then(newResult => JSON.stringify(newResult))
 		.then(result => JSON.parse(result))
 		.then(info => title = info.title)
-		//.then(title => res.contentType("html").send(title))
+
 		.then(page => res.sendFile(path.resolve(__dirname, "..", "..", "pages", "reports.html")))
-		//.then(s => setSelection(title))
-		//.catch((err) => res.status(400).json("Error: " + err));
+
 });
 
 // Show all users
