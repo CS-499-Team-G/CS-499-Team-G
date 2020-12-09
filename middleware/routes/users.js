@@ -153,7 +153,7 @@ router.route("/add").post((req, res) => {
 	// Save the newly created user in Mongodb
 	newUser
 		.save()
-		.then(() => res.json("User added!"))
+		.then(page => res.sendFile(path.resolve(__dirname, "..", "..", "pages", "reports.html")))
 		.catch((err) => res.status(400).json("Error: " + err));
 });
 
