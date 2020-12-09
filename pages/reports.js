@@ -527,17 +527,19 @@ function incomingShipmentTable(data) {
 
 		table.appendChild(row);
 
-		table.rows[i + 1].cells[7].getElementsByTagName(
-			"a"
-		)[0].onclick = function () {
-			setSessionStorage(i);
-			window.open(
-				this.href,
-				"Shipment Manifest",
-				"width=500, height=500, left=100, top=100, scrollbars, resizable"
-			);
-			return false;
-		};
+		if (data[i].manifest) {
+			table.rows[i + 1].cells[7].getElementsByTagName(
+				"a"
+			)[0].onclick = function () {
+				setSessionStorage(i);
+				window.open(
+					this.href,
+					"Shipment Manifest",
+					"width=500, height=500, left=100, top=100, scrollbars, resizable"
+				);
+				return false;
+			};
+		}
 	}
 }
 
@@ -696,17 +698,19 @@ function outgoingShipmentTable(data) {
 
 		table.appendChild(row);
 
-		table.rows[i + 1].cells[7].getElementsByTagName(
-			"a"
-		)[0].onclick = function () {
-			setSessionStorage(i);
-			window.open(
-				this.href,
-				"Shipment Manifest",
-				"width=500, height=500, left=100, top=100, scrollbars, resizable"
-			);
-			return false;
-		};
+		if (data[i].manifest) {
+			table.rows[i + 1].cells[7].getElementsByTagName(
+				"a"
+			)[0].onclick = function () {
+				setSessionStorage(i);
+				window.open(
+					this.href,
+					"Shipment Manifest",
+					"width=500, height=500, left=100, top=100, scrollbars, resizable"
+				);
+				return false;
+			};
+		}
 	}
 }
 
