@@ -310,6 +310,48 @@
 							/>
 						</div>
 
+						<span class="signup100-form-label p-b-20">Items</span>
+						<div id="addFields">
+							<div class="wrap-input100 validate-input m-b-16">
+								<input
+									class="itemName-input100"
+									id="itemName"
+									type="text"
+									placeholder="Item Name"
+									name="itemName"
+									required
+								/>
+								<input
+									class="quantity-input100"
+									id="quantity"
+									type="text"
+									placeholder="Quantity"
+									name="quantity"
+									required
+								/>
+								<input
+									class="unitCost-input100"
+									id="unitCost"
+									type="text"
+									placeholder="Unit Cost"
+									name="unitCost"
+									required
+								/>
+								<select
+									class="backorder-input100"
+									name="backorder"
+									id="backorder"
+									required
+								>
+									<option value="0">[Backorder Status</option>
+									<option value="True">Backordered</option>
+									<option value="False">Ready to Ship</option>
+								</select>
+							</div>
+						</div>
+						<div class="wrap-input100 validate-input m-b-16">
+							<button class="addMore-input100">Add Item</button>
+						</div>
 						<div class="container-signup100-form-btn p-t-25">
 							<button
 								type="submit"

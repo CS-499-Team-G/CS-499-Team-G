@@ -27,9 +27,9 @@ router.route("/add").post((req, res) => {
 	const traffic = req.body.traffic;
 	var driver = req.body.driver;
 
-	const {firstName, lastName} = driver.split(" ");
+	const { firstName, lastName } = driver.split(" ");
 	console.log("First Name: " + firstName + "Last Name: " + lastName);
-	driver = {firstName, lastName}
+	driver = { firstName, lastName };
 
 	const oCompany = req.body.oCompany;
 	const oStreetAddress = req.body.oStreetAddress;
@@ -68,7 +68,9 @@ router.route("/add").post((req, res) => {
 
 	newShipment
 		.save()
-		.then(page => res.sendFile(path.resolve(__dirname, "..", "..", "pages", "reports.html")))
+		.then((page) =>
+			res.sendFile(path.resolve(__dirname, "..", "..", "pages", "reports.html"))
+		)
 		.catch((err) => res.status(400).json("Error: " + err));
 });
 
@@ -97,7 +99,6 @@ router.route("/:id/item").post((req, res) => {
 		object = JSON.stringify(queryResult);
 		json = JSON.parse(object);
 
-		
 		try {
 			totalCost = json.manifest.totalCost;
 			manifest = newTotalCost(totalCost);
@@ -105,7 +106,7 @@ router.route("/:id/item").post((req, res) => {
 			console.log("Total cost not defined.");
 			newTotalCost();
 		}
-		
+
 		//updateShipment(manifest);
 	}
 
@@ -128,7 +129,6 @@ router.route("/:id/item").post((req, res) => {
 		console.log("Total balance: " + totalBalance);
 
 		updateShipment(totalCost, totalBalance);
-
 	}
 
 	function addShipItem(newItem) {
@@ -139,25 +139,30 @@ router.route("/:id/item").post((req, res) => {
 	}
 
 	function updateShipment(totalCost, totalBalance) {
-		Shipment.updateOne({ _id: id }, { $set: { "manifest.totalCost": totalCost, "manifest.totalBalance": totalBalance } })
+		Shipment.updateOne(
+			{ _id: id },
+			{
+				$set: {
+					"manifest.totalCost": totalCost,
+					"manifest.totalBalance": totalBalance,
+				},
+			}
+		)
 			.then((shipments) => addShipItem(item))
 			.catch((err) => res.status(400).json("Error: " + err));
 	}
 });
-
 
 router.route("/:id/driver").post((req, res) => {
 	const id = req.body.id;
 	const firstName = req.body.firstName;
 	const lastName = req.body.lastName;
 	const middleName = req.body.middleName;
-	const fullName = { firstName, middleName, lastName }; 
+	const fullName = { firstName, middleName, lastName };
 
 	Shipment.updateOne({ _id: id }, { $set: { driver: fullName } })
-		.then((shipments) => res.json(shipments) )
+		.then((shipments) => res.json(shipments))
 		.catch((err) => res.status(400).json("Error: " + err));
-
 });
-
 
 module.exports = router;
