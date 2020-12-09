@@ -265,33 +265,33 @@ function totalMaintenanceTable(data) {
 	});
 
 	// Sort by model
-	table.rows[0].cells[0].addEventListener("click", function () {
-		sortTable(0);
+	table.rows[0].cells[1].addEventListener("click", function () {
+		sortTable(1);
 	});
 
 	// Sort by body style
-	table.rows[0].cells[0].addEventListener("click", function () {
-		sortTable(0);
+	table.rows[0].cells[3].addEventListener("click", function () {
+		sortTable(3);
 	});
 
 	// Sort by maintenance
-	table.rows[0].cells[0].addEventListener("click", function () {
-		sortTable(0);
+	table.rows[0].cells[4].addEventListener("click", function () {
+		sortTable(4);
 	});
 
 	// Sort by description
-	table.rows[0].cells[0].addEventListener("click", function () {
-		sortTable(0);
+	table.rows[0].cells[5].addEventListener("click", function () {
+		sortTable(5);
 	});
 
 	// Sort by parts
-	table.rows[0].cells[0].addEventListener("click", function () {
-		sortTable(0);
+	table.rows[0].cells[6].addEventListener("click", function () {
+		sortTable(6);
 	});
 
 	// Sort by inspection
-	table.rows[0].cells[0].addEventListener("click", function () {
-		sortTable(0);
+	table.rows[0].cells[7].addEventListener("click", function () {
+		sortTable(7);
 	});
 
 	for (let i = 0; i < data.length; i++) {
@@ -383,9 +383,9 @@ function incomingShipmentTable(data) {
 	var manifest = document.createElement("th");
 
 	// Populate header elements with text nodes
+	vim.appendChild(document.createTextNode("Vehicle ID"));
 	origin.appendChild(document.createTextNode("Origin"));
 	destination.appendChild(document.createTextNode("Destination"));
-	vim.appendChild(document.createTextNode("Vehicle ID"));
 	depart.appendChild(document.createTextNode("Departure Date"));
 	arrive.appendChild(document.createTextNode("Arrival Date"));
 	status.appendChild(document.createTextNode("Status"));
@@ -393,9 +393,9 @@ function incomingShipmentTable(data) {
 	manifest.appendChild(document.createTextNode("Items"));
 
 	// Append the header elements to the row element
+	headerRow.appendChild(vim);
 	headerRow.appendChild(origin);
 	headerRow.appendChild(destination);
-	headerRow.appendChild(vim);
 	headerRow.appendChild(depart);
 	headerRow.appendChild(arrive);
 	headerRow.appendChild(status);
@@ -406,13 +406,13 @@ function incomingShipmentTable(data) {
 	table.appendChild(headerRow);
 
 	// Sort by origin
-	table.rows[0].cells[0].addEventListener("click", function () {
-		sortTable(0);
+	table.rows[0].cells[1].addEventListener("click", function () {
+		sortTable(1);
 	});
 
 	// Sort by destination
-	table.rows[0].cells[1].addEventListener("click", function () {
-		sortTable(1);
+	table.rows[0].cells[2].addEventListener("click", function () {
+		sortTable(2);
 	});
 
 	// Sort by status
@@ -447,17 +447,17 @@ function incomingShipmentTable(data) {
 		var cell8 = document.createElement("td");
 
 		// Populate each data field with a text node
-		cell1.appendChild(document.createTextNode(data[i].origin.oCompany));
-		cell2.appendChild(document.createTextNode(data[i].destination.dCompany));
-		cell3.appendChild(document.createTextNode("N/A"));
+		cell1.appendChild(document.createTextNode("N/A"));
+		cell2.appendChild(document.createTextNode(data[i].origin.oCompany));
+		cell3.appendChild(document.createTextNode(data[i].destination.dCompany));
 
 		var dConvertedDate = new Date(data[i].departureDate);
 		var dDateString =
-			(dConvertedDate.getMonth().toString().length > 1
+			((dConvertedDate.getMonth() + 1).toString().length > 1
 				? dConvertedDate.getMonth() + 1
 				: "0" + (dConvertedDate.getMonth() + 1)) +
 			"/" +
-			(dConvertedDate.getDate().toString().length > 1
+			((dConvertedDate.getMonth() + 1).toString().length > 1
 				? dConvertedDate.getDate()
 				: "0" + dConvertedDate.getDate()) +
 			"/" +
@@ -467,11 +467,11 @@ function incomingShipmentTable(data) {
 
 		var aConvertedDate = new Date(data[i].arrivalDate);
 		var aDateString =
-			(aConvertedDate.getMonth().toString().length > 1
+			((aConvertedDate.getMonth() + 1).toString().length > 1
 				? aConvertedDate.getMonth() + 1
 				: "0" + (aConvertedDate.getMonth() + 1)) +
 			"/" +
-			(aConvertedDate.getDate().toString().length > 1
+			((aConvertedDate.getMonth() + 1).toString().length > 1
 				? aConvertedDate.getDate()
 				: "0" + aConvertedDate.getDate()) +
 			"/" +
@@ -543,19 +543,19 @@ function outgoingShipmentTable(data) {
 	var manifest = document.createElement("th");
 
 	// Populate header elements with text nodes
+	vim.appendChild(document.createTextNode("Vehicle ID"));
 	origin.appendChild(document.createTextNode("Origin"));
 	destination.appendChild(document.createTextNode("Destination"));
-	vim.appendChild(document.createTextNode("Vehicle ID"));
 	depart.appendChild(document.createTextNode("Departure Date"));
 	arrive.appendChild(document.createTextNode("Arrival Date"));
 	status.appendChild(document.createTextNode("Status"));
 	payment.appendChild(document.createTextNode("Paid"));
-	manifest.appendChild(document.createTextNode("Manifest"));
+	manifest.appendChild(document.createTextNode("Items"));
 
 	// Append the header elements to the row element
+	headerRow.appendChild(vim);
 	headerRow.appendChild(origin);
 	headerRow.appendChild(destination);
-	headerRow.appendChild(vim);
 	headerRow.appendChild(depart);
 	headerRow.appendChild(arrive);
 	headerRow.appendChild(status);
@@ -566,13 +566,13 @@ function outgoingShipmentTable(data) {
 	table.appendChild(headerRow);
 
 	// Sort by origin
-	table.rows[0].cells[0].addEventListener("click", function () {
-		sortTable(0);
+	table.rows[0].cells[1].addEventListener("click", function () {
+		sortTable(1);
 	});
 
 	// Sort by destination
-	table.rows[0].cells[1].addEventListener("click", function () {
-		sortTable(1);
+	table.rows[0].cells[2].addEventListener("click", function () {
+		sortTable(2);
 	});
 
 	// Sort by status
@@ -608,17 +608,17 @@ function outgoingShipmentTable(data) {
 		var cell8 = document.createElement("td");
 
 		// Populate each data field with a text node
-		cell1.appendChild(document.createTextNode(data[i].origin.oCompany));
-		cell2.appendChild(document.createTextNode(data[i].destination.dCompany));
-		cell3.appendChild(document.createTextNode("N/A"));
+		cell1.appendChild(document.createTextNode("N/A"));
+		cell2.appendChild(document.createTextNode(data[i].origin.oCompany));
+		cell3.appendChild(document.createTextNode(data[i].destination.dCompany));
 
 		var dConvertedDate = new Date(data[i].departureDate);
 		var dDateString =
-			(dConvertedDate.getMonth().toString().length > 1
+			((dConvertedDate.getMonth() + 1).toString().length > 1
 				? dConvertedDate.getMonth() + 1
 				: "0" + (dConvertedDate.getMonth() + 1)) +
 			"/" +
-			(dConvertedDate.getDate().toString().length > 1
+			((dConvertedDate.getMonth() + 1).toString().length > 1
 				? dConvertedDate.getDate()
 				: "0" + dConvertedDate.getDate()) +
 			"/" +
@@ -628,11 +628,11 @@ function outgoingShipmentTable(data) {
 
 		var aConvertedDate = new Date(data[i].arrivalDate);
 		var aDateString =
-			(aConvertedDate.getMonth().toString().length > 1
+			((aConvertedDate.getMonth() + 1).toString().length > 1
 				? aConvertedDate.getMonth() + 1
 				: "0" + (aConvertedDate.getMonth() + 1)) +
 			"/" +
-			(aConvertedDate.getDate().toString().length > 1
+			((aConvertedDate.getMonth() + 1).toString().length > 1
 				? aConvertedDate.getDate()
 				: "0" + aConvertedDate.getDate()) +
 			"/" +
