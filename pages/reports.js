@@ -610,7 +610,7 @@ function outgoingShipmentTable(data) {
 		var cell8 = document.createElement("td");
 
 		// Populate each data field with a text node
-		cell1.appendChild(document.createTextNode(data[i].vehicleID));
+		cell1.appendChild(document.createTextNode(data[i].vehicle.vehicleID));
 		cell2.appendChild(document.createTextNode(data[i].origin.oCompany));
 		cell3.appendChild(document.createTextNode(data[i].destination.dCompany));
 
