@@ -79,11 +79,6 @@ router.route("/:id/item").post((req, res) => {
 
 	Shipment.findOne({ _id: id }, { "manifest.totalCost": 1 })
 		.then((result) => checkArray(result, res))
-		//.then((result) => checkArray(result))
-		/*.then(queryResult => JSON.stringify(queryResult))
-    .then(object => JSON.parse(object))
-    .then(answer => res.json(answer.manifest.totalCost))
-  */
 		.catch((err) => res.status(400).json("Error: " + err));
 
 	/**
@@ -128,12 +123,8 @@ router.route("/:id/item").post((req, res) => {
 		const totalBalance = totalCost + 10;
 		console.log("Total balance: " + totalBalance);
 
-		// Add item to shipment
-		//addShipItem(item);
-
-		//const manifest = { totalCost, totalBalance };
 		updateShipment(totalCost, totalBalance);
-		//return manifest;
+
 	}
 
 	function addShipItem(newItem) {
@@ -149,5 +140,20 @@ router.route("/:id/item").post((req, res) => {
 			.catch((err) => res.status(400).json("Error: " + err));
 	}
 });
+
+
+router.route("/:id/driver").post((req, res) => {
+	const id = req.body.id;
+	const firstName = req.body.firstName;
+	const lastName = req.body.lastName;
+	const middleName = req.body.middleName;
+	const fullName = { firstName, middleName, lastName }; 
+
+	Shipment.updateOne({ _id: id }, { $set: { driver: fullName } })
+		.then((shipments) => res.json(shipments) )
+		.catch((err) => res.status(400).json("Error: " + err));
+
+});
+
 
 module.exports = router;
