@@ -459,7 +459,7 @@ function incomingShipmentTable(data) {
 				? dConvertedDate.getMonth() + 1
 				: "0" + (dConvertedDate.getMonth() + 1)) +
 			"/" +
-			((dConvertedDate.getMonth() + 1).toString().length > 1
+			((dConvertedDate.getDate() + 1).toString().length > 1
 				? dConvertedDate.getDate()
 				: "0" + dConvertedDate.getDate()) +
 			"/" +
@@ -473,7 +473,7 @@ function incomingShipmentTable(data) {
 				? aConvertedDate.getMonth() + 1
 				: "0" + (aConvertedDate.getMonth() + 1)) +
 			"/" +
-			((aConvertedDate.getMonth() + 1).toString().length > 1
+			((aConvertedDate.getDate() + 1).toString().length > 1
 				? aConvertedDate.getDate()
 				: "0" + aConvertedDate.getDate()) +
 			"/" +
@@ -620,7 +620,7 @@ function outgoingShipmentTable(data) {
 				? dConvertedDate.getMonth() + 1
 				: "0" + (dConvertedDate.getMonth() + 1)) +
 			"/" +
-			((dConvertedDate.getMonth() + 1).toString().length > 1
+			((dConvertedDate.getDate() + 1).toString().length > 1
 				? dConvertedDate.getDate()
 				: "0" + dConvertedDate.getDate()) +
 			"/" +
@@ -634,7 +634,7 @@ function outgoingShipmentTable(data) {
 				? aConvertedDate.getMonth() + 1
 				: "0" + (aConvertedDate.getMonth() + 1)) +
 			"/" +
-			((aConvertedDate.getMonth() + 1).toString().length > 1
+			((aConvertedDate.getDate() + 1).toString().length > 1
 				? aConvertedDate.getDate()
 				: "0" + aConvertedDate.getDate()) +
 			"/" +
