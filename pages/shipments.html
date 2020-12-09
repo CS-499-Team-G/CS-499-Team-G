@@ -32,21 +32,315 @@
 						action="http://68.93.20.191:5000/shipments/add"
 						method="POST"
 					>
-						<span class="login100-form-title p-b-55">Add Shipment</span>
-                        <select class="traffic-input100" name="traffic" id="traffic" required>
-                            <option value="0">[Traffic]</option>
-                            <option value="Incoming">Incoming</option>
-                            <option value="Outgoing">Outgoing</option>
-                        </select>
-                        <select class="driver-input100" name="driver" id="driver" required>
-                            <option value="0">[Driver]</option>
-                            <option value="5fb4b7925afbd433503a4080">Jrue Holiday</option>
-                            <option value="5fbaf281b098272bd00beaa0">Frank Sinatra</option>
-                            <option value="5fbaf371fdb8561f208459d2">Gloria O'Neal</option>
-                            <option value="5fbc400e77bab71e546a453a">Cam Netwon</option>
-                            <option value="5fbc405277bab71e546a453d">Diane Grown</option>
-                            <option value="5fbc408d77bab71e546a4540">Steve Lower</option>
-                        </select>
+                        <span class="login100-form-title p-b-55">Add Shipment</span>
+                        
+                        <div class="wrap-input100 validate-input m-b-16">
+                            <select class="traffic-input100" name="traffic" id="traffic" required>
+                                <option value="0">[Traffic]</option>
+                                <option value="Incoming">Incoming</option>
+                                <option value="Outgoing">Outgoing</option>
+                            </select>
+                        </div>
+
+                        <div class="wrap-input100 validate-input m-b-16">
+                            <select class="driver-input100" name="driver" id="driver" required>
+                                <option value="0">[Driver]</option>
+                                <option value="5fb4b7925afbd433503a4080">Jrue Holiday</option>
+                                <option value="5fbaf281b098272bd00beaa0">Frank Sinatra</option>
+                                <option value="5fbaf371fdb8561f208459d2">Gloria O'Neal</option>
+                                <option value="5fbc400e77bab71e546a453a">Cam Netwon</option>
+                                <option value="5fbc405277bab71e546a453d">Diane Grown</option>
+                                <option value="5fbc408d77bab71e546a4540">Steve Lower</option>
+                            </select>
+                        </div>
+
+						<div class="wrap-input100 validate-input m-b-16">
+                            <input
+								class="oCompany-input100"
+								id="oCompany"
+								type="text"
+								placeholder="Origin Company"
+								name="oCompany"
+								required
+							/>
+							<span class="focus-input100"></span>
+							<input
+								class="oStreetAddress-input100"
+								id="oStreetAddress"
+								type="text"
+								placeholder="Origin Company Street Address"
+								name="oStreetAddress"
+                                required
+                            />
+                            <input
+								class="oCity-input100"
+								id="oCity"
+								type="text"
+								placeholder="Origin Company City"
+								name="oCity"
+								required
+                            />
+                            <select class="oState-input100" name="oState" id="oState" required>
+								<option value="0">[State]</option>
+								<option value="AK">AK</option>
+								<option value="AL">AL</option>
+								<option value="AR">AR</option>
+								<option value="AZ">AZ</option>
+								<option value="CA">CA</option>
+								<option value="CO">CO</option>
+								<option value="CT">CT</option>
+								<option value="DE">DE</option>
+								<option value="FL">FL</option>
+								<option value="GA">GA</option>
+								<option value="HI">HI</option>
+								<option value="IA">IA</option>
+								<option value="ID">ID</option>
+								<option value="IL">IL</option>
+								<option value="IN">IN</option>
+								<option value="KS">KS</option>
+								<option value="KY">KY</option>
+								<option value="LA">LA</option>
+								<option value="MA">MA</option>
+								<option value="MD">MD</option>
+								<option value="ME">ME</option>
+								<option value="MI">MI</option>
+								<option value="MN">MN</option>
+								<option value="MO">MO</option>
+								<option value="MS">MS</option>
+								<option value="MT">MT</option>
+								<option value="NC">NC</option>
+								<option value="ND">ND</option>
+								<option value="NE">NE</option>
+								<option value="NH">NH</option>
+								<option value="NJ">NJ</option>
+								<option value="NM">NM</option>
+								<option value="NV">NV</option>
+								<option value="NY">NY</option>
+								<option value="OH">OH</option>
+								<option value="OK">OK</option>
+								<option value="OR">OR</option>
+								<option value="PA">PA</option>
+								<option value="RI">RI</option>
+								<option value="SC">SC</option>
+								<option value="SD">SD</option>
+								<option value="TN">TN</option>
+								<option value="TX">TX</option>
+								<option value="UT">UT</option>
+								<option value="VA">VA</option>
+								<option value="VT">VT</option>
+								<option value="WA">WA</option>
+								<option value="WI">WI</option>
+								<option value="WV">WV</option>
+								<option value="WY">WY</option>
+							</select>
+							<span class="focus-input100"></span>
+							<input
+								class="oZip-input100"
+								id="oZip"
+								type="text"
+								placeholder="Origin Company Zip Code"
+								name="oZip"
+                                required
+                            />
+						</div>
+
+<div class="wrap-input100 validate-input m-b-16">
+                            <input
+								class="oCompany-input100"
+								id="oCompany"
+								type="text"
+								placeholder="Origin Company"
+								name="oCompany"
+								required
+							/>
+							<span class="focus-input100"></span>
+							<input
+								class="oStreetAddress-input100"
+								id="oStreetAddress"
+								type="text"
+								placeholder="Origin Company Street Address"
+								name="oStreetAddress"
+                                required
+                            />
+                            <input
+								class="oCity-input100"
+								id="oCity"
+								type="text"
+								placeholder="Origin Company City"
+								name="oCity"
+								required
+                            />
+                            <select class="oState-input100" name="oState" id="oState" required>
+								<option value="0">[State]</option>
+								<option value="AK">AK</option>
+								<option value="AL">AL</option>
+								<option value="AR">AR</option>
+								<option value="AZ">AZ</option>
+								<option value="CA">CA</option>
+								<option value="CO">CO</option>
+								<option value="CT">CT</option>
+								<option value="DE">DE</option>
+								<option value="FL">FL</option>
+								<option value="GA">GA</option>
+								<option value="HI">HI</option>
+								<option value="IA">IA</option>
+								<option value="ID">ID</option>
+								<option value="IL">IL</option>
+								<option value="IN">IN</option>
+								<option value="KS">KS</option>
+								<option value="KY">KY</option>
+								<option value="LA">LA</option>
+								<option value="MA">MA</option>
+								<option value="MD">MD</option>
+								<option value="ME">ME</option>
+								<option value="MI">MI</option>
+								<option value="MN">MN</option>
+								<option value="MO">MO</option>
+								<option value="MS">MS</option>
+								<option value="MT">MT</option>
+								<option value="NC">NC</option>
+								<option value="ND">ND</option>
+								<option value="NE">NE</option>
+								<option value="NH">NH</option>
+								<option value="NJ">NJ</option>
+								<option value="NM">NM</option>
+								<option value="NV">NV</option>
+								<option value="NY">NY</option>
+								<option value="OH">OH</option>
+								<option value="OK">OK</option>
+								<option value="OR">OR</option>
+								<option value="PA">PA</option>
+								<option value="RI">RI</option>
+								<option value="SC">SC</option>
+								<option value="SD">SD</option>
+								<option value="TN">TN</option>
+								<option value="TX">TX</option>
+								<option value="UT">UT</option>
+								<option value="VA">VA</option>
+								<option value="VT">VT</option>
+								<option value="WA">WA</option>
+								<option value="WI">WI</option>
+								<option value="WV">WV</option>
+								<option value="WY">WY</option>
+							</select>
+							<span class="focus-input100"></span>
+							<input
+								class="oZip-input100"
+								id="oZip"
+								type="text"
+								placeholder="Origin Company Zip Code"
+								name="oZip"
+                                required
+                            />
+						</div>
+
+						<div class="container-signup100-form-btn p-t-25">
+							<button type="submit" class="signup100-form-btn">
+								Add Shipment
+							</button>
+							<input
+								type="button"
+								class="signup100-form-btn"
+								onclick="location.href='reports.html';"
+								value="Cancel"
+							/>
+						</div>
+
+
+
+
+                        <div class="wrap-input100 validate-input m-b-16">
+                            <input
+								class="dCompany-input100"
+								id="dCompany"
+								type="text"
+								placeholder="Destination Company"
+								name="dCompany"
+								required
+							/>
+							<span class="focus-input100"></span>
+							<input
+								class="dStreetAddress-input100"
+								id="dStreetAddress"
+								type="text"
+								placeholder="Destination Company Street Address"
+								name="dStreetAddress"
+                                required
+                            />
+                            <input
+								class="dCity-input100"
+								id="dCity"
+								type="text"
+								placeholder="Destination Company City"
+								name="dCity"
+								required
+                            />
+                            <select class="dState-input100" name="dState" id="dState" required>
+								<option value="0">[State]</option>
+								<option value="AK">AK</option>
+								<option value="AL">AL</option>
+								<option value="AR">AR</option>
+								<option value="AZ">AZ</option>
+								<option value="CA">CA</option>
+								<option value="CO">CO</option>
+								<option value="CT">CT</option>
+								<option value="DE">DE</option>
+								<option value="FL">FL</option>
+								<option value="GA">GA</option>
+								<option value="HI">HI</option>
+								<option value="IA">IA</option>
+								<option value="ID">ID</option>
+								<option value="IL">IL</option>
+								<option value="IN">IN</option>
+								<option value="KS">KS</option>
+								<option value="KY">KY</option>
+								<option value="LA">LA</option>
+								<option value="MA">MA</option>
+								<option value="MD">MD</option>
+								<option value="ME">ME</option>
+								<option value="MI">MI</option>
+								<option value="MN">MN</option>
+								<option value="MO">MO</option>
+								<option value="MS">MS</option>
+								<option value="MT">MT</option>
+								<option value="NC">NC</option>
+								<option value="ND">ND</option>
+								<option value="NE">NE</option>
+								<option value="NH">NH</option>
+								<option value="NJ">NJ</option>
+								<option value="NM">NM</option>
+								<option value="NV">NV</option>
+								<option value="NY">NY</option>
+								<option value="OH">OH</option>
+								<option value="OK">OK</option>
+								<option value="OR">OR</option>
+								<option value="PA">PA</option>
+								<option value="RI">RI</option>
+								<option value="SC">SC</option>
+								<option value="SD">SD</option>
+								<option value="TN">TN</option>
+								<option value="TX">TX</option>
+								<option value="UT">UT</option>
+								<option value="VA">VA</option>
+								<option value="VT">VT</option>
+								<option value="WA">WA</option>
+								<option value="WI">WI</option>
+								<option value="WV">WV</option>
+								<option value="WY">WY</option>
+							</select>
+							<span class="focus-input100"></span>
+							<input
+								class="dZip-input100"
+								id="dZip"
+								type="text"
+								placeholder="Destination Company Zip Code"
+								name="dZip"
+                                required
+                            />
+						</div>
+
+
+
 						<div class="container-signup100-form-btn p-t-25">
 							<button type="submit" class="signup100-form-btn">
 								Add Shipment
